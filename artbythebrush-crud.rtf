@@ -1,0 +1,1062 @@
+{\rtf1\ansi\ansicpg1252\cocoartf2512
+\cocoatextscaling0\cocoaplatform0{\fonttbl\f0\fswiss\fcharset0 Helvetica;\f1\fnil\fcharset77 ZapfDingbatsITC;}
+{\colortbl;\red255\green255\blue255;}
+{\*\expandedcolortbl;;}
+\paperw11900\paperh16840\margl1440\margr1440\vieww10800\viewh8400\viewkind0
+\pard\tx566\tx1133\tx1700\tx2267\tx2834\tx3401\tx3968\tx4535\tx5102\tx5669\tx6236\tx6803\pardirnatural\partightenfactor0
+
+\f0\fs24 \cf0  create mode 100644 app/models/artwork_tag.rb\
+ create mode 100644 app/models/tag.rb\
+ create mode 100644 db/migrate/20200530043244_create_tags.rb\
+ create mode 100644 db/migrate/20200530043249_create_artwork_tags.rb\
+ create mode 100644 test/models/artwork_tag_test.rb\
+ create mode 100644 test/models/tag_test.rb\
+
+\f1 \uc0\u10140 
+\f0   artbythebrush git:(master) git checkout -b followed-relations\
+Switched to a new branch 'followed-relations'\
+
+\f1 \uc0\u10140 
+\f0   artbythebrush git:(followed-relations) rails g model followed_relationships record_type:string record_id:string\
+Running via Spring preloader in process 11752\
+[WARNING] The model name 'followed_relationships' was recognized as a plural, using the singular 'followed_relationship' instead. Override with --force-plural or setup custom inflection rules for this noun before running the generator.\
+      invoke  active_record\
+      create    db/migrate/20200530045812_create_followed_relationships.rb\
+      create    app/models/followed_relationship.rb\
+      invoke    test_unit\
+      create      test/models/followed_relationship_test.rb\
+
+\f1 \uc0\u10140 
+\f0   artbythebrush git:(followed-relations) 
+\f1 \uc0\u10007 
+\f0  rails db:migrate\
+== 20200530045812 CreateFollowedRelationships: migrating ======================\
+-- create_table(:followed_relationships)\
+   -> 0.0057s\
+== 20200530045812 CreateFollowedRelationships: migrated (0.0057s) =============\
+\
+
+\f1 \uc0\u10140 
+\f0   artbythebrush git:(followed-relations) 
+\f1 \uc0\u10007 
+\f0  git checkout master\
+M	db/schema.rb\
+Switched to branch 'master'\
+Your branch is up to date with 'origin/master'.\
+
+\f1 \uc0\u10140 
+\f0   artbythebrush git:(master) 
+\f1 \uc0\u10007 
+\f0  git clean -d -f\
+Removing app/models/followed_relationship.rb\
+Removing db/migrate/20200530045812_create_followed_relationships.rb\
+Removing test/models/followed_relationship_test.rb\
+
+\f1 \uc0\u10140 
+\f0   artbythebrush git:(master) 
+\f1 \uc0\u10007 
+\f0  git status\
+On branch master\
+Your branch is up to date with 'origin/master'.\
+\
+Changes not staged for commit:\
+  (use "git add <file>..." to update what will be committed)\
+  (use "git restore <file>..." to discard changes in working directory)\
+	modified:   db/schema.rb\
+\
+no changes added to commit (use "git add" and/or "git commit -a")\
+
+\f1 \uc0\u10140 
+\f0   artbythebrush git:(master) 
+\f1 \uc0\u10007 
+\f0  git pull origin master\
+Enter passphrase for key '/Users/henrylay/.ssh/id_ed25519':\
+From github.com:DanielNguyen8/artbythebrush\
+ * branch            master     -> FETCH_HEAD\
+Already up to date.\
+
+\f1 \uc0\u10140 
+\f0   artbythebrush git:(master) 
+\f1 \uc0\u10007 
+\f0  git checkout followed-relations\
+M	db/schema.rb\
+Switched to branch 'followed-relations'\
+
+\f1 \uc0\u10140 
+\f0   artbythebrush git:(followed-relations) 
+\f1 \uc0\u10007 
+\f0  git checkout master\
+M	db/schema.rb\
+Switched to branch 'master'\
+Your branch is up to date with 'origin/master'.\
+
+\f1 \uc0\u10140 
+\f0   artbythebrush git:(master) 
+\f1 \uc0\u10007 
+\f0  git sweep\
+Deleted branch add-like-model (was 63beb7a).\
+Deleted branch artwork-tags (was f9e2c04).\
+Deleted branch followed-relations (was f002467).\
+Enter passphrase for key '/Users/henrylay/.ssh/id_ed25519':\
+Pruning origin\
+URL: git@github.com:DanielNguyen8/artbythebrush.git\
+ * [pruned] origin/add-like-model\
+ * [pruned] origin/artwork-tags\
+
+\f1 \uc0\u10140 
+\f0   artbythebrush git:(master) 
+\f1 \uc0\u10007 
+\f0  git checkout -b followed-rel\
+M	db/schema.rb\
+Switched to a new branch 'followed-rel'\
+
+\f1 \uc0\u10140 
+\f0   artbythebrush git:(followed-rel) 
+\f1 \uc0\u10007 
+\f0  stt\
+
+\f1 \uc0\u10140 
+\f0   artbythebrush git:(followed-rel) 
+\f1 \uc0\u10007 
+\f0  rails db:drop\
+Dropped database 'artbythebrush_development'\
+Dropped database 'artbythebrush_test'\
+
+\f1 \uc0\u10140 
+\f0   artbythebrush git:(followed-rel) 
+\f1 \uc0\u10007 
+\f0  rails db:create db:migrate\
+Created database 'artbythebrush_development'\
+Created database 'artbythebrush_test'\
+== 20200530020958 DeviseCreateUsers: migrating ================================\
+-- create_table(:users)\
+   -> 0.0045s\
+-- add_index(:users, :email, \{:unique=>true\})\
+   -> 0.0022s\
+-- add_index(:users, :reset_password_token, \{:unique=>true\})\
+   -> 0.0019s\
+== 20200530020958 DeviseCreateUsers: migrated (0.0087s) =======================\
+\
+== 20200530022246 AddMoreToUser: migrating ====================================\
+-- add_column(:users, :origin, :string)\
+   -> 0.0017s\
+-- add_column(:users, :location, :string)\
+   -> 0.0007s\
+-- add_column(:users, :biography, :string)\
+   -> 0.0007s\
+-- add_column(:users, :DOB, :date)\
+   -> 0.0007s\
+== 20200530022246 AddMoreToUser: migrated (0.0038s) ===========================\
+\
+== 20200530033656 CreateArtworks: migrating ===================================\
+-- create_table(:artworks)\
+   -> 0.0081s\
+== 20200530033656 CreateArtworks: migrated (0.0081s) ==========================\
+\
+== 20200530034859 CreateGalleries: migrating ==================================\
+-- create_table(:galleries)\
+   -> 0.0080s\
+== 20200530034859 CreateGalleries: migrated (0.0081s) =========================\
+\
+== 20200530035947 CreateFavourites: migrating =================================\
+-- create_table(:favourites)\
+   -> 0.0093s\
+== 20200530035947 CreateFavourites: migrated (0.0093s) ========================\
+\
+== 20200530040335 CreateCollections: migrating ================================\
+-- create_table(:collections)\
+   -> 0.0086s\
+== 20200530040335 CreateCollections: migrated (0.0086s) =======================\
+\
+== 20200530040753 CreateCurates: migrating ====================================\
+-- create_table(:curates)\
+   -> 0.0132s\
+== 20200530040753 CreateCurates: migrated (0.0132s) ===========================\
+\
+== 20200530042234 CreateLikes: migrating ======================================\
+-- create_table(:likes)\
+   -> 0.0141s\
+== 20200530042234 CreateLikes: migrated (0.0142s) =============================\
+\
+== 20200530043244 CreateTags: migrating =======================================\
+-- create_table(:tags)\
+   -> 0.0069s\
+== 20200530043244 CreateTags: migrated (0.0069s) ==============================\
+\
+== 20200530043249 CreateArtworkTags: migrating ================================\
+-- create_table(:artwork_tags)\
+   -> 0.0136s\
+== 20200530043249 CreateArtworkTags: migrated (0.0136s) =======================\
+\
+
+\f1 \uc0\u10140 
+\f0   artbythebrush git:(followed-rel) rails g model followed_relationship\
+Running via Spring preloader in process 12519\
+      invoke  active_record\
+      create    db/migrate/20200530051237_create_followed_relationships.rb\
+      create    app/models/followed_relationship.rb\
+      invoke    test_unit\
+      create      test/models/followed_relationship_test.rb\
+
+\f1 \uc0\u10140 
+\f0   artbythebrush git:(followed-rel) 
+\f1 \uc0\u10007 
+\f0  rails db:migrate\
+== 20200530051237 CreateFollowedRelationships: migrating ======================\
+-- create_table(:followed_relationships)\
+   -> 0.0102s\
+== 20200530051237 CreateFollowedRelationships: migrated (0.0103s) =============\
+\
+
+\f1 \uc0\u10140 
+\f0   artbythebrush git:(followed-rel) 
+\f1 \uc0\u10007 
+\f0  rails g model follow followed_relationship:references user:references\
+Running via Spring preloader in process 14281\
+      invoke  active_record\
+      create    db/migrate/20200530052118_create_follows.rb\
+      create    app/models/follow.rb\
+      invoke    test_unit\
+      create      test/models/follow_test.rb\
+
+\f1 \uc0\u10140 
+\f0   artbythebrush git:(followed-rel) 
+\f1 \uc0\u10007 
+\f0  rails db:migrate\
+== 20200530052118 CreateFollows: migrating ====================================\
+-- create_table(:follows)\
+   -> 0.0130s\
+== 20200530052118 CreateFollows: migrated (0.0131s) ===========================\
+\
+
+\f1 \uc0\u10140 
+\f0   artbythebrush git:(followed-rel) 
+\f1 \uc0\u10007 
+\f0  rails c\
+Running via Spring preloader in process 14674\
+Loading development environment (Rails 6.0.3.1)\
+[1] pry(main)> user = User.create!(email: "henry88lay@gmail.com", password: "password")\
+   (0.1ms)  BEGIN\
+  User Exists? (2.2ms)  SELECT 1 AS one FROM "users" WHERE "users"."email" = $1 LIMIT $2  [["email", "henry88lay@gmail.com"], ["LIMIT", 1]]\
+  User Create (0.6ms)  INSERT INTO "users" ("email", "encrypted_password", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"  [["email", "henry88lay@gmail.com"], ["encrypted_password", "$2a$11$ZW3nFx51WIkMA6jN0gvuvOOvc7qjUXouTieotaLADNO69yKjImBQy"], ["created_at", "2020-05-30 05:26:49.813428"], ["updated_at", "2020-05-30 05:26:49.813428"]]\
+   (0.4ms)  COMMIT\
+=> #<User id: 1, email: "henry88lay@gmail.com", created_at: "2020-05-30 05:26:49", updated_at: "2020-05-30 05:26:49", origin: nil, location: nil, biography: nil, DOB: nil>\
+[2] pry(main)> tag = Tag.create!(text: "oil")\
+ActiveRecord::RecordInvalid: Validation failed: Artwork tag must exist\
+from /Users/henrylay/.rbenv/versions/2.6.6/lib/ruby/gems/2.6.0/gems/activerecord-6.0.3.1/lib/active_record/validations.rb:80:in `raise_validation_error'\
+[3] pry(main)> tag = Tag.create!(text: "oil")\
+ActiveRecord::RecordInvalid: Validation failed: Artwork tag must exist\
+from /Users/henrylay/.rbenv/versions/2.6.6/lib/ruby/gems/2.6.0/gems/activerecord-6.0.3.1/lib/active_record/validations.rb:80:in `raise_validation_error'\
+[4] pry(main)> reload!\\\
+[4] pry(main)*\
+[4] pry(main)*\
+[4] pry(main)* ;alksjdf\
+Reloading...\
+NameError: undefined local variable or method `alksjdf' for main:Object\
+from (pry):7:in `<main>'\
+[5] pry(main)> reload!\
+Reloading...\
+=> true\
+[6] pry(main)> tag = Tag.create!(text: "oil")\
+   (0.1ms)  BEGIN\
+  Tag Create (4.5ms)  INSERT INTO "tags" ("text", "created_at", "updated_at") VALUES ($1, $2, $3) RETURNING "id"  [["text", "oil"], ["created_at", "2020-05-30 05:29:37.781380"], ["updated_at", "2020-05-30 05:29:37.781380"]]\
+   (0.4ms)  COMMIT\
+=> #<Tag:0x00007fda37915be0\
+ id: 1,\
+ text: "oil",\
+ created_at: Sat, 30 May 2020 05:29:37 UTC +00:00,\
+ updated_at: Sat, 30 May 2020 05:29:37 UTC +00:00>\
+[7] pry(main)> user\
+=> #<User id: 1, email: "henry88lay@gmail.com", created_at: "2020-05-30 05:26:49", updated_at: "2020-05-30 05:26:49", origin: nil, location: nil, biography: nil, DOB: nil>\
+[8] pry(main)> follow1 = FollowRelationship.new\
+NameError: uninitialized constant FollowRelationship\
+Did you mean?  FollowedRelationship\
+from (pry):11:in `<main>'\
+[9] pry(main)> follow1 = FollowedRelationship.new\
+=> #<FollowedRelationship:0x00007fda3815da28\
+ id: nil,\
+ record_type: nil,\
+ record_id: nil,\
+ created_at: nil,\
+ updated_at: nil>\
+[10] pry(main)> follow1.record = tag\
+=> #<Tag:0x00007fda37915be0\
+ id: 1,\
+ text: "oil",\
+ created_at: Sat, 30 May 2020 05:29:37 UTC +00:00,\
+ updated_at: Sat, 30 May 2020 05:29:37 UTC +00:00>\
+[11] pry(main)> follow1\
+=> #<FollowedRelationship:0x00007fda3815da28\
+ id: nil,\
+ record_type: "Tag",\
+ record_id: 1,\
+ created_at: nil,\
+ updated_at: nil>\
+[12] pry(main)> follow1.save!\
+   (0.2ms)  BEGIN\
+  FollowedRelationship Create (5.7ms)  INSERT INTO "followed_relationships" ("record_type", "record_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"  [["record_type", "Tag"], ["record_id", 1], ["created_at", "2020-05-30 05:31:54.430332"], ["updated_at", "2020-05-30 05:31:54.430332"]]\
+   (0.5ms)  COMMIT\
+=> true\
+[13] pry(main)> follow2 = FollowedRelationship.new\
+=> #<FollowedRelationship:0x00007fda384568d8\
+ id: nil,\
+ record_type: nil,\
+ record_id: nil,\
+ created_at: nil,\
+ updated_at: nil>\
+[14] pry(main)> follow2.record = user\
+=> #<User id: 1, email: "henry88lay@gmail.com", created_at: "2020-05-30 05:26:49", updated_at: "2020-05-30 05:26:49", origin: nil, location: nil, biography: nil, DOB: nil>\
+[15] pry(main)> follow2.save!\
+   (0.2ms)  BEGIN\
+  FollowedRelationship Create (0.3ms)  INSERT INTO "followed_relationships" ("record_type", "record_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"  [["record_type", "User"], ["record_id", 1], ["created_at", "2020-05-30 05:32:32.580217"], ["updated_at", "2020-05-30 05:32:32.580217"]]\
+   (0.6ms)  COMMIT\
+=> true\
+[16] pry(main)> FollowedRelationship.all\
+  FollowedRelationship Load (0.4ms)  SELECT "followed_relationships".* FROM "followed_relationships"\
+=> [#<FollowedRelationship:0x00007fda3f025d48\
+  id: 1,\
+  record_type: "Tag",\
+  record_id: 1,\
+  created_at: Sat, 30 May 2020 05:31:54 UTC +00:00,\
+  updated_at: Sat, 30 May 2020 05:31:54 UTC +00:00>,\
+ #<FollowedRelationship:0x00007fda3f025b68\
+  id: 2,\
+  record_type: "User",\
+  record_id: 1,\
+  created_at: Sat, 30 May 2020 05:32:32 UTC +00:00,\
+  updated_at: Sat, 30 May 2020 05:32:32 UTC +00:00>]\
+[17] pry(main)> user.records\
+NoMethodError: undefined method `records' for #<User:0x00007fda385b51e8>\
+from /Users/henrylay/.rbenv/versions/2.6.6/lib/ruby/gems/2.6.0/gems/activemodel-6.0.3.1/lib/active_model/attribute_methods.rb:432:in `method_missing'\
+[18] pry(main)> user.record\
+NoMethodError: undefined method `record' for #<User:0x00007fda385b51e8>\
+from /Users/henrylay/.rbenv/versions/2.6.6/lib/ruby/gems/2.6.0/gems/activemodel-6.0.3.1/lib/active_model/attribute_methods.rb:432:in `method_missing'\
+[19] pry(main)> user.followedrelationships\
+NoMethodError: undefined method `followedrelationships' for #<User:0x00007fda385b51e8>\
+from /Users/henrylay/.rbenv/versions/2.6.6/lib/ruby/gems/2.6.0/gems/activemodel-6.0.3.1/lib/active_model/attribute_methods.rb:432:in `method_missing'\
+[20] pry(main)> user\
+=> #<User id: 1, email: "henry88lay@gmail.com", created_at: "2020-05-30 05:26:49", updated_at: "2020-05-30 05:26:49", origin: nil, location: nil, biography: nil, DOB: nil>\
+[21] pry(main)> user.followed_relationships\
+NoMethodError: undefined method `followed_relationships' for #<User:0x00007fda385b51e8>\
+from /Users/henrylay/.rbenv/versions/2.6.6/lib/ruby/gems/2.6.0/gems/activemodel-6.0.3.1/lib/active_model/attribute_methods.rb:432:in `method_missing'\
+[22] pry(main)> user.followed_relationship\
+NoMethodError: undefined method `followed_relationship' for #<User:0x00007fda385b51e8>\
+from /Users/henrylay/.rbenv/versions/2.6.6/lib/ruby/gems/2.6.0/gems/activemodel-6.0.3.1/lib/active_model/attribute_methods.rb:432:in `method_missing'\
+[23] pry(main)> tag\
+=> #<Tag:0x00007fda37915be0\
+ id: 1,\
+ text: "oil",\
+ created_at: Sat, 30 May 2020 05:29:37 UTC +00:00,\
+ updated_at: Sat, 30 May 2020 05:29:37 UTC +00:00>\
+[24] pry(main)> tag.record\
+NoMethodError: undefined method `record' for #<Tag:0x00007fda37915be0>\
+from /Users/henrylay/.rbenv/versions/2.6.6/lib/ruby/gems/2.6.0/gems/activemodel-6.0.3.1/lib/active_model/attribute_methods.rb:432:in `method_missing'\
+[25] pry(main)> tag.followed_relationships\
+  FollowedRelationship Load (0.2ms)  SELECT "followed_relationships".* FROM "followed_relationships" WHERE "followed_relationships"."record_id" = $1 AND "followed_relationships"."record_type" = $2  [["record_id", 1], ["record_type", "Tag"]]\
+=> [#<FollowedRelationship:0x00007fda372c48b8\
+  id: 1,\
+  record_type: "Tag",\
+  record_id: 1,\
+  created_at: Sat, 30 May 2020 05:31:54 UTC +00:00,\
+  updated_at: Sat, 30 May 2020 05:31:54 UTC +00:00>]\
+[26] pry(main)> reload!\
+Reloading...\
+=> true\
+[27] pry(main)> user.followed_relationships\
+NoMethodError: undefined method `followed_relationships' for #<User:0x00007fda385b51e8>\
+from /Users/henrylay/.rbenv/versions/2.6.6/lib/ruby/gems/2.6.0/gems/activemodel-6.0.3.1/lib/active_model/attribute_methods.rb:432:in `method_missing'\
+[28] pry(main)> user\
+=> #<User id: 1, email: "henry88lay@gmail.com", created_at: "2020-05-30 05:26:49", updated_at: "2020-05-30 05:26:49", origin: nil, location: nil, biography: nil, DOB: nil>\
+[29] pry(main)> tag.followed_relationships\
+=> [#<FollowedRelationship:0x00007fda372c48b8\
+  id: 1,\
+  record_type: "Tag",\
+  record_id: 1,\
+  created_at: Sat, 30 May 2020 05:31:54 UTC +00:00,\
+  updated_at: Sat, 30 May 2020 05:31:54 UTC +00:00>]\
+[30] pry(main)> user.followed_relationships\
+NoMethodError: undefined method `followed_relationships' for #<User:0x00007fda385b51e8>\
+from /Users/henrylay/.rbenv/versions/2.6.6/lib/ruby/gems/2.6.0/gems/activemodel-6.0.3.1/lib/active_model/attribute_methods.rb:432:in `method_missing'\
+[31] pry(main)> reload!\
+Reloading...\
+=> true\
+[32] pry(main)> user.followed_relationships\
+NoMethodError: undefined method `followed_relationships' for #<User:0x00007fda385b51e8>\
+from /Users/henrylay/.rbenv/versions/2.6.6/lib/ruby/gems/2.6.0/gems/activemodel-6.0.3.1/lib/active_model/attribute_methods.rb:432:in `method_missing'\
+[33] pry(main)> Follow.all\
+  Follow Load (4.2ms)  SELECT "follows".* FROM "follows"\
+=> []\
+[34] pry(main)> tag.followed_relationships\
+=> [#<FollowedRelationship:0x00007fda372c48b8\
+  id: 1,\
+  record_type: "Tag",\
+  record_id: 1,\
+  created_at: Sat, 30 May 2020 05:31:54 UTC +00:00,\
+  updated_at: Sat, 30 May 2020 05:31:54 UTC +00:00>]\
+[35] pry(main)> tag.followed_relationships.count\
+   (0.6ms)  SELECT COUNT(*) FROM "followed_relationships" WHERE "followed_relationships"."record_id" = $1 AND "followed_relationships"."record_type" = $2  [["record_id", 1], ["record_type", "Tag"]]\
+=> 1\
+[36] pry(main)> tag.followed_relationships\
+=> [#<FollowedRelationship:0x00007fda372c48b8\
+  id: 1,\
+  record_type: "Tag",\
+  record_id: 1,\
+  created_at: Sat, 30 May 2020 05:31:54 UTC +00:00,\
+  updated_at: Sat, 30 May 2020 05:31:54 UTC +00:00>]\
+[37] pry(main)> tag.followed_relationships.first\
+=> #<FollowedRelationship:0x00007fda372c48b8\
+ id: 1,\
+ record_type: "Tag",\
+ record_id: 1,\
+ created_at: Sat, 30 May 2020 05:31:54 UTC +00:00,\
+ updated_at: Sat, 30 May 2020 05:31:54 UTC +00:00>\
+[38] pry(main)> tag.followed_relationships.first.record\
+=> #<Tag:0x00007fda37915be0\
+ id: 1,\
+ text: "oil",\
+ created_at: Sat, 30 May 2020 05:29:37 UTC +00:00,\
+ updated_at: Sat, 30 May 2020 05:29:37 UTC +00:00>\
+[39] pry(main)> tag.followed_relationships.first\
+=> #<FollowedRelationship:0x00007fda372c48b8\
+ id: 1,\
+ record_type: "Tag",\
+ record_id: 1,\
+ created_at: Sat, 30 May 2020 05:31:54 UTC +00:00,\
+ updated_at: Sat, 30 May 2020 05:31:54 UTC +00:00>\
+[40] pry(main)> reload!\
+Reloading...\
+=> true\
+[41] pry(main)> user.followed_relationships\
+NoMethodError: undefined method `followed_relationships' for #<User:0x00007fda385b51e8>\
+from /Users/henrylay/.rbenv/versions/2.6.6/lib/ruby/gems/2.6.0/gems/activemodel-6.0.3.1/lib/active_model/attribute_methods.rb:432:in `method_missing'\
+[42] pry(main)> user.followed_relationships\
+NoMethodError: undefined method `followed_relationships' for #<User:0x00007fda385b51e8>\
+from /Users/henrylay/.rbenv/versions/2.6.6/lib/ruby/gems/2.6.0/gems/activemodel-6.0.3.1/lib/active_model/attribute_methods.rb:432:in `method_missing'\
+[43] pry(main)> reload!\
+Reloading...\
+=> true\
+[44] pry(main)> user.followed_relationships\
+NoMethodError: undefined method `followed_relationships' for #<User:0x00007fda385b51e8>\
+from /Users/henrylay/.rbenv/versions/2.6.6/lib/ruby/gems/2.6.0/gems/activemodel-6.0.3.1/lib/active_model/attribute_methods.rb:432:in `method_missing'\
+[45] pry(main)> followes_realtionships.record\
+NameError: undefined local variable or method `followes_realtionships' for main:Object\
+from (pry):48:in `<main>'\
+[46] pry(main)> followed_realtionships.record\
+NameError: undefined local variable or method `followed_realtionships' for main:Object\
+from (pry):49:in `<main>'\
+[47] pry(main)> followed_relationships.record\
+NameError: undefined local variable or method `followed_relationships' for main:Object\
+from (pry):50:in `<main>'\
+[48] pry(main)> reload!\
+Reloading...\
+=> true\
+[49] pry(main)> user\
+=> #<User id: 1, email: "henry88lay@gmail.com", created_at: "2020-05-30 05:26:49", updated_at: "2020-05-30 05:26:49", origin: nil, location: nil, biography: nil, DOB: nil>\
+[50] pry(main)> User.all\
+  User Load (0.3ms)  SELECT "users".* FROM "users"\
+=> [#<User id: 1, email: "henry88lay@gmail.com", created_at: "2020-05-30 05:26:49", updated_at: "2020-05-30 05:26:49", origin: nil, location: nil, biography: nil, DOB: nil>]\
+[51] pry(main)> User.first\
+  User Load (0.3ms)  SELECT "users".* FROM "users" ORDER BY "users"."id" ASC LIMIT $1  [["LIMIT", 1]]\
+=> #<User id: 1, email: "henry88lay@gmail.com", created_at: "2020-05-30 05:26:49", updated_at: "2020-05-30 05:26:49", origin: nil, location: nil, biography: nil, DOB: nil>\
+[52] pry(main)> User.first.followed_relationship\
+  User Load (0.3ms)  SELECT "users".* FROM "users" ORDER BY "users"."id" ASC LIMIT $1  [["LIMIT", 1]]\
+NoMethodError: undefined method `followed_relationship' for #<User:0x00007fda385b5dc8>\
+Did you mean?  followed_relationships\
+               followed_relationships=\
+               followed_relationship_ids\
+               followed_relationship_ids=\
+from /Users/henrylay/.rbenv/versions/2.6.6/lib/ruby/gems/2.6.0/gems/activemodel-6.0.3.1/lib/active_model/attribute_methods.rb:432:in `method_missing'\
+[53] pry(main)> User.first.followed_relationships\
+  User Load (0.3ms)  SELECT "users".* FROM "users" ORDER BY "users"."id" ASC LIMIT $1  [["LIMIT", 1]]\
+  FollowedRelationship Load (0.2ms)  SELECT "followed_relationships".* FROM "followed_relationships" WHERE "followed_relationships"."record_id" = $1  [["record_id", 1]]\
+=> [#<FollowedRelationship:0x00007fda3a325c50\
+  id: 1,\
+  record_type: "Tag",\
+  record_id: 1,\
+  created_at: Sat, 30 May 2020 05:31:54 UTC +00:00,\
+  updated_at: Sat, 30 May 2020 05:31:54 UTC +00:00>,\
+ #<FollowedRelationship:0x00007fda3a3c5bd8\
+  id: 2,\
+  record_type: "User",\
+  record_id: 1,\
+  created_at: Sat, 30 May 2020 05:32:32 UTC +00:00,\
+  updated_at: Sat, 30 May 2020 05:32:32 UTC +00:00>]\
+[54] pry(main)> user.followed_relationships\
+NoMethodError: undefined method `followed_relationships' for #<User:0x00007fda385b51e8>\
+from /Users/henrylay/.rbenv/versions/2.6.6/lib/ruby/gems/2.6.0/gems/activemodel-6.0.3.1/lib/active_model/attribute_methods.rb:432:in `method_missing'\
+[55] pry(main)> user\
+=> #<User id: 1, email: "henry88lay@gmail.com", created_at: "2020-05-30 05:26:49", updated_at: "2020-05-30 05:26:49", origin: nil, location: nil, biography: nil, DOB: nil>\
+[56] pry(main)> User.first.followed_relationships\
+  User Load (0.3ms)  SELECT "users".* FROM "users" ORDER BY "users"."id" ASC LIMIT $1  [["LIMIT", 1]]\
+  FollowedRelationship Load (0.2ms)  SELECT "followed_relationships".* FROM "followed_relationships" WHERE "followed_relationships"."record_id" = $1  [["record_id", 1]]\
+=> [#<FollowedRelationship:0x00007fda376207f0\
+  id: 1,\
+  record_type: "Tag",\
+  record_id: 1,\
+  created_at: Sat, 30 May 2020 05:31:54 UTC +00:00,\
+  updated_at: Sat, 30 May 2020 05:31:54 UTC +00:00>,\
+ #<FollowedRelationship:0x00007fda376320b8\
+  id: 2,\
+  record_type: "User",\
+  record_id: 1,\
+  created_at: Sat, 30 May 2020 05:32:32 UTC +00:00,\
+  updated_at: Sat, 30 May 2020 05:32:32 UTC +00:00>]\
+[57] pry(main)> User.first\
+  User Load (0.3ms)  SELECT "users".* FROM "users" ORDER BY "users"."id" ASC LIMIT $1  [["LIMIT", 1]]\
+=> #<User id: 1, email: "henry88lay@gmail.com", created_at: "2020-05-30 05:26:49", updated_at: "2020-05-30 05:26:49", origin: nil, location: nil, biography: nil, DOB: nil>\
+[58] pry(main)> user\
+=> #<User id: 1, email: "henry88lay@gmail.com", created_at: "2020-05-30 05:26:49", updated_at: "2020-05-30 05:26:49", origin: nil, location: nil, biography: nil, DOB: nil>\
+[59] pry(main)> User.first == user\
+  User Load (0.5ms)  SELECT "users".* FROM "users" ORDER BY "users"."id" ASC LIMIT $1  [["LIMIT", 1]]\
+=> false\
+[60] pry(main)> user = User.first\
+  User Load (0.3ms)  SELECT "users".* FROM "users" ORDER BY "users"."id" ASC LIMIT $1  [["LIMIT", 1]]\
+=> #<User id: 1, email: "henry88lay@gmail.com", created_at: "2020-05-30 05:26:49", updated_at: "2020-05-30 05:26:49", origin: nil, location: nil, biography: nil, DOB: nil>\
+[61] pry(main)> user.followed_relationships\
+  FollowedRelationship Load (0.3ms)  SELECT "followed_relationships".* FROM "followed_relationships" WHERE "followed_relationships"."record_id" = $1  [["record_id", 1]]\
+=> [#<FollowedRelationship:0x00007fda3a14e328\
+  id: 1,\
+  record_type: "Tag",\
+  record_id: 1,\
+  created_at: Sat, 30 May 2020 05:31:54 UTC +00:00,\
+  updated_at: Sat, 30 May 2020 05:31:54 UTC +00:00>,\
+ #<FollowedRelationship:0x00007fda3a14e120\
+  id: 2,\
+  record_type: "User",\
+  record_id: 1,\
+  created_at: Sat, 30 May 2020 05:32:32 UTC +00:00,\
+  updated_at: Sat, 30 May 2020 05:32:32 UTC +00:00>]\
+[62] pry(main)> reload!\
+Reloading...\
+=> true\
+[63] pry(main)> user.followed_relationships\
+=> [#<FollowedRelationship:0x00007fda3a14e328\
+  id: 1,\
+  record_type: "Tag",\
+  record_id: 1,\
+  created_at: Sat, 30 May 2020 05:31:54 UTC +00:00,\
+  updated_at: Sat, 30 May 2020 05:31:54 UTC +00:00>,\
+ #<FollowedRelationship:0x00007fda3a14e120\
+  id: 2,\
+  record_type: "User",\
+  record_id: 1,\
+  created_at: Sat, 30 May 2020 05:32:32 UTC +00:00,\
+  updated_at: Sat, 30 May 2020 05:32:32 UTC +00:00>]\
+[64] pry(main)> tag\
+=> #<Tag:0x00007fda37915be0\
+ id: 1,\
+ text: "oil",\
+ created_at: Sat, 30 May 2020 05:29:37 UTC +00:00,\
+ updated_at: Sat, 30 May 2020 05:29:37 UTC +00:00>\
+[65] pry(main)> tag.followed_relationships\
+=> [#<FollowedRelationship:0x00007fda372c48b8\
+  id: 1,\
+  record_type: "Tag",\
+  record_id: 1,\
+  created_at: Sat, 30 May 2020 05:31:54 UTC +00:00,\
+  updated_at: Sat, 30 May 2020 05:31:54 UTC +00:00>]\
+[66] pry(main)> reload!\
+Reloading...\
+=> true\
+[67] pry(main)> user.followed_relationships\
+=> [#<FollowedRelationship:0x00007fda3a14e328\
+  id: 1,\
+  record_type: "Tag",\
+  record_id: 1,\
+  created_at: Sat, 30 May 2020 05:31:54 UTC +00:00,\
+  updated_at: Sat, 30 May 2020 05:31:54 UTC +00:00>,\
+ #<FollowedRelationship:0x00007fda3a14e120\
+  id: 2,\
+  record_type: "User",\
+  record_id: 1,\
+  created_at: Sat, 30 May 2020 05:32:32 UTC +00:00,\
+  updated_at: Sat, 30 May 2020 05:32:32 UTC +00:00>]\
+[68] pry(main)> exit\
+
+\f1 \uc0\u10140 
+\f0   artbythebrush git:(followed-rel) 
+\f1 \uc0\u10007 
+\f0  rails c\
+Running via Spring preloader in process 16154\
+Loading development environment (Rails 6.0.3.1)\
+[1] pry(main)> user = User.first\
+  User Load (0.4ms)  SELECT "users".* FROM "users" ORDER BY "users"."id" ASC LIMIT $1  [["LIMIT", 1]]\
+=> #<User id: 1, email: "henry88lay@gmail.com", created_at: "2020-05-30 05:26:49", updated_at: "2020-05-30 05:26:49", origin: nil, location: nil, biography: nil, DOB: nil>\
+[2] pry(main)> user.followed_relationships\
+  FollowedRelationship Load (0.4ms)  SELECT "followed_relationships".* FROM "followed_relationships" WHERE "followed_relationships"."record_id" = $1 AND "followed_relationships"."record_type" = $2  [["record_id", 1], ["record_type", "User"]]\
+=> [#<FollowedRelationship:0x00007fee5f39a148\
+  id: 2,\
+  record_type: "User",\
+  record_id: 1,\
+  created_at: Sat, 30 May 2020 05:32:32 UTC +00:00,\
+  updated_at: Sat, 30 May 2020 05:32:32 UTC +00:00>]\
+[3] pry(main)> tag = Tag.first\
+  Tag Load (0.3ms)  SELECT "tags".* FROM "tags" ORDER BY "tags"."id" ASC LIMIT $1  [["LIMIT", 1]]\
+=> #<Tag:0x00007fee60a74b20\
+ id: 1,\
+ text: "oil",\
+ created_at: Sat, 30 May 2020 05:29:37 UTC +00:00,\
+ updated_at: Sat, 30 May 2020 05:29:37 UTC +00:00>\
+[4] pry(main)> tag.followed_relationships\
+  FollowedRelationship Load (0.4ms)  SELECT "followed_relationships".* FROM "followed_relationships" WHERE "followed_relationships"."record_id" = $1 AND "followed_relationships"."record_type" = $2  [["record_id", 1], ["record_type", "Tag"]]\
+=> [#<FollowedRelationship:0x00007fee60b3d5e8\
+  id: 1,\
+  record_type: "Tag",\
+  record_id: 1,\
+  created_at: Sat, 30 May 2020 05:31:54 UTC +00:00,\
+  updated_at: Sat, 30 May 2020 05:31:54 UTC +00:00>]\
+[5] pry(main)> user.followed_relationships.count\
+   (0.5ms)  SELECT COUNT(*) FROM "followed_relationships" WHERE "followed_relationships"."record_id" = $1 AND "followed_relationships"."record_type" = $2  [["record_id", 1], ["record_type", "User"]]\
+=> 1\
+[6] pry(main)> user.followed_relationships\
+=> [#<FollowedRelationship:0x00007fee5f39a148\
+  id: 2,\
+  record_type: "User",\
+  record_id: 1,\
+  created_at: Sat, 30 May 2020 05:32:32 UTC +00:00,\
+  updated_at: Sat, 30 May 2020 05:32:32 UTC +00:00>]\
+[7] pry(main)> user.followed_relationships.first\
+=> #<FollowedRelationship:0x00007fee5f39a148\
+ id: 2,\
+ record_type: "User",\
+ record_id: 1,\
+ created_at: Sat, 30 May 2020 05:32:32 UTC +00:00,\
+ updated_at: Sat, 30 May 2020 05:32:32 UTC +00:00>\
+[8] pry(main)> user.followed_relationships.first.record\
+=> #<User id: 1, email: "henry88lay@gmail.com", created_at: "2020-05-30 05:26:49", updated_at: "2020-05-30 05:26:49", origin: nil, location: nil, biography: nil, DOB: nil>\
+[9] pry(main)> tag.followed_relationships\
+=> [#<FollowedRelationship:0x00007fee60b3d5e8\
+  id: 1,\
+  record_type: "Tag",\
+  record_id: 1,\
+  created_at: Sat, 30 May 2020 05:31:54 UTC +00:00,\
+  updated_at: Sat, 30 May 2020 05:31:54 UTC +00:00>]\
+[10] pry(main)> tag.followed_relationships.first\
+=> #<FollowedRelationship:0x00007fee60b3d5e8\
+ id: 1,\
+ record_type: "Tag",\
+ record_id: 1,\
+ created_at: Sat, 30 May 2020 05:31:54 UTC +00:00,\
+ updated_at: Sat, 30 May 2020 05:31:54 UTC +00:00>\
+[11] pry(main)> tag.followed_relationships.first.record\
+=> #<Tag:0x00007fee60a74b20\
+ id: 1,\
+ text: "oil",\
+ created_at: Sat, 30 May 2020 05:29:37 UTC +00:00,\
+ updated_at: Sat, 30 May 2020 05:29:37 UTC +00:00>\
+[12] pry(main)> exit\
+
+\f1 \uc0\u10140 
+\f0   artbythebrush git:(followed-rel) 
+\f1 \uc0\u10007 
+\f0  rails db:drop\
+Dropped database 'artbythebrush_development'\
+Dropped database 'artbythebrush_test'\
+
+\f1 \uc0\u10140 
+\f0   artbythebrush git:(followed-rel) 
+\f1 \uc0\u10007 
+\f0  rails db:create\
+Created database 'artbythebrush_development'\
+Created database 'artbythebrush_test'\
+
+\f1 \uc0\u10140 
+\f0   artbythebrush git:(followed-rel) 
+\f1 \uc0\u10007 
+\f0  rails db:migrate\
+== 20200530020958 DeviseCreateUsers: migrating ================================\
+-- create_table(:users)\
+   -> 0.0060s\
+-- add_index(:users, :email, \{:unique=>true\})\
+   -> 0.0033s\
+-- add_index(:users, :reset_password_token, \{:unique=>true\})\
+   -> 0.0021s\
+== 20200530020958 DeviseCreateUsers: migrated (0.0114s) =======================\
+\
+== 20200530022246 AddMoreToUser: migrating ====================================\
+-- add_column(:users, :origin, :string)\
+   -> 0.0017s\
+-- add_column(:users, :location, :string)\
+   -> 0.0008s\
+-- add_column(:users, :biography, :string)\
+   -> 0.0008s\
+-- add_column(:users, :DOB, :date)\
+   -> 0.0008s\
+== 20200530022246 AddMoreToUser: migrated (0.0041s) ===========================\
+\
+== 20200530033656 CreateArtworks: migrating ===================================\
+-- create_table(:artworks)\
+   -> 0.0108s\
+== 20200530033656 CreateArtworks: migrated (0.0108s) ==========================\
+\
+== 20200530034859 CreateGalleries: migrating ==================================\
+-- create_table(:galleries)\
+   -> 0.0084s\
+== 20200530034859 CreateGalleries: migrated (0.0085s) =========================\
+\
+== 20200530035947 CreateFavourites: migrating =================================\
+-- create_table(:favourites)\
+   -> 0.0100s\
+== 20200530035947 CreateFavourites: migrated (0.0101s) ========================\
+\
+== 20200530040335 CreateCollections: migrating ================================\
+-- create_table(:collections)\
+   -> 0.0083s\
+== 20200530040335 CreateCollections: migrated (0.0084s) =======================\
+\
+== 20200530040753 CreateCurates: migrating ====================================\
+-- create_table(:curates)\
+   -> 0.0100s\
+== 20200530040753 CreateCurates: migrated (0.0101s) ===========================\
+\
+== 20200530042234 CreateLikes: migrating ======================================\
+-- create_table(:likes)\
+   -> 0.0134s\
+== 20200530042234 CreateLikes: migrated (0.0135s) =============================\
+\
+== 20200530043244 CreateTags: migrating =======================================\
+-- create_table(:tags)\
+   -> 0.0068s\
+== 20200530043244 CreateTags: migrated (0.0068s) ==============================\
+\
+== 20200530043249 CreateArtworkTags: migrating ================================\
+-- create_table(:artwork_tags)\
+   -> 0.0135s\
+== 20200530043249 CreateArtworkTags: migrated (0.0135s) =======================\
+\
+== 20200530051237 CreateFollowedRelationships: migrating ======================\
+-- create_table(:followed_relationships)\
+   -> 0.0165s\
+== 20200530051237 CreateFollowedRelationships: migrated (0.0165s) =============\
+\
+== 20200530052118 CreateFollows: migrating ====================================\
+-- create_table(:follows)\
+   -> 0.0210s\
+== 20200530052118 CreateFollows: migrated (0.0211s) ===========================\
+\
+
+\f1 \uc0\u10140 
+\f0   artbythebrush git:(followed-rel) 
+\f1 \uc0\u10007 
+\f0  rails c\
+Running via Spring preloader in process 17628\
+Loading development environment (Rails 6.0.3.1)\
+[1] pry(main)> exit\
+
+\f1 \uc0\u10140 
+\f0   artbythebrush git:(followed-rel) 
+\f1 \uc0\u10007 
+\f0  rails db:seed\
+rails aborted!\
+ActiveModel::UnknownAttributeError: unknown attribute 'name' for User.\
+/Users/henrylay/code/henry88lay/artbythebrush/db/seeds.rb:9:in `<main>'\
+/Users/henrylay/code/henry88lay/artbythebrush/bin/rails:9:in `<top (required)>'\
+/Users/henrylay/code/henry88lay/artbythebrush/bin/spring:15:in `<top (required)>'\
+./bin/rails:3:in `load'\
+./bin/rails:3:in `<main>'\
+Tasks: TOP => db:seed\
+(See full trace by running task with --trace)\
+
+\f1 \uc0\u10140 
+\f0   artbythebrush git:(followed-rel) 
+\f1 \uc0\u10007 
+\f0  rails db:seed\
+
+\f1 \uc0\u10140 
+\f0   artbythebrush git:(followed-rel) 
+\f1 \uc0\u10007 
+\f0  rails c\
+Running via Spring preloader in process 17854\
+Loading development environment (Rails 6.0.3.1)\
+[1] pry(main)> User.all\
+  User Load (0.6ms)  SELECT "users".* FROM "users"\
+=> [#<User id: 1, email: "user1@hotmail.com", created_at: "2020-05-30 06:05:48", updated_at: "2020-05-30 06:05:48", origin: nil, location: nil, biography: nil, DOB: nil>,\
+ #<User id: 2, email: "user2@hotmail.com", created_at: "2020-05-30 06:05:48", updated_at: "2020-05-30 06:05:48", origin: nil, location: nil, biography: nil, DOB: nil>,\
+ #<User id: 3, email: "user3@hotmail.com", created_at: "2020-05-30 06:05:48", updated_at: "2020-05-30 06:05:48", origin: nil, location: nil, biography: nil, DOB: nil>,\
+ #<User id: 4, email: "user4@hotmail.com", created_at: "2020-05-30 06:05:48", updated_at: "2020-05-30 06:05:48", origin: nil, location: nil, biography: nil, DOB: nil>]\
+[2] pry(main)> Tag.all\
+  Tag Load (0.5ms)  SELECT "tags".* FROM "tags"\
+=> [#<Tag:0x00007fee60f2ac28\
+  id: 1,\
+  text: "oil",\
+  created_at: Sat, 30 May 2020 06:05:48 UTC +00:00,\
+  updated_at: Sat, 30 May 2020 06:05:48 UTC +00:00>,\
+ #<Tag:0x00007fee60f9b860\
+  id: 2,\
+  text: "pastel",\
+  created_at: Sat, 30 May 2020 06:05:48 UTC +00:00,\
+  updated_at: Sat, 30 May 2020 06:05:48 UTC +00:00>,\
+ #<Tag:0x00007fee60f9b658\
+  id: 3,\
+  text: "hands",\
+  created_at: Sat, 30 May 2020 06:05:48 UTC +00:00,\
+  updated_at: Sat, 30 May 2020 06:05:48 UTC +00:00>,\
+ #<Tag:0x00007fee60f9b4f0\
+  id: 4,\
+  text: "black",\
+  created_at: Sat, 30 May 2020 06:05:48 UTC +00:00,\
+  updated_at: Sat, 30 May 2020 06:05:48 UTC +00:00>]\
+[3] pry(main)> rel1 = FollowedRelationship.new\
+=> #<FollowedRelationship:0x00007fee5e8cfa88\
+ id: nil,\
+ record_type: nil,\
+ record_id: nil,\
+ user_id: nil,\
+ created_at: nil,\
+ updated_at: nil>\
+[4] pry(main)> rel1.user = User.first\
+  User Load (0.2ms)  SELECT "users".* FROM "users" ORDER BY "users"."id" ASC LIMIT $1  [["LIMIT", 1]]\
+NoMethodError: undefined method `user=' for #<FollowedRelationship:0x00007fee5e8cfa88>\
+Did you mean?  user_id=\
+from /Users/henrylay/.rbenv/versions/2.6.6/lib/ruby/gems/2.6.0/gems/activemodel-6.0.3.1/lib/active_model/attribute_methods.rb:432:in `method_missing'\
+[5] pry(main)> reload!\
+Reloading...\
+=> true\
+[6] pry(main)> rel1.user = User.first\
+  User Load (0.2ms)  SELECT "users".* FROM "users" ORDER BY "users"."id" ASC LIMIT $1  [["LIMIT", 1]]\
+NoMethodError: undefined method `user=' for #<FollowedRelationship:0x00007fee5e8cfa88>\
+Did you mean?  user_id=\
+from /Users/henrylay/.rbenv/versions/2.6.6/lib/ruby/gems/2.6.0/gems/activemodel-6.0.3.1/lib/active_model/attribute_methods.rb:432:in `method_missing'\
+[7] pry(main)> exit\
+
+\f1 \uc0\u10140 
+\f0   artbythebrush git:(followed-rel) 
+\f1 \uc0\u10007 
+\f0  rails c\
+Running via Spring preloader in process 18027\
+Loading development environment (Rails 6.0.3.1)\
+[1] pry(main)> rel1 = FollowedRelationship.new\
+=> #<FollowedRelationship:0x00007fee603ce8e8\
+ id: nil,\
+ record_type: nil,\
+ record_id: nil,\
+ user_id: nil,\
+ created_at: nil,\
+ updated_at: nil>\
+[2] pry(main)> rel1.user = User.first\
+  User Load (0.5ms)  SELECT "users".* FROM "users" ORDER BY "users"."id" ASC LIMIT $1  [["LIMIT", 1]]\
+=> #<User id: 1, email: "user1@hotmail.com", created_at: "2020-05-30 06:05:48", updated_at: "2020-05-30 06:05:48", origin: nil, location: nil, biography: nil, DOB: nil>\
+[3] pry(main)> rel1\
+=> #<FollowedRelationship:0x00007fee603ce8e8\
+ id: nil,\
+ record_type: nil,\
+ record_id: nil,\
+ user_id: 1,\
+ created_at: nil,\
+ updated_at: nil>\
+[4] pry(main)> rel1.record = Tag.first\
+  Tag Load (0.3ms)  SELECT "tags".* FROM "tags" ORDER BY "tags"."id" ASC LIMIT $1  [["LIMIT", 1]]\
+=> #<Tag:0x00007fee6196bc00\
+ id: 1,\
+ text: "oil",\
+ created_at: Sat, 30 May 2020 06:05:48 UTC +00:00,\
+ updated_at: Sat, 30 May 2020 06:05:48 UTC +00:00>\
+[5] pry(main)> rel1\
+=> #<FollowedRelationship:0x00007fee603ce8e8\
+ id: nil,\
+ record_type: "Tag",\
+ record_id: 1,\
+ user_id: 1,\
+ created_at: nil,\
+ updated_at: nil>\
+[6] pry(main)> rel1.save!\
+   (0.2ms)  BEGIN\
+  FollowedRelationship Create (3.5ms)  INSERT INTO "followed_relationships" ("record_type", "record_id", "user_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"  [["record_type", "Tag"], ["record_id", 1], ["user_id", 1], ["created_at", "2020-05-30 06:07:55.625734"], ["updated_at", "2020-05-30 06:07:55.625734"]]\
+   (0.5ms)  COMMIT\
+=> true\
+[7] pry(main)> rel2 = FollowedRelationship.new\
+=> #<FollowedRelationship:0x00007fee60c50fe8\
+ id: nil,\
+ record_type: nil,\
+ record_id: nil,\
+ user_id: nil,\
+ created_at: nil,\
+ updated_at: nil>\
+[8] pry(main)> exit\
+
+\f1 \uc0\u10140 
+\f0   artbythebrush git:(followed-rel) 
+\f1 \uc0\u10007 
+\f0  rails db:seed\
+
+\f1 \uc0\u10140 
+\f0   artbythebrush git:(followed-rel) 
+\f1 \uc0\u10007 
+\f0  rails c\
+Running via Spring preloader in process 18604\
+Loading development environment (Rails 6.0.3.1)\
+[1] pry(main)> User.all\
+  User Load (0.6ms)  SELECT "users".* FROM "users"\
+=> [#<User id: 5, email: "user1@hotmail.com", created_at: "2020-05-30 06:10:07", updated_at: "2020-05-30 06:10:07", origin: nil, location: nil, biography: nil, DOB: nil>,\
+ #<User id: 6, email: "user2@hotmail.com", created_at: "2020-05-30 06:10:07", updated_at: "2020-05-30 06:10:07", origin: nil, location: nil, biography: nil, DOB: nil>,\
+ #<User id: 7, email: "user3@hotmail.com", created_at: "2020-05-30 06:10:07", updated_at: "2020-05-30 06:10:07", origin: nil, location: nil, biography: nil, DOB: nil>,\
+ #<User id: 8, email: "user4@hotmail.com", created_at: "2020-05-30 06:10:07", updated_at: "2020-05-30 06:10:07", origin: nil, location: nil, biography: nil, DOB: nil>]\
+[2] pry(main)> user = User.all[1]\
+  User Load (0.4ms)  SELECT "users".* FROM "users"\
+=> #<User id: 6, email: "user2@hotmail.com", created_at: "2020-05-30 06:10:07", updated_at: "2020-05-30 06:10:07", origin: nil, location: nil, biography: nil, DOB: nil>\
+[3] pry(main)> user.followed_relationships\
+  FollowedRelationship Load (0.4ms)  SELECT "followed_relationships".* FROM "followed_relationships" WHERE "followed_relationships"."record_id" = $1 AND "followed_relationships"."record_type" = $2  [["record_id", 6], ["record_type", "User"]]\
+=> [#<FollowedRelationship:0x00007fee5ec55478\
+  id: 3,\
+  record_type: "User",\
+  record_id: 6,\
+  user_id: 5,\
+  created_at: Sat, 30 May 2020 06:10:07 UTC +00:00,\
+  updated_at: Sat, 30 May 2020 06:10:07 UTC +00:00>]\
+[4] pry(main)> User.first.followed_relationships\
+  User Load (0.3ms)  SELECT "users".* FROM "users" ORDER BY "users"."id" ASC LIMIT $1  [["LIMIT", 1]]\
+  FollowedRelationship Load (0.2ms)  SELECT "followed_relationships".* FROM "followed_relationships" WHERE "followed_relationships"."record_id" = $1 AND "followed_relationships"."record_type" = $2  [["record_id", 5], ["record_type", "User"]]\
+=> []\
+[5] pry(main)> user = User.find(5)\
+  User Load (0.3ms)  SELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2  [["id", 5], ["LIMIT", 1]]\
+=> #<User id: 5, email: "user1@hotmail.com", created_at: "2020-05-30 06:10:07", updated_at: "2020-05-30 06:10:07", origin: nil, location: nil, biography: nil, DOB: nil>\
+[6] pry(main)> user.followed_relationships\
+  FollowedRelationship Load (0.3ms)  SELECT "followed_relationships".* FROM "followed_relationships" WHERE "followed_relationships"."record_id" = $1 AND "followed_relationships"."record_type" = $2  [["record_id", 5], ["record_type", "User"]]\
+=> []\
+[7] pry(main)> user = User.find(6)\
+  User Load (0.3ms)  SELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2  [["id", 6], ["LIMIT", 1]]\
+=> #<User id: 6, email: "user2@hotmail.com", created_at: "2020-05-30 06:10:07", updated_at: "2020-05-30 06:10:07", origin: nil, location: nil, biography: nil, DOB: nil>\
+[8] pry(main)> user.followed_relationships\
+  FollowedRelationship Load (0.4ms)  SELECT "followed_relationships".* FROM "followed_relationships" WHERE "followed_relationships"."record_id" = $1 AND "followed_relationships"."record_type" = $2  [["record_id", 6], ["record_type", "User"]]\
+=> [#<FollowedRelationship:0x00007fee6681e9b0\
+  id: 3,\
+  record_type: "User",\
+  record_id: 6,\
+  user_id: 5,\
+  created_at: Sat, 30 May 2020 06:10:07 UTC +00:00,\
+  updated_at: Sat, 30 May 2020 06:10:07 UTC +00:00>]\
+[9] pry(main)> user.followed_relationships.first\
+=> #<FollowedRelationship:0x00007fee6681e9b0\
+ id: 3,\
+ record_type: "User",\
+ record_id: 6,\
+ user_id: 5,\
+ created_at: Sat, 30 May 2020 06:10:07 UTC +00:00,\
+ updated_at: Sat, 30 May 2020 06:10:07 UTC +00:00>\
+[10] pry(main)> user.followed_relationships.first.record\
+=> #<User id: 6, email: "user2@hotmail.com", created_at: "2020-05-30 06:10:07", updated_at: "2020-05-30 06:10:07", origin: nil, location: nil, biography: nil, DOB: nil>\
+[11] pry(main)> user.followed_relationships.first.user\
+  User Load (0.4ms)  SELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2  [["id", 5], ["LIMIT", 1]]\
+=> #<User id: 5, email: "user1@hotmail.com", created_at: "2020-05-30 06:10:07", updated_at: "2020-05-30 06:10:07", origin: nil, location: nil, biography: nil, DOB: nil>\
+[12] pry(main)> user = User.find(5)\
+  User Load (0.3ms)  SELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2  [["id", 5], ["LIMIT", 1]]\
+=> #<User id: 5, email: "user1@hotmail.com", created_at: "2020-05-30 06:10:07", updated_at: "2020-05-30 06:10:07", origin: nil, location: nil, biography: nil, DOB: nil>\
+[13] pry(main)> FollowedRelationships.where(user = user)\
+\\NameError: uninitialized constant FollowedRelationships\
+from (pry):13:in `<main>'\
+[14] pry(main)> FollowedRelationship.where(user = user)\
+ArgumentError: Unsupported argument type: #<User:0x00007fee60de8f18> (User)\
+from /Users/henrylay/.rbenv/versions/2.6.6/lib/ruby/gems/2.6.0/gems/activerecord-6.0.3.1/lib/active_record/relation/where_clause_factory.rb:23:in `build'\
+[15] pry(main)> FollowedRelationship.where(user_id = user.id)\
+ArgumentError: Unsupported argument type: 5 (Integer)\
+from /Users/henrylay/.rbenv/versions/2.6.6/lib/ruby/gems/2.6.0/gems/activerecord-6.0.3.1/lib/active_record/relation/where_clause_factory.rb:23:in `build'\
+[16] pry(main)> FollowedRelationship.find_by(user: user)\
+  FollowedRelationship Load (0.2ms)  SELECT "followed_relationships".* FROM "followed_relationships" WHERE "followed_relationships"."user_id" = $1 LIMIT $2  [["user_id", 5], ["LIMIT", 1]]\
+=> #<FollowedRelationship:0x00007fee604aa348\
+ id: 2,\
+ record_type: "Tag",\
+ record_id: 5,\
+ user_id: 5,\
+ created_at: Sat, 30 May 2020 06:10:07 UTC +00:00,\
+ updated_at: Sat, 30 May 2020 06:10:07 UTC +00:00>\
+[17] pry(main)> FollowedRelationship.all\
+  FollowedRelationship Load (0.3ms)  SELECT "followed_relationships".* FROM "followed_relationships"\
+=> [#<FollowedRelationship:0x00007fee5f4f0cb8\
+  id: 2,\
+  record_type: "Tag",\
+  record_id: 5,\
+  user_id: 5,\
+  created_at: Sat, 30 May 2020 06:10:07 UTC +00:00,\
+  updated_at: Sat, 30 May 2020 06:10:07 UTC +00:00>,\
+ #<FollowedRelationship:0x00007fee5f4f0ba0\
+  id: 3,\
+  record_type: "User",\
+  record_id: 6,\
+  user_id: 5,\
+  created_at: Sat, 30 May 2020 06:10:07 UTC +00:00,\
+  updated_at: Sat, 30 May 2020 06:10:07 UTC +00:00>,\
+ #<FollowedRelationship:0x00007fee5f4f0a88\
+  id: 4,\
+  record_type: "User",\
+  record_id: 7,\
+  user_id: 5,\
+  created_at: Sat, 30 May 2020 06:10:07 UTC +00:00,\
+  updated_at: Sat, 30 May 2020 06:10:07 UTC +00:00>,\
+ #<FollowedRelationship:0x00007fee5f4f0998\
+  id: 5,\
+  record_type: "Tag",\
+  record_id: 8,\
+  user_id: 5,\
+  created_at: Sat, 30 May 2020 06:10:07 UTC +00:00,\
+  updated_at: Sat, 30 May 2020 06:10:07 UTC +00:00>]\
+[18] pry(main)> FollowedRelationship.find_by(user_id: user.id)\
+  FollowedRelationship Load (7.4ms)  SELECT "followed_relationships".* FROM "followed_relationships" WHERE "followed_relationships"."user_id" = $1 LIMIT $2  [["user_id", 5], ["LIMIT", 1]]\
+=> #<FollowedRelationship:0x00007fee6099e1b0\
+ id: 2,\
+ record_type: "Tag",\
+ record_id: 5,\
+ user_id: 5,\
+ created_at: Sat, 30 May 2020 06:10:07 UTC +00:00,\
+ updated_at: Sat, 30 May 2020 06:10:07 UTC +00:00>\
+[19] pry(main)>\
+[20] pry(main)> FollowedRelationship.where(user_id: user.id)\
+  FollowedRelationship Load (0.2ms)  SELECT "followed_relationships".* FROM "followed_relationships" WHERE "followed_relationships"."user_id" = $1  [["user_id", 5]]\
+=> [#<FollowedRelationship:0x00007fee5eb74338\
+  id: 2,\
+  record_type: "Tag",\
+  record_id: 5,\
+  user_id: 5,\
+  created_at: Sat, 30 May 2020 06:10:07 UTC +00:00,\
+  updated_at: Sat, 30 May 2020 06:10:07 UTC +00:00>,\
+ #<FollowedRelationship:0x00007fee5eb6f9a0\
+  id: 3,\
+  record_type: "User",\
+  record_id: 6,\
+  user_id: 5,\
+  created_at: Sat, 30 May 2020 06:10:07 UTC +00:00,\
+  updated_at: Sat, 30 May 2020 06:10:07 UTC +00:00>,\
+ #<FollowedRelationship:0x00007fee5eb6f108\
+  id: 4,\
+  record_type: "User",\
+  record_id: 7,\
+  user_id: 5,\
+  created_at: Sat, 30 May 2020 06:10:07 UTC +00:00,\
+  updated_at: Sat, 30 May 2020 06:10:07 UTC +00:00>,\
+ #<FollowedRelationship:0x00007fee5eb6eb18\
+  id: 5,\
+  record_type: "Tag",\
+  record_id: 8,\
+  user_id: 5,\
+  created_at: Sat, 30 May 2020 06:10:07 UTC +00:00,\
+  updated_at: Sat, 30 May 2020 06:10:07 UTC +00:00>]\
+[21] pry(main)> FollowedRelationship.where(user: user)\
+  FollowedRelationship Load (0.3ms)  SELECT "followed_relationships".* FROM "followed_relationships" WHERE "followed_relationships"."user_id" = $1  [["user_id", 5]]\
+=> [#<FollowedRelationship:0x00007fee5ebe4de0\
+  id: 2,\
+  record_type: "Tag",\
+  record_id: 5,\
+  user_id: 5,\
+  created_at: Sat, 30 May 2020 06:10:07 UTC +00:00,\
+  updated_at: Sat, 30 May 2020 06:10:07 UTC +00:00>,\
+ #<FollowedRelationship:0x00007fee5ebe4ca0\
+  id: 3,\
+  record_type: "User",\
+  record_id: 6,\
+  user_id: 5,\
+  created_at: Sat, 30 May 2020 06:10:07 UTC +00:00,\
+  updated_at: Sat, 30 May 2020 06:10:07 UTC +00:00>,\
+ #<FollowedRelationship:0x00007fee5ebe4a98\
+  id: 4,\
+  record_type: "User",\
+  record_id: 7,\
+  user_id: 5,\
+  created_at: Sat, 30 May 2020 06:10:07 UTC +00:00,\
+  updated_at: Sat, 30 May 2020 06:10:07 UTC +00:00>,\
+ #<FollowedRelationship:0x00007fee5ebe49d0\
+  id: 5,\
+  record_type: "Tag",\
+  record_id: 8,\
+  user_id: 5,\
+  created_at: Sat, 30 May 2020 06:10:07 UTC +00:00,\
+  updated_at: Sat, 30 May 2020 06:10:07 UTC +00:00>]\
+[22] pry(main)>}

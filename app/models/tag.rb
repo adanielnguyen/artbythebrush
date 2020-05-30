@@ -1,3 +1,3 @@
 class Tag < ApplicationRecord
-  belongs_to :artwork_tag
+  has_many :followed_relationships, as: :record
 end
