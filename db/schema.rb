@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_05_30_034859) do
+ActiveRecord::Schema.define(version: 2020_05_30_040335) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -27,11 +27,28 @@ ActiveRecord::Schema.define(version: 2020_05_30_034859) do
     t.index ["user_id"], name: "index_artworks_on_user_id"
   end
 
+  create_table "collections", force: :cascade do |t|
+    t.bigint "favourite_id", null: false
+    t.string "name"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.index ["favourite_id"], name: "index_collections_on_favourite_id"
+  end
+
+  create_table "favourites", force: :cascade do |t|
+    t.bigint "artwork_id", null: false
+    t.bigint "user_id", null: false
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.index ["artwork_id"], name: "index_favourites_on_artwork_id"
+    t.index ["user_id"], name: "index_favourites_on_user_id"
+  end
+
   create_table "galleries", force: :cascade do |t|
     t.date "start_date"
     t.date "end_date"
     t.string "description"
-    t.bigint "user_id"
+    t.bigint "user_id", null: false
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
     t.index ["user_id"], name: "index_galleries_on_user_id"
@@ -54,5 +71,8 @@ ActiveRecord::Schema.define(version: 2020_05_30_034859) do
   end
 
   add_foreign_key "artworks", "users"
+  add_foreign_key "collections", "favourites"
+  add_foreign_key "favourites", "artworks"
+  add_foreign_key "favourites", "users"
   add_foreign_key "galleries", "users"
 end
