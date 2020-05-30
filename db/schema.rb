@@ -10,10 +10,19 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_05_30_042234) do
+ActiveRecord::Schema.define(version: 2020_05_30_043249) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
+
+  create_table "artwork_tags", force: :cascade do |t|
+    t.bigint "tag_id", null: false
+    t.bigint "artwork_id", null: false
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.index ["artwork_id"], name: "index_artwork_tags_on_artwork_id"
+    t.index ["tag_id"], name: "index_artwork_tags_on_tag_id"
+  end
 
   create_table "artworks", force: :cascade do |t|
     t.string "name"
@@ -72,6 +81,12 @@ ActiveRecord::Schema.define(version: 2020_05_30_042234) do
     t.index ["user_id"], name: "index_likes_on_user_id"
   end
 
+  create_table "tags", force: :cascade do |t|
+    t.string "text"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+  end
+
   create_table "users", force: :cascade do |t|
     t.string "email", default: "", null: false
     t.string "encrypted_password", default: "", null: false
@@ -88,6 +103,8 @@ ActiveRecord::Schema.define(version: 2020_05_30_042234) do
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
   end
 
+  add_foreign_key "artwork_tags", "artworks"
+  add_foreign_key "artwork_tags", "tags"
   add_foreign_key "artworks", "users"
   add_foreign_key "collections", "favourites"
   add_foreign_key "curates", "artworks"
