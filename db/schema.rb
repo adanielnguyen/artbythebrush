@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_05_30_040335) do
+ActiveRecord::Schema.define(version: 2020_05_30_040753) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -33,6 +33,15 @@ ActiveRecord::Schema.define(version: 2020_05_30_040335) do
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
     t.index ["favourite_id"], name: "index_collections_on_favourite_id"
+  end
+
+  create_table "curates", force: :cascade do |t|
+    t.bigint "artwork_id", null: false
+    t.bigint "gallery_id", null: false
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.index ["artwork_id"], name: "index_curates_on_artwork_id"
+    t.index ["gallery_id"], name: "index_curates_on_gallery_id"
   end
 
   create_table "favourites", force: :cascade do |t|
@@ -72,6 +81,8 @@ ActiveRecord::Schema.define(version: 2020_05_30_040335) do
 
   add_foreign_key "artworks", "users"
   add_foreign_key "collections", "favourites"
+  add_foreign_key "curates", "artworks"
+  add_foreign_key "curates", "galleries"
   add_foreign_key "favourites", "artworks"
   add_foreign_key "favourites", "users"
   add_foreign_key "galleries", "users"
