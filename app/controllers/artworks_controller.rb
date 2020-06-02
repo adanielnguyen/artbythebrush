@@ -13,9 +13,14 @@ class ArtworksController < ApplicationController
 
   def create
     @artwork = Artwork.new(artwork_params)
-    @artwork.save
+    # @artwork.user_id = current_user.id
+    
+    if @artwork.save
+      redirect_to artwork_path(@artwork)
+    else
+      render "new"
+    end
 
-    redirect_to artwork_path
   end
 
   def edit
