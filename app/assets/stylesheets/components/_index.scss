@@ -2,3 +2,42 @@
 @import "alert";
 @import "avatar";
 @import "navbar";
+
+.avatar_image{
+  border-radius: 50px;
+  width: 30px;
+}
+ .post_work{
+  margin-top: 100px;
+  font-family: 'Forum', cursive;
+  color: black;
+ }
+
+.logo{
+  font-family: 'Forum', cursive;
+  color: black;
+}
+
+.search {
+  position: absolute;
+  width: 561px;
+  left: 257px;
+  top: 28.57%;
+  bottom: 23.81%;
+
+  font-family: 'Forum';
+  font-style: normal;
+  font-weight: normal;
+  font-size: 18px;
+  line-height: 20px;
+
+  display: flex;
+  align-items: center;
+
+  color: #9D9D9D;
+  border-color: none;
+
+}
+// .search_bar{
+//   border-color: none;
+// }
