@@ -11,7 +11,21 @@ class ArtworksController < ApplicationController
     @artwork = Artwork.new
   end
 
+  def create
+    @artwork = Artwork.new(artwork_params)
+    @artwork.save
+
+    redirect_to artwork_path
+  end
+
+  def edit
+    @artwork = Artwork.find(params[:id])
+  end
+
   private
 
-  params.require(:artwork).permit()
+  def artwork_params
+    params.require(:artwork).permit(:name, :description, :genre, :medium, :date_created)
+  end
+  
 end
