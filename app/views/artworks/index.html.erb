@@ -1,1 +1,20 @@
-<h1>All artworks works</h1>
+<h1>Finding Artworks in Your Area</h1>
+
+<div class="cards">
+<% @artworks.each do |artwork| %>
+<%= link_to artwork do %>
+ <div class="card content" data-aos="fade-up">
+    <div class="card-content">
+      <div class="card-img">
+        <%= cl_image_tag(artwork.image.key) %>
+      </div>
+      <div class="card-label">
+        <%= artwork.name %>
+      </div>
+      <div class="card-title">
+        <%= artwork.name %>
+      </div>
+    </div>
+  </div>
+<% end %>
+<% end %>
