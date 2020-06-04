@@ -1,1 +1,7 @@
 <h1>show artworks works</h1>
+
+<%= @artwork.name %>
+<%= @artwork.description %>
+<%= @artwork.genre %>
+<%= @artwork.medium %>
+<%= cl_image_tag(@artwork.images.first.key) %>
