@@ -9,16 +9,15 @@
   <div class="collapse navbar-collapse" id="navbarSupportedContent-4">
     <ul class="navbar-nav ml-auto">
 
+      <% if user_signed_in? %>
+        <li class="search">
+            <input type="text" class="form-control" placeholder="Search">
+        </li>
 
-      <li class="search">
-          <input type="text" class="form-control" placeholder="Search">
-      </li>
-
-      <li class="nav-item active ">
-        <a class="post_work" href="#">
-          <i class=""></i> Post my work
-        </a>
-      </li>
+        <li class="nav-item">
+          <%= link_to "Favorites", new_user_registration_path, class: "favorites" %>
+          <%= link_to "Post my Work", new_user_registration_path, class: "post-my-work" %>
+        </li>
 
 
       <li class="nav-item avatar dropdown">
@@ -32,10 +31,18 @@
           <a class="dropdown-item" href="#">My account</a>
           <a class="dropdown-item" href="#">Messages</a>
           <a class="dropdown-item" href="#">My work</a>
-          <a class="dropdown-item" href="#">Log out</a>
+          <%= link_to "Log out", destroy_user_session_path, method: :delete, class: "dropdown-item" %>
         </div>
       </li>
-
+      <% else %>
+        <li class="search">
+            <input type="text" class="form-control" placeholder="Search">
+        </li>
+        <li class="nav-item">
+          <%= link_to "Sign up", new_user_registration_path, class: "log-in" %>
+          <%= link_to "Log In", new_user_session_path, class: "sign-up" %>
+        </li>
+      <% end %>
     </ul>
   </div>
 </nav>
