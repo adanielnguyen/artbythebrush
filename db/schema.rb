@@ -83,23 +83,14 @@ ActiveRecord::Schema.define(version: 2020_06_02_104157) do
     t.index ["user_id"], name: "index_favourites_on_user_id"
   end
 
-  create_table "followed_relationships", force: :cascade do |t|
+  create_table "follows", force: :cascade do |t|
     t.string "record_type"
     t.bigint "record_id"
-    t.bigint "user_id"
+    t.bigint "fan_id", null: false
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
-    t.index ["record_type", "record_id"], name: "index_followed_relationships_on_record_type_and_record_id"
-    t.index ["user_id"], name: "index_followed_relationships_on_user_id"
-  end
-
-  create_table "follows", force: :cascade do |t|
-    t.bigint "followed_relationship_id", null: false
-    t.bigint "user_id", null: false
-    t.datetime "created_at", precision: 6, null: false
-    t.datetime "updated_at", precision: 6, null: false
-    t.index ["followed_relationship_id"], name: "index_follows_on_followed_relationship_id"
-    t.index ["user_id"], name: "index_follows_on_user_id"
+    t.index ["fan_id"], name: "index_follows_on_fan_id"
+    t.index ["record_type", "record_id"], name: "index_follows_on_record_type_and_record_id"
   end
 
   create_table "galleries", force: :cascade do |t|
@@ -152,9 +143,7 @@ ActiveRecord::Schema.define(version: 2020_06_02_104157) do
   add_foreign_key "curates", "galleries"
   add_foreign_key "favourites", "artworks"
   add_foreign_key "favourites", "users"
-  add_foreign_key "followed_relationships", "users"
-  add_foreign_key "follows", "followed_relationships"
-  add_foreign_key "follows", "users"
+  add_foreign_key "follows", "users", column: "fan_id"
   add_foreign_key "galleries", "users"
   add_foreign_key "likes", "artworks"
   add_foreign_key "likes", "users"
