@@ -1,5 +1,6 @@
 class User < ApplicationRecord
-  has_many :followed_relationships, as: :record
+  has_many :follows, as: :record
+  has_many :follows
   # Include default devise modules. Others available are:
   # :confirmable, :lockable, :timeoutable, :trackable and :omniauthable
   devise :database_authenticatable, :registerable,
