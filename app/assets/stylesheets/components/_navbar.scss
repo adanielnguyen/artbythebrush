@@ -1,6 +1,6 @@
 .navbar-lewagon {
   justify-content: space-between;
-  background: white;
+  // background: white;
 }
 
 .navbar-lewagon .navbar-collapse {
@@ -9,4 +9,93 @@
 
 .navbar-lewagon .navbar-brand img {
   width: 40px;
+}
+.navbar-collapse{
+  padding-bottom: 60px;
+}
+
+.logo{
+  font-family: 'Forum', cursive;
+  color: black;
+  position: absolute;
+  width: 247px;
+  height: 18px;
+  left: 12px;
+  top: 12px;
+  margin-top: 10px;
+  margin-left: 10px;
+}
+
+.form-control {
+  position: absolute;
+  width: 561px;
+  left: 257px;
+
+
+  margin-top: 5px;
+  font-family: 'Forum', cursive;
+
+  font-size: 18px;
+
+  display: flex;
+
+  border: none;
+
+}
+.sign-up{
+  font-family: 'Forum', cursive;
+  color: black;
+  position: absolute;
+  width: 54px;
+  height: 18px;
+  left: 1322px;
+  top: 12px;
+  margin-top: 10px;
+
+}
+.log-in{
+  font-family: 'Forum', cursive;
+  color: black;
+  position: absolute;
+  width: 54px;
+  height: 18px;
+  left: 1376px;
+  top: 12px;
+  margin-top: 10px;
+}
+.favorites {
+  font-family: 'Forum', cursive;
+  color: black;
+  position: relative;
+  width: 54px;
+  height: 18px;
+
+
+
+  padding-right: 12px;
+
+
+  top: 12px;
+  margin-top: 10px;
+  margin-left: 10px;
+
+}
+.post-my-work {
+  font-family: 'Forum', cursive;
+  color: black;
+  margin-top: 19px;
+  width: 54px;
+  height: 18px;
+  position: relative;
+  padding-right: 12px;
+  top: 12px;
+  margin-top: 10px;
+  margin-left: 10px;
+
+}
+.avatar_image{
+
+  height: 40px;
+  width: 40px;
+
 }
