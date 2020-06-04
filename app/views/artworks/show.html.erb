@@ -5,3 +5,5 @@
 <%= @artwork.genre %>
 <%= @artwork.medium %>
 <%= cl_image_tag(@artwork.images.first.key) %>
+
+<%= link_to "edit this artwork", edit_artwork_path %>
