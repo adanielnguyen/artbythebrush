@@ -1,2 +1,21 @@
-<h1>Pages#home</h1>
-<p>Find me in app/views/pages/home.html.erb</p>
+<h1>Cards</h1>
+<div class="row">
+  <% @artworks.each do |artwork| %>
+    <% h = rand(300..500)%>
+    <% w = rand(300..500)%>
+    <div class="card" style="width: 18rem;">
+      <%= cl_image_tag(artwork.images.first.key, height:h, width:w, class: 'img')%>
+      <div class="card-body">
+        <p class="card-text"><%= artwork.name %></p>
+      </div>
+    </div>
+
+  <% end %>
+</div>
+
+
+
+<a href=""><%= link_to "Create new artwork", new_artwork_path %></a>
+
+      <%#= cl_image_tag(artwork.images.first.key, height:h, width:w, class: 'img')%>
+      <%#= artwork.name %>

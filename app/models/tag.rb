@@ -1,3 +1,3 @@
 class Tag < ApplicationRecord
-  has_many :followed_relationships, as: :record
+  has_many :follows, as: :record
 end
