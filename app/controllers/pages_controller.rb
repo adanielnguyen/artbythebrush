@@ -2,6 +2,7 @@ class PagesController < ApplicationController
   def home
     @artworks = Artwork.all
     @favourite = Favourite.new
+    @like = Like.new
   end
 
   def profile
