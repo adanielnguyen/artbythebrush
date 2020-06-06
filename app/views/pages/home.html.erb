@@ -1,2 +1,25 @@
-<h1>Pages#home</h1>
-<p>Find me in app/views/pages/home.html.erb</p>
+
+<div class="banner">
+  <h1>WELCOME<br>TO<br>ART BY<br>THE <spam class="brush-word">BRUSH</spam></h1>
+</div>
+
+<div class="second-banner">
+  <h2 class="second-title">Personalising Your Art By The Brush Experience</h2>
+  <p class="paragraph">Select Some Genres You’re Interested In To Help Personalize Your Experience<br>Starting With Finding People To Follow</p>
+</div>
+
+<div class="masonry-with-columns px-3">
+  <% @artworks.shuffle.each do |artwork| %>
+      <div class="art" >
+        <%= cl_image_tag(artwork.images.first.key)%>
+        <div class="">
+          <p class=""><%= artwork.name %></p>
+        </div>
+      </div>
+  <% end %>
+</div>
+
+<a href=""><%= link_to "Create new artwork", new_artwork_path %></a>
+
+
+

@@ -48,3 +48,5 @@ artwork4 = Artwork.create!(name: "Claude Monet - Floating Ice on the Seine 1880"
 file = URI.open('http://art-monet.com/image/1880/1880%20Floating%20Ice%20on%20the%20Seine.jpg')
 artwork4.images.attach(io: file, filename: 'nes.png', content_type: 'image/png')
 artwork4.save!
+
+
