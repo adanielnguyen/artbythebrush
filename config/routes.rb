@@ -11,6 +11,8 @@ end
     resources :collections
   end
 
+resources :favourites, only: [:destroy]
+
 
   get "artists/:id", to: 'pages#profile'
   resources :users, only: [] do

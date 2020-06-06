@@ -1,4 +1,5 @@
 class User < ApplicationRecord
+  has_many :favourites
   has_many :follows, as: :record
   has_many :follows
   # Include default devise modules. Others available are:
