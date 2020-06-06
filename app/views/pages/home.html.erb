@@ -1,10 +1,10 @@
 <h1>Cards</h1>
 <div class="row">
   <% @artworks.each do |artwork| %>
-    <% h = rand(300..500)%>
-    <% w = rand(300..500)%>
-    <div class="card" style="width: 18rem;">
-      <%= cl_image_tag(artwork.images.first.key, height:h, width:w, class: 'img')%>
+    <% h = rand(200..500)%>
+
+    <div class="card" style="width: 18rem">
+      <%= cl_image_tag(artwork.images.first.key, height:h, class: 'img')%>
       <div class="card-body">
         <p class="card-text"><%= artwork.name %></p>
       </div>
