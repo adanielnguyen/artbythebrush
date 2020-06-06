@@ -3,6 +3,7 @@ Rails.application.routes.draw do
   root to: 'pages#home'
   resources :artworks
   resources :galleries
+  resources :collections
 
   get "artists/:id", to: 'pages#profile'
   resources :users, only: [] do
