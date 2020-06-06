@@ -7,6 +7,9 @@
       <%= cl_image_tag(artwork.images.first.key, height:h, class: 'img')%>
       <div class="card-body">
         <p class="card-text"><%= artwork.name %></p>
+        <%= simple_form_for [artwork, @favourite] do |f| %>
+          <%= f.button :submit  %>
+        <% end %>
       </div>
     </div>
 
