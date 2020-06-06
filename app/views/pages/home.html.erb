@@ -3,14 +3,19 @@
   <% @artworks.each do |artwork| %>
     <% h = rand(300..500)%>
     <% w = rand(300..500)%>
-    <div class="card">
+    <div class="card" style="width: 18rem;">
       <%= cl_image_tag(artwork.images.first.key, height:h, width:w, class: 'img')%>
-      <%#= artwork.name %>
+      <div class="card-body">
+        <p class="card-text"><%= artwork.name %></p>
+      </div>
     </div>
+
   <% end %>
 </div>
-<!-- </div> -->
+
 
 
 <a href=""><%= link_to "Create new artwork", new_artwork_path %></a>
 
+      <%#= cl_image_tag(artwork.images.first.key, height:h, width:w, class: 'img')%>
+      <%#= artwork.name %>
