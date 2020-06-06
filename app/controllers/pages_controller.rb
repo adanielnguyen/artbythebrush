@@ -1,6 +1,7 @@
 class PagesController < ApplicationController
   def home
     @artworks = Artwork.all
+    @favourite = Favourite.new
   end
 
   def profile

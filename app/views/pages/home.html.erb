@@ -7,6 +7,16 @@
       <%= cl_image_tag(artwork.images.first.key, height:h, class: 'img')%>
       <div class="card-body">
         <p class="card-text"><%= artwork.name %></p>
+        <% if current_user.favourites.select { |f| f.artwork == artwork}.empty? %>
+        <%= simple_form_for [artwork, @favourite] do |f| %>
+          <%= f.button :submit  %>
+          <% end %>
+          <% else %>
+           <%= link_to "Delete",
+            favourite_path(current_user.favourites.select { |f| f.artwork == artwork}.first),
+            method: :delete,
+            data: { confirm: "Are you sure?" } %>
+        <% end %>
       </div>
     </div>
 
