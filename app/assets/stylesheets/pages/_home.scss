@@ -1,11 +1,54 @@
-.card {
- height: fit-content;
-  border-radius: 5px; /* 5px rounded corners */
+
+
+.banner{
+  width: 329px;
+  height: 316px;
+  margin-top: 90px;
+  margin-left: 95px;
+
 }
-.img {
-  border-radius: 5px 5px 0 0;
-  width: 100%;
+.banner
+  h1{
+    font-family: 'Forum', cursive;
+    color: black;
+    font-size: 72px;
+  }
+.brush-word{
+  text-decoration: underline;
 }
-.row{
-  display: flex;
+.second-banner{
+  padding-top: 90px;
+  padding-bottom: 50px;
+  text-align: center;
+}
+.second-title, .paragraph{
+  font-family: 'Forum', cursive;
+  color: black;
+}
+.second-title{
+  font-size: 36px;
+}
+.paragraph{
+  font-size: 18px;
+}
+
+
+.centrar{
+  text-align: center;
+  content: center;
+}
+
+.masonry-with-columns {
+  columns: 6 300px;
+  column-gap: 1rem;
+  .art {
+    width: 150px;
+    display:inline-block;
+    width: 100%;
+    border: 10px;
+
+    img {
+      width: 100%;
+    }
+  }
 }

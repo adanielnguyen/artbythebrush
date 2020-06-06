@@ -49,6 +49,7 @@ file = URI.open('http://art-monet.com/image/1880/1880%20Floating%20Ice%20on%20th
 artwork4.images.attach(io: file, filename: 'nes.png', content_type: 'image/png')
 artwork4.save!
 
+
 artwork5 = Artwork.create!(name: "John Sargent - Carnation, Lily Lily", description: "Carnation, Lily, Lily, Rose is an oil-on-canvas painting made by the American painter John Singer Sargent in 1885–86. The painting depicts two small children dressed in white who are lighting paper lanterns as day turns to evening; they are in a garden strewn with pink roses, accents of yellow carnations and tall white lilies (possibly the Japanese mountain lily, Lilium auratum) behind them. The painting is dominated by green foliage, with no horizon or other horizontal line to give a sense of depth. The viewer seems to be on a level with the children but also looking down on them.", genre: "Impressionism Painting", user: user1, medium: "Oil Painting" )
 file = URI.open('https://upload.wikimedia.org/wikipedia/commons/e/ed/John_Singer_Sargent_-_Carnation%2C_Lily%2C_Lily%2C_Rose_-_Google_Art_Project.jpg')
 artwork5.images.attach(io: file, filename: 'nes.png', content_type: 'image/png')
@@ -95,3 +96,4 @@ artwork11 = Artwork.create!(name: "Claude Monet - The Lady with the Umbrella", d
 file = URI.open('https://i.pinimg.com/originals/97/20/49/972049d0a1345e177b7a4676514b9bc4.jpg')
 artwork11.images.attach(io: file, filename: 'nes.png', content_type: 'image/png')
 artwork11.save!
+

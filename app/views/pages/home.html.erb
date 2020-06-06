@@ -1,31 +1,40 @@
-<h1>Cards</h1>
-<div class="row">
-  <% @artworks.each do |artwork| %>
-    <% h = rand(200..500)%>
 
-    <div class="card" style="width: 18rem">
-      <%= cl_image_tag(artwork.images.first.key, height:h, class: 'img')%>
-      <div class="card-body">
-        <p class="card-text"><%= artwork.name %></p>
-        <% if current_user.favourites.select { |f| f.artwork == artwork}.empty? %>
-        <%= simple_form_for [artwork, @favourite] do |f| %>
-          <%= f.button :submit  %>
+
+
+<div class="banner">
+  <h1>WELCOME<br>TO<br>ART BY<br>THE <spam class="brush-word">BRUSH</spam></h1>
+</div>
+
+<div class="second-banner">
+  <h2 class="second-title">Personalising Your Art By The Brush Experience</h2>
+  <p class="paragraph">Select Some Genres You’re Interested In To Help Personalize Your Experience<br>Starting With Finding People To Follow</p>
+</div>
+
+<div class="masonry-with-columns px-3">
+  <% @artworks.shuffle.each do |artwork| %>
+      <div class="art" >
+        <%= cl_image_tag(artwork.images.first.key)%>
+        <div class="">
+          <p class=""><%= artwork.name %></p>
+          <% if current_user.favourites.select { |f| f.artwork == artwork}.empty? %>
+            <%= simple_form_for [artwork, @favourite] do |f| %>
+            <%= f.button :submit  %>
           <% end %>
           <% else %>
            <%= link_to "Delete",
             favourite_path(current_user.favourites.select { |f| f.artwork == artwork}.first),
             method: :delete,
             data: { confirm: "Are you sure?" } %>
-        <% end %>
-      </div>
-    </div>
-
+          <% end %>
+       </div>
+     </div>
   <% end %>
 </div>
 
-
-
 <a href=""><%= link_to "Create new artwork", new_artwork_path %></a>
 
-      <%#= cl_image_tag(artwork.images.first.key, height:h, width:w, class: 'img')%>
-      <%#= artwork.name %>
+
+
+
+
+
