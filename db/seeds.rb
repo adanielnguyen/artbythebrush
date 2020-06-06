@@ -61,7 +61,7 @@ artwork6.images.attach(io: file, filename: 'nes.png', content_type: 'image/png')
 artwork6.save!
 
 artwork7 = Artwork.create!(name: "Portrait Madeleine Bernard - Paul Gauguin", description: "
-  Portrait of Madeleine Bernard, 1888 This work was painted in 1888 during Gauguin's second visit to Pont-Aven, where he met up again with Emile Bernard and his young sister Madeleine, aged 17; Gauguin duly fell in love with her." )
+  Portrait of Madeleine Bernard, 1888 This work was painted in 1888 during Gauguin's second visit to Pont-Aven, where he met up again with Emile Bernard and his young sister Madeleine, aged 17; Gauguin duly fell in love with her.", genre: "Impressionism Painting", user: user1, medium: "Oil Painting" )
 file = URI.open('https://www.art-prints-on-demand.com/kunst/paul_gauguin/Bildnis-der-Madeleine-Bernard-Paul-Gauguin.jpg')
 artwork7.images.attach(io: file, filename: 'nes.png', content_type: 'image/png')
 artwork7.save!
