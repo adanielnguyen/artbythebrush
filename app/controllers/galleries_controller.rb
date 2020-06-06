@@ -4,7 +4,6 @@ class GalleriesController < ApplicationController
   end
 
   def new
-    @user = User.find(params[:dj_id])
     @gallery = Gallery.new
   end
 
