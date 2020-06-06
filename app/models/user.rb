@@ -1,4 +1,5 @@
 class User < ApplicationRecord
+  has_many :likes
   has_many :favourites
   has_many :follows, as: :record
   has_many :fans, through: :follows
