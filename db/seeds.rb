@@ -8,7 +8,7 @@
 # require "open-uri"
 
 puts "reseting database"
-FollowedRelationship.destroy_all
+Follow.destroy_all
 Artwork.destroy_all
 User.destroy_all
 Tag.destroy_all
