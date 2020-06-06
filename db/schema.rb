@@ -86,7 +86,7 @@ ActiveRecord::Schema.define(version: 2020_06_02_104157) do
   create_table "follows", force: :cascade do |t|
     t.string "record_type"
     t.bigint "record_id"
-    t.bigint "fan_id", null: false
+    t.bigint "fan_id"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
     t.index ["fan_id"], name: "index_follows_on_fan_id"

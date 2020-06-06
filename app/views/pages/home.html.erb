@@ -14,9 +14,8 @@
   <% @artworks.shuffle.each do |artwork| %>
       <div class="art" >
         <%= cl_image_tag(artwork.images.first.key)%>
-        <div class="">
+        <div class="card-description">
           <p class=""><%= artwork.name %></p>
-
           <% if user_signed_in? %>
             <% if current_user.favourites.select { |f| f.artwork == artwork}.empty? %>
               <%= simple_form_for [artwork, @favourite] do |f| %>
@@ -46,7 +45,7 @@
   <% end %>
 </div>
 
-<a href=""><%= link_to "Create new artwork", new_artwork_path %></a>
+<%#= link_to "Create new artwork", new_artwork_path %>
 
 
 
