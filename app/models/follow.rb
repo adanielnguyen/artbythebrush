@@ -1,5 +1,4 @@
 class Follow < ApplicationRecord
-  belongs_to :followed_relationship
-  belongs_to :user
-  has_many :followed_relationships, as: :record
+  belongs_to :fan, class_name: 'User'
+  belongs_to :record, polymorphic: true
 end
