@@ -27,40 +27,63 @@
 
 
 <div class="masonry-with-columns px-3">
-  <% @artworks.shuffle.each do |artwork| %>
+  <% @artworks.each do |artwork| %>
       <div class="art" >
         <%= cl_image_tag(artwork.images.first.key)%>
         <div class="card-description">
           <p class=""><%= artwork.name %></p>
-          <% if user_signed_in? %>
-            <% if current_user.favourites.select { |f| f.artwork == artwork}.empty? %>
-              <%= simple_form_for [artwork, @favourite] do |f| %>
-                <%= f.button :submit  %>
-              <% end %>
-            <% else %>
-             <%= link_to "Delete",
-              favourite_path(current_user.favourites.select { |f| f.artwork == artwork}.first),
-              method: :delete,
-              data: { confirm: "Are you sure?" } %>
-            <% end %>
+          <div class="d-flex">
+            <% if user_signed_in? %>
+              <% if current_user.favourites.select { |f| f.artwork == artwork}.empty? %>
+                <%= simple_form_for [artwork, @favourite] do |f| %>
+                  
+                  <%= button_tag do %>
+                    <i class="far fa-bookmark"></i>
+                  <% end %>
 
-            <% if current_user.likes.select { |f| f.artwork == artwork}.empty? %>
-              <%= simple_form_for [artwork, @like] do |f| %>
-                <%= f.button :submit  %>
-              <% end %>
+                <% end %>
               <% else %>
-             <%= link_to "Delete",
-              like_path(current_user.likes.select { |f| f.artwork == artwork}.first),
-              method: :delete,
-              data: { confirm: "Are you sure?" } %>
+              <%= link_to favourite_path(current_user.favourites.select { |f| f.artwork == artwork}.first),
+                method: :delete,
+                data: { confirm: "Are you sure?" } do %>
+                  <i class="fas fa-bookmark"></i>
+                <% end %>
+              <% end %>
 
+              <% if current_user.likes.select { |f| f.artwork == artwork}.empty? %>
+                <%= simple_form_for [artwork, @like] do |f| %>
+                  <%= button_tag do %>
+                    <i class="far fa-heart"></i>
+                  <% end %>
+                <% end %>
+              <% else %>
+                <%= link_to like_path(current_user.likes.select { |f| f.artwork == artwork}.first), method: :delete, data: { confirm: "Are you sure?" } do %>
+                  <i class="fas fa-heart"></i>
+                <% end %>
+              <% end %>
             <% end %>
-          <% end %>
+          </div>
        </div>
      </div>
   <% end %>
 </div>
 
+<div class="similar">
+  <h2>Follow Similar Artists</h2>
+  <div class="flex">
+      <div class="avatar"></div>
+      <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn%3AANd9GcQCkG1DRSavF9tqFQFwctuLwm_P3rT0ylNIkSbmfbFb9jPwQij2&usqp=CAU" alt="">
+    <div class="avatar"></div>
+      <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn%3AANd9GcQCkG1DRSavF9tqFQFwctuLwm_P3rT0ylNIkSbmfbFb9jPwQij2&usqp=CAU" alt="">
+    <div class="avatar"></div>
+      <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn%3AANd9GcQCkG1DRSavF9tqFQFwctuLwm_P3rT0ylNIkSbmfbFb9jPwQij2&usqp=CAU" alt="">
+    <div class="avatar"></div>
+      <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn%3AANd9GcQCkG1DRSavF9tqFQFwctuLwm_P3rT0ylNIkSbmfbFb9jPwQij2&usqp=CAU" alt="">
+    <div class="avatar"></div>
+      <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn%3AANd9GcQCkG1DRSavF9tqFQFwctuLwm_P3rT0ylNIkSbmfbFb9jPwQij2&usqp=CAU" alt="">
+    <div class="avatar"></div>
+  </div>
+</div>
 <%#= link_to "Create new artwork", new_artwork_path %>
 
 
