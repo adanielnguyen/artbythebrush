@@ -3,6 +3,7 @@ class User < ApplicationRecord
   has_many :favourites
   has_many :follows, as: :record
   has_many :fans, through: :follows
+  has_many :artworks
   # Include default devise modules. Others available are:
   # :confirmable, :lockable, :timeoutable, :trackable and :omniauthable
   devise :database_authenticatable, :registerable,
