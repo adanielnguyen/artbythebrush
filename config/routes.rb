@@ -4,6 +4,9 @@ Rails.application.routes.draw do
 
 resources :galleries
 
+resources :users
+resources :pages
+
 resources :artworks do
   resources :favourites, only: [:create]
   resources :likes, only: [:create]
