@@ -52,3 +52,22 @@
     }
   }
 }
+.similar{
+  width: 100%;
+  background: #F2F2F2;
+  height: 260px;
+  padding-top: 100px;
+  text-align: center;
+
+
+  .flex{
+  display: flex;
+  justify-content: center;
+
+  }
+  img{
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+  }
+ }
