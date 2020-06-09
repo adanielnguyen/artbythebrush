@@ -20,4 +20,6 @@ resources :likes, only: [:destroy]
   resources :users, only: [] do
     resources :follows, only: [:create]
   end
+
+resource :collections
 end
