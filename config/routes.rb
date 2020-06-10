@@ -3,6 +3,7 @@ Rails.application.routes.draw do
   root to: 'pages#home'
 
 resources :galleries
+resources :collections
 
 resources :users
 resources :pages
