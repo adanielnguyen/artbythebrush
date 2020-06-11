@@ -3,6 +3,10 @@ Rails.application.routes.draw do
   root to: 'pages#home'
 
 resources :galleries
+resources :collections
+
+resources :users
+resources :pages
 
 resources :artworks do
   resources :favourites, only: [:create]
@@ -20,4 +24,5 @@ resources :likes, only: [:destroy]
   resources :users, only: [] do
     resources :follows, only: [:create]
   end
+
 end
