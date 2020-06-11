@@ -1,16 +1,9 @@
-<div class="artist-profile" style="background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url(https://cdn.statically.io/img/timelinecovers.pro/facebook-cover/download/leonid-afremov-bridge-painting-facebook-cover.jpg)";>
-  <div class="artist-text">
-    <h1>I am John Doe</h1>
-    <p>And I'm a Painter</p>
-    <button>Hire me</button>
-    <%= @artist.email  %>
-        <%= simple_form_for [@artist, @follow] do |f| %>
-          <%= f.button :submit  %>
-        <% end %>
-  </div>
-</div>
+<h1>Artist Profile</h1>
 
-
+<%= @artist.email  %>
+<%= simple_form_for [@artist, @follow] do |f| %>
+  <%= f.button :submit  %>
+<% end %>
 
 <div class="masonry-with-columns px-3">
   <% @artworks.shuffle.each do |artwork| %>
@@ -19,13 +12,30 @@
         <div class="card-description">
           <p class=""><%= artwork.name %></p>
           <% if user_signed_in? %>
-            <%= render "shared/favourite_button" %>
-            <%= render "shared/like_button" %>
+            <% if current_user.favourites.select { |f| f.artwork == artwork}.empty? %>
+              <%= simple_form_for [artwork, @favourite] do |f| %>
+                <%= f.button :submit  %>
+              <% end %>
+            <% else %>
+             <%= link_to "Delete",
+              favourite_path(current_user.favourites.select { |f| f.artwork == artwork}.first),
+              method: :delete,
+              data: { confirm: "Are you sure?" } %>
+            <% end %>
+
+            <% if current_user.likes.select { |f| f.artwork == artwork}.empty? %>
+              <%= simple_form_for [artwork, @like] do |f| %>
+                <%= f.button :submit  %>
+              <% end %>
+              <% else %>
+             <%= link_to "Delete",
+              like_path(current_user.likes.select { |f| f.artwork == artwork}.first),
+              method: :delete,
+              data: { confirm: "Are you sure?" } %>
+
+            <% end %>
           <% end %>
        </div>
      </div>
   <% end %>
 </div>
-
-
-

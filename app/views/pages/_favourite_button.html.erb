@@ -1,0 +1,15 @@
+<% if current_user.favourites.select { |f| f.artwork == artwork}.empty? %>
+                <%= simple_form_for [artwork, @favourite] do |f| %>
+
+                  <%= button_tag do %>
+                    <i class="far fa-bookmark"></i>
+                  <% end %>
+
+                <% end %>
+              <% else %>
+              <%= link_to favourite_path(current_user.favourites.select { |f| f.artwork == artwork}.first),
+                method: :delete,
+                data: { confirm: "Are you sure?" } do %>
+                  <i class="fas fa-bookmark"></i>
+                <% end %>
+              <% end %>
