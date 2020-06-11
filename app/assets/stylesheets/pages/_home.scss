@@ -49,15 +49,15 @@
   }
 }
 
-
+// Gallery-Cards-Style
 
 .card-trip {
   // overflow: hidden;
-  background: white;
-  box-shadow: 0 0 15px;
+  background: gray;
+  box-shadow: 0 0 1px;
   border-color: black;
-  width: 380px;
-  margin-left: 30px;
+  width: 350px;
+  width: 24%;
 }
 
 .card-trip > img {
@@ -71,31 +71,58 @@
   font-weight: bold;
   margin: 0;
   text-align: center;
-
+  position: relative;
 }
 
 
+.gallery-card {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: space-between;
+
+}
 
 
 .card-trip .card-trip-infos {
   padding: 40px;
   display: flex;
-  justify-content: center;
-  align-items: center;
   position: relative;
+  height: 80px;
 
 
 }
 
 .card-trip-infos .card-trip-user {
   position: absolute;
-  right: 160px;
-  top: -35px;
+  right: 127px;
+  top: -37px;
   width: 70px;
   height: 70px;
   border-radius: 50px;
 }
 
+
+.flex-samples{
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: space-around;
+  padding-bottom: 7px;
+  .sample{
+    background: red;
+    width: 100px;
+    height: 150px;
+  }
+}
+
+.sample img{
+  width: 100%;
+  border-radius: 5px;
+
+}
+
+// Similar Artist Styles
 .similar{
   width: 100%;
   padding-bottom: 20px;

@@ -12,20 +12,68 @@
 
 
 
-<div class="gallery-card">
+<div class="gallery-card px-3">
   <div class="card-trip">
-  <img src="https://images.unsplash.com/photo-1545033131-485ea67fd7c3?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=800&q=60" />
-  <div class="card-trip-infos">
-    <div>
-      <h2>Gallery Name</h2>
+      <img src="https://images.unsplash.com/photo-1545033131-485ea67fd7c3?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=800&q=60" />
+    <div class="card-trip-infos">
+      <div class="w-100">
+        <h2>Gallery Name</h2>
+      </div>
+      <img src="https://images.unsplash.com/photo-1525550557089-27c1bfedd06c?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=800&q=60" class="card-trip-user avatar-bordered" />
     </div>
-    <img src="https://images.unsplash.com/photo-1525550557089-27c1bfedd06c?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=800&q=60" class="card-trip-user avatar-bordered" />
+    <div class="flex-samples">
+      <div class="sample">
+        <img src="https://images.unsplash.com/photo-1591647862759-bdf6ef08ae78?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=800&q=60" alt="">
+      </div>
+      <div class="sample">
+        <img src="https://images.unsplash.com/photo-1591647862759-bdf6ef08ae78?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=800&q=60" alt="">
+      </div>
+      <div class="sample">
+        <img src="https://images.unsplash.com/photo-1591647862759-bdf6ef08ae78?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=800&q=60" alt="">
+      </div>
+    </div>
   </div>
+
+  <div class="card-trip">
+      <img src="https://images.unsplash.com/photo-1545033131-485ea67fd7c3?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=800&q=60" />
+    <div class="card-trip-infos">
+      <div class="w-100">
+        <h2>Gallery Name</h2>
+      </div>
+      <img src="https://images.unsplash.com/photo-1525550557089-27c1bfedd06c?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=800&q=60" class="card-trip-user avatar-bordered" />
+    </div>
+  </div>
+
+  <div class="card-trip">
+      <img src="https://images.unsplash.com/photo-1545033131-485ea67fd7c3?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=800&q=60" />
+    <div class="card-trip-infos">
+      <div class="w-100">
+          <h2>Gallery Name</h2>
+      </div>
+      <img src="https://images.unsplash.com/photo-1525550557089-27c1bfedd06c?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=800&q=60" class="card-trip-user avatar-bordered" />
+    </div>
+  </div>
+
+  <div class="card-trip">
+      <img src="https://images.unsplash.com/photo-1545033131-485ea67fd7c3?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=800&q=60" />
+    <div class="card-trip-infos">
+      <div class="w-100">
+        <h2>Gallery Name</h2>
+      </div>
+      <img src="https://images.unsplash.com/photo-1525550557089-27c1bfedd06c?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=800&q=60" class="card-trip-user avatar-bordered" />
+    </div>
+  </div>
+
 </div>
+
+<!-- <div class="galleries">
+    <%# @galleries.shuffle.each do |galley| %>
+    <%#= link_to galley do %>
+    <div class="card">
+      <%#= galley.name%>
+    </div>
 </div>
-
-
-
+ -->
 <div class="masonry-with-columns px-3">
   <% @artworks.shuffle.each do |artwork| %>
     <%= link_to artwork do %>
