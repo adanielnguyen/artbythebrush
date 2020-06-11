@@ -37,7 +37,7 @@
             <% if user_signed_in? %>
               <% if current_user.favourites.select { |f| f.artwork == artwork}.empty? %>
                 <%= simple_form_for [artwork, @favourite] do |f| %>
-                  
+
                   <%= button_tag do %>
                     <i class="far fa-bookmark"></i>
                   <% end %>
@@ -72,8 +72,8 @@
 
 <div class="similar">
   <h2>Follow Similar Artists</h2>
-  <div class="flex">
-      <div class="avatar"></div>
+  <div class="similar-flex">
+    <div class="avatar"></div>
       <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn%3AANd9GcQCkG1DRSavF9tqFQFwctuLwm_P3rT0ylNIkSbmfbFb9jPwQij2&usqp=CAU" alt="">
     <div class="avatar"></div>
       <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn%3AANd9GcQCkG1DRSavF9tqFQFwctuLwm_P3rT0ylNIkSbmfbFb9jPwQij2&usqp=CAU" alt="">
