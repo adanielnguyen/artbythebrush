@@ -27,22 +27,22 @@
   font-size: 26px;
 }
 
-.form-control {
-  position: absolute;
-  width: 561px;
-  left: 257px;
-  top: 14px;
+.search {
+  .form-control {
+    position: absolute;
+    width: 561px;
+    left: 257px;
+    top: 14px;
 
+    margin-top: 6px;
+    font-family: 'Forum', cursive;
 
-  margin-top: 6px;
-  font-family: 'Forum', cursive;
+    font-size: 18px;
 
-  font-size: 18px;
+    display: flex;
 
-  display: flex;
-
-  border: none;
-
+    border: none;
+  }
 }
 .sign-up{
   font-family: 'Forum', cursive;
