@@ -1,3 +1,3 @@
 class Collection < ApplicationRecord
-  belongs_to :favourite
+  belongs_to :user
 end
