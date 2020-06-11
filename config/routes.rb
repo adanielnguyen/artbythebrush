@@ -25,5 +25,4 @@ resources :likes, only: [:destroy]
     resources :follows, only: [:create]
   end
 
-resource :collections
 end
