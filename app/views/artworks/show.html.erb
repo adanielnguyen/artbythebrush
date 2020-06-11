@@ -1,9 +1,45 @@
-<h1>show artworks works</h1>
 
-<%= @artwork.name %>
-<%= @artwork.description %>
-<%= @artwork.genre %>
-<%= @artwork.medium %>
-<%= cl_image_tag(@artwork.images.first.key) %>
 
-<%= link_to "edit this artwork", edit_artwork_path %>
+
+<div class="artwork-card">
+  <div class="artwork-image">
+    <%= cl_image_tag(@artwork.images.first.key) %>
+  </div>
+    <h2><%= @artwork.name %></h2>
+  <div class="flex-info">
+    <div class="flex-description">
+      <p><%= @artwork.description %></p>
+    </div>
+    <div class="flex-avatar">
+      <p>
+        <img src="https://www.vincentvangogh.org/images/self-portrait.jpg" class="avatar">
+        <h4 class="forum">Vincent Van Gogh</h3>
+        <p class="garamond">1200 Admires</p>
+        <p>
+          <button type="button" class="button">Follow</button>
+          <button type="button" class="button">Contact</button>
+        </p>
+      </p>
+     <!--  <div class="follow-info">
+        <h4>vincent van gogh</h3>
+        <p>1200 followers</p>
+      </div>
+      <div class="follow-button">
+        <h3>follow</h3>
+      </div>
+      <div class="contact-button">
+        <h3>contact</h3>
+      <div/> -->
+    </div>
+  </div>
+</div>
+
+
+
+
+<div>
+  <%#= link_to "edit this artwork", edit_artwork_path %>
+
+
+</div>
+

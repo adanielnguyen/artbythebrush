@@ -27,7 +27,8 @@
 
 
 <div class="masonry-with-columns px-3">
-  <% @artworks.each do |artwork| %>
+  <% @artworks.shuffle.each do |artwork| %>
+    <%= link_to artwork do %>
       <div class="art" >
         <%= cl_image_tag(artwork.images.first.key)%>
         <div class="card-description">
@@ -65,6 +66,7 @@
           </div>
        </div>
      </div>
+    <% end %>
   <% end %>
 </div>
 
