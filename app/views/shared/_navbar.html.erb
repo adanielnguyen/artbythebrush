@@ -1,78 +1,41 @@
-<!--Navbar -->
-<nav class="mb-1 navbar navbar-expand-lg navbar-dark secondary-color lighten-1">
-  <a class="logo" href="/">ART BY THE BRUSH</a>
-  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent-555"
-    aria-controls="navbarSupportedContent-555" aria-expanded="false" aria-label="Toggle navigation">
+<div class="navbar navbar-expand-sm navbar-light navbar-lewagon">
+  <div class="d-flex">
+    <%= link_to "Art By The Brush", "/", class: "navbar-brand" %>
+    <input type="text" class="form-control search-center" placeholder="Search">
+  </div>
+  
+
+  
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
     <span class="navbar-toggler-icon"></span>
   </button>
 
-  <div class="collapse navbar-collapse" id="navbarSupportedContent-4">
-    <ul class="navbar-nav ml-auto">
-
-      <% if user_signed_in? %>
-        <li class="search">
-            <input type="text" class="form-control" placeholder="Search">
-        </li>
-
-        <li class="nav-item">
-          <%= link_to "Favorites", new_user_registration_path, class: "favorites" %>
-          <%= link_to "Post my Work", new_artwork_path, class: "post-my-work" %>
-        </li>
-
-
-      <li class="nav-item avatar dropdown">
-        <a class="nav-link dropdown-toggle" id="navbarDropdownMenuLink-55" data-toggle="dropdown"
-          aria-haspopup="true" aria-expanded="false">
-          <img src="https://mdbootstrap.com/img/Photos/Avatars/avatar-2.jpg" class="avatar_image"
-            alt="avatar image">
-        </a>
-        <div class="dropdown-menu dropdown-menu-lg-right dropdown-secondary"
-          aria-labelledby="navbarDropdownMenuLink-55">
-          <a class="dropdown-item" href="#">My account</a>
-          <a class="dropdown-item" href="#">Messages</a>
-          <a class="dropdown-item" href="#">My work</a>
-          <%= link_to "Log out", destroy_user_session_path, method: :delete, class: "dropdown-item" %>
+  <% if user_signed_in? %>
+  <div class="collapse navbar-collapse" id="navbarSupportedContent">
+    <ul class="navbar-nav mr-auto">
+      <li class="nav-item">
+        <%= link_to "Favourites", "#", class: "nav-link" %>
+      </li>
+      <li class="nav-item">
+        <%= link_to "Post my Work", new_artwork_path, class: "nav-link" %>
+      </li>
+      <li class="nav-item dropdown">
+        <%= image_tag "https://kitt.lewagon.com/placeholder/users/ssaunier", class: "avatar dropdown-toggle", id: "navbarDropdown", data: { toggle: "dropdown" }, 'aria-haspopup': true, 'aria-expanded': false %>
+        <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
+          <%= link_to "My Account", "#", class: "dropdown-item" %>
+          <%= link_to "My Messages", "#", class: "dropdown-item" %>
+          <%= link_to "Messsages", "#", class: "dropdown-item" %>
+          <%= link_to "Log Out", destroy_user_session_path, method: :delete, class:"dropdown-item" %>
         </div>
       </li>
       <% else %>
-        <li class="search">
-            <input type="text" class="form-control" placeholder="Search">
-        </li>
-        <li class="nav-item">
-          <%= link_to "Sign up", new_user_registration_path, class: "favorites" %>
-          <%= link_to "Log In", new_user_session_path, class: "post-my-work" %>
-        </li>
+      <li class="nav-item">
+        <%= link_to "Sign Up", new_user_registration_path %>
+      </li>
+      <li class="nav-item">
+        <%= link_to "Log In", new_user_session_path%>
+      </li>
       <% end %>
     </ul>
   </div>
-</nav>
-
-<!--/.Navbar -->
-
-
-<!-- <div class="c-dropdown dropdown">
-    <div class="c-avatar has-dropdown dropdown-toggle" id="dropdownMenuAvatar" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-        <img class="c-avatar__img" src="https://thumbs.dreamstime.com/b/gentleman-avatar-profile-icon-image-default-user-hairstyle-vector-illustration-182197665.jpg" alt="Name">
-    </div>
-    <div class="c-dropdown__menu dropdown-menu dropdown-menu-right" aria-labelledby="dropdownMenuAvatar">
-        <a class="c-dropdown__item dropdown-item" href="#">Edit Profile</a>
-        <a class="c-dropdown__item dropdown-item" href="#">View Activity</a>
-        <a class="c-dropdown__item dropdown-item" href="#">Manage Roles</a>
-    </div>
-</div> -->
-<!--
-avatar drop bar
-      <li class="nav-item avatar dropdown">
-        <a class="nav-link dropdown-toggle" id="navbarDropdownMenuLink-55" data-toggle="dropdown"
-          aria-haspopup="true" aria-expanded="false">
-          <img src="https://mdbootstrap.com/img/Photos/Avatars/avatar-2.jpg" class="rounded-circle z-depth-0"
-            alt="avatar image">
-        </a>
-        <div class="dropdown-menu dropdown-menu-lg-right dropdown-secondary"
-          aria-labelledby="navbarDropdownMenuLink-55">
-          <a class="dropdown-item" href="#">Action</a>
-          <a class="dropdown-item" href="#">Another action</a>
-          <a class="dropdown-item" href="#">Something else here</a>
-        </div>
-      </li>
- -->
+</div>
