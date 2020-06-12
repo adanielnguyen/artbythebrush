@@ -15,9 +15,21 @@
 /* Place text in the middle of the image */
 .artist-text {
   text-align: center;
+  align-items: center;
   position: absolute;
-  top: 50%;
+  top: 35%;
   left: 50%;
   transform: translate(-50%, -50%);
   color: white;
+}
+
+.card-trip-user {
+    position: absolute;
+    height: 11vh;
+    width: 11vh;
+    left: 47%;
+    top: 23vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
