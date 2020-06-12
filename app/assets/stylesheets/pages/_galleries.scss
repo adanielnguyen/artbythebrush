@@ -1,0 +1,23 @@
+// Main container Description Styles
+.first-component{
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: space-between;
+}
+.avatar-gallery {
+    text-align: center;
+    width: 145px;
+    margin-right: 166px;
+img{
+        width: 145px;
+        border-radius: 50%;
+    }
+  button{
+    border-color: black;
+    margin-top: 10px;
+  }
+}
+.description-gallery{
+  width: 897px;
+}

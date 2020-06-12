@@ -17,10 +17,12 @@ Rails.application.routes.draw do
   end
   resources :favourites, only: [:new] do
     resources :collections
+    resources :collections_favourites
   end
   
   resources :favourites, only: [:destroy]
   resources :likes, only: [:destroy]
+
   
   
   
