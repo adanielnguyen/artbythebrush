@@ -81,40 +81,15 @@
         <%= cl_image_tag(artwork.images.first.key)%>
         <div class="card-description">
           <p class=""><%= artwork.name %></p>
+          <% end %>
           <div class="d-flex">
             <% if user_signed_in? %>
-              <% if current_user.favourites.select { |f| f.artwork == artwork}.empty? %>
-                <%= simple_form_for [artwork, @favourite] do |f| %>
-
-                  <%= button_tag do %>
-                    <i class="far fa-bookmark"></i>
-                  <% end %>
-
-                <% end %>
-              <% else %>
-              <%= link_to favourite_path(current_user.favourites.select { |f| f.artwork == artwork}.first),
-                method: :delete,
-                data: { confirm: "Are you sure?" } do %>
-                  <i class="fas fa-bookmark"></i>
-                <% end %>
-              <% end %>
-
-              <% if current_user.likes.select { |f| f.artwork == artwork}.empty? %>
-                <%= simple_form_for [artwork, @like] do |f| %>
-                  <%= button_tag do %>
-                    <i class="far fa-heart"></i>
-                  <% end %>
-                <% end %>
-              <% else %>
-                <%= link_to like_path(current_user.likes.select { |f| f.artwork == artwork}.first), method: :delete, data: { confirm: "Are you sure?" } do %>
-                  <i class="fas fa-heart"></i>
-                <% end %>
-              <% end %>
+              <%= render "favourite_button", artwork: artwork %>
+              <%= render "like_button", artwork: artwork %>
             <% end %>
           </div>
-       </div>
-     </div>
-    <% end %>
+        </div>
+      </div>
   <% end %>
 </div>
 
