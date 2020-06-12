@@ -9,6 +9,12 @@ class CollectionsController < ApplicationController
     @favourites = Favourites.find(params[:id])
   end
 
+  def windowshow 
+    @collection = Collection.find(params[:id])
+    @artworks = Artworks.find(params[:id])
+    @favourites = Favourites.find(params[:id])
+  end
+
   def new
     @collection = Collection.new
   end
