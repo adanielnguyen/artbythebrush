@@ -10,7 +10,32 @@
   <p class="paragraph">Select Some Genres You’re Interested In To Help Personalize Your Experience<br>Starting With Finding People To Follow</p>
 </div>
 
-
+<!-- <div class="galleries">
+    <%# @galleries.shuffle.each do |galley| %>
+    <%#= link_to galley do %>
+    <div class="card">
+      <%#= galley.name%>
+    </div>
+</div>
+ -->
+<div class="masonry-with-columns px-3">
+  <% @artworks.shuffle.each do |artwork| %>
+    <%= link_to artwork do %>
+      <div class="art" >
+        <%= cl_image_tag(artwork.images.first.key)%>
+        <div class="card-description">
+          <p class=""><%= artwork.name %></p>
+          <% end %>
+          <div class="d-flex">
+            <% if user_signed_in? %>
+              <%= render "favourite_button", artwork: artwork %>
+              <%= render "like_button", artwork: artwork %>
+            <% end %>
+          </div>
+        </div>
+      </div>
+  <% end %>
+</div>
 
 <div class="gallery-card px-3">
   <div class="card-trip">
@@ -64,33 +89,6 @@
     </div>
   </div>
 
-</div>
-
-<!-- <div class="galleries">
-    <%# @galleries.shuffle.each do |galley| %>
-    <%#= link_to galley do %>
-    <div class="card">
-      <%#= galley.name%>
-    </div>
-</div>
- -->
-<div class="masonry-with-columns px-3">
-  <% @artworks.shuffle.each do |artwork| %>
-    <%= link_to artwork do %>
-      <div class="art" >
-        <%= cl_image_tag(artwork.images.first.key)%>
-        <div class="card-description">
-          <p class=""><%= artwork.name %></p>
-          <% end %>
-          <div class="d-flex">
-            <% if user_signed_in? %>
-              <%= render "favourite_button", artwork: artwork %>
-              <%= render "like_button", artwork: artwork %>
-            <% end %>
-          </div>
-        </div>
-      </div>
-  <% end %>
 </div>
 
 <div class="similar">
