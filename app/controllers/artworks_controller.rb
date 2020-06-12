@@ -14,7 +14,7 @@ class ArtworksController < ApplicationController
   def create
     @artwork = Artwork.new(artwork_params)
     # @artwork.user_id = current_user.id
-    
+    @artwork.user = current_user
     if @artwork.save
       redirect_to artwork_path(@artwork)
     else
@@ -37,11 +37,11 @@ class ArtworksController < ApplicationController
   private
 
   def artwork_update_params
-    params.require(:artwork).permit(:name, :description, :genre, :medium, :date_created)
+    params.require(:artwork).permit(:name, :description, :genre, :medium, :date_created, images: [])
   end
 
   def artwork_params
-    params.require(:artwork).permit(:name, :description, :genre, :medium, :date_created)
+    params.require(:artwork).permit(:name, :description, :genre, :medium, :date_created, images: [])
   end
   
 end
