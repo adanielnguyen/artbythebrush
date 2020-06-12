@@ -1,25 +1,28 @@
+$main-font: eb-garamond;
+$headline-font: forum;
+
 .navbar-lewagon {
   justify-content: space-between;
   background: white;
 
   a.navbar-brand {
-    font-family: forum;
+    font-family: $main-font;
     color: rgba(0,  0,  0, 0.8);
     font-size: 26px;
-    font-weight: 500;
+    font-weight: 300;
     text-decoration: none;
     text-transform: uppercase;
   }
 
   a.nav-link {
-    font-family: eb-garamond;
+    font-family: $main-font;
     font-size: medium;
     font-weight: 500;
     text-transform: capitalize;
   }
   
   .dropdown-item {
-    font-family: eb-garamond;
+    font-family: $main-font;
     font-size: medium;
     font-weight: 500;
     text-transform: capitalize;
@@ -38,4 +41,5 @@
 
 .search-center {
   margin: auto;
+  font-family: $main-font;
 }

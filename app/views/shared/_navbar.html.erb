@@ -1,10 +1,8 @@
 <div class="navbar navbar-expand-sm navbar-light navbar-lewagon">
   <div class="d-flex">
     <%= link_to "Art By The Brush", "/", class: "navbar-brand" %>
-    <input type="text" class="form-control search-center" placeholder="Search">
+    <input type="text" class="form-control search-center border-0" placeholder="Search">
   </div>
-  
-
   
   <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
     <span class="navbar-toggler-icon"></span>
@@ -29,12 +27,14 @@
         </div>
       </li>
       <% else %>
-      <li class="nav-item">
-        <%= link_to "Sign Up", new_user_registration_path %>
-      </li>
-      <li class="nav-item">
-        <%= link_to "Log In", new_user_session_path%>
-      </li>
+        <ul class="navbar-nav mr-auro">
+          <li class="nav-item">
+            <%= link_to "Sign Up", new_user_registration_path, class: "nav-link" %>
+          </li>
+          <li class="nav-item">
+            <%= link_to "Log In", new_user_session_path, class: "nav-link" %>
+          </li>
+        </ul>
       <% end %>
     </ul>
   </div>
