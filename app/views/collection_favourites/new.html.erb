@@ -1,0 +1,6 @@
+<h1>New Collection</h1>
+
+  <%collection_favourites.select {|f| f.collection_id == f.collection && f.favourite_id == f.favourite }  %>
+  <% end %>
+<%= link_to "save collection", new_favourite_collections_favourite %>
+
