@@ -4,7 +4,7 @@ Rails.application.routes.draw do
   
   get "artists/:id", to: 'pages#profile'
   resources :users, only: [] do
-    resources :follows, only: [:create]
+    resources :follows, only: [:new, :create]
   end
   resources :galleries
   
