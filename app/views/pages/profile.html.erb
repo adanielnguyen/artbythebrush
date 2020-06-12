@@ -1,9 +1,16 @@
-<h1>Artist Profile</h1>
+<div class="artist-profile" style="background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url(https://cdn.statically.io/img/timelinecovers.pro/facebook-cover/download/leonid-afremov-bridge-painting-facebook-cover.jpg)";>
+  <div class="artist-text">
+    <h1>I am John Doe</h1>
+    <p>And I'm a Painter</p>
+    <button>Hire me</button>
+    <%= @artist.email  %>
+        <%= simple_form_for [@artist, @follow] do |f| %>
+          <%= f.button :submit  %>
+        <% end %>
+  </div>
+</div>
 
-<%= @artist.email  %>
-<%= simple_form_for [@artist, @follow] do |f| %>
-  <%= f.button :submit  %>
-<% end %>
+
 
 <div class="masonry-with-columns px-3">
   <% @artworks.shuffle.each do |artwork| %>
@@ -39,3 +46,6 @@
      </div>
   <% end %>
 </div>
+
+
+

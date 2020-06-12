@@ -13,6 +13,7 @@ class GalleriesController < ApplicationController
 
   def create
     @gallery = Gallery.new(gallery_params)
+    @gallery.user = current_user
 
     if @gallery.save
       redirect_to gallery_path(@gallery)
@@ -40,6 +41,6 @@ class GalleriesController < ApplicationController
   private
 
   def gallery_params
-    params.require(:gallery_params).permit(:start_date, :end_date, :description)
+    params.require(:gallery).permit(:start_date, :end_date, :description)
   end
 end
