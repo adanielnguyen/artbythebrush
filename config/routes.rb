@@ -22,7 +22,6 @@ Rails.application.routes.draw do
   
   resources :favourites, only: [:destroy]
   resources :likes, only: [:destroy]
-
   
   
   
