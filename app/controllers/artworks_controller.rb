@@ -5,6 +5,8 @@ class ArtworksController < ApplicationController
 
   def show
     @artwork = Artwork.find(params[:id])
+    @favourite = Favourite.new
+    @like = Like.new
   end
 
   def new
@@ -43,5 +45,5 @@ class ArtworksController < ApplicationController
   def artwork_params
     params.require(:artwork).permit(:name, :description, :genre, :medium, :date_created, images: [])
   end
-  
+
 end
