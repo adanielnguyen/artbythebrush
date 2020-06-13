@@ -29,12 +29,7 @@
         <div class="card-description">
           <p class=""><%= artwork.name %></p>
           <% end %>
-          <div class="d-flex">
-            <% if user_signed_in? %>
-              <%= render "favourite_button", artwork: artwork %>
-              <%= render "like_button", artwork: artwork %>
-            <% end %>
-          </div>
+        
         </div>
       </div>
   <% end %>
