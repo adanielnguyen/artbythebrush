@@ -35,18 +35,3 @@
 
 </div>
 
-<div class="masonry-with-columns px-3">
-  <% @artworks.shuffle.each do |artwork| %>
-      <div class="art" >
-        <%= cl_image_tag(artwork.images.first.key)%>
-        <div class="card-description">
-          <p class=""><%= artwork.name %></p>
-          <% if user_signed_in? %>
-            <%= render "favourite_button", artwork: artwork %>
-            <%= render "like_button", artwork: artwork %>
-          <% end %>
-        </div>
-      </div>
-  <% end %>
-</div>
-
