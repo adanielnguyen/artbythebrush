@@ -5,6 +5,7 @@ class GalleriesController < ApplicationController
 
   def new
     @gallery = Gallery.new
+    @artworks = Artwork.all.select { |artwork| artwork.user_id == current_user.id}
   end
 
   def show
@@ -14,6 +15,7 @@ class GalleriesController < ApplicationController
   def create
     @gallery = Gallery.new(gallery_params)
     @gallery.user = current_user
+    
 
     if @gallery.save
       redirect_to gallery_path(@gallery)
