@@ -11,7 +11,7 @@ class ArtworkTagsController < ApplicationController
       @artwork_tag = ArtworkTag.new(artwork: @artwork, tag: tag)
       @artwork_tag.save
     end
-    redirect_to artwork_path(@artwork.)
+    redirect_to artwork_path(@artwork)
   end
 
 end
