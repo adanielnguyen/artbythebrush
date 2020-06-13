@@ -1,6 +1,7 @@
-class User < ApplicationRecord
+class User < ApplicationRecordgit
   has_many :likes
   has_many :favourites
+  has_many :collections
   has_many :follows, as: :record
   has_many :fans, through: :follows
   has_many :artworks

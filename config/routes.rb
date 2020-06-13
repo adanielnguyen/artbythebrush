@@ -2,7 +2,7 @@ Rails.application.routes.draw do
   devise_for :users
   root to: 'pages#home'
   
-  get "artists/:id", to: 'pages#profile'
+  get "artists/:id", to: 'pages#profile', as: "artist"
   resources :users, only: [] do
     resources :follows, only: [:new, :create]
   end
