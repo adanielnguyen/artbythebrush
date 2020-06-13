@@ -1,4 +1,4 @@
 class CollectionFavourite < ApplicationRecord
-  has_many :collection
-  has_many :favourite
+  belongs_to :collection
+  belongs_to :favourite
 end

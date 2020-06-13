@@ -1,4 +1,4 @@
-class User < ApplicationRecordgit
+class User < ApplicationRecord
   has_many :likes
   has_many :favourites
   has_many :collections

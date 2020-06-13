@@ -7,6 +7,8 @@ class ArtworksController < ApplicationController
     @artwork = Artwork.find(params[:id])
     @favourite = Favourite.new
     @like = Like.new
+    @artworks = Artwork.all
+    #@displayotherartwork = Artwork.all.select { |artwork| artwork}
   end
 
   def new
