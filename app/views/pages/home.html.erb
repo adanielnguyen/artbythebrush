@@ -30,7 +30,7 @@
             <% if user_signed_in? %>
               <%= render "favourite_button", artwork: artwork %>
               <%= render "like_button", artwork: artwork %>
-              <%= render "collection_modal" %>
+              <%= render "collection_modal", artwork: artwork %>
             <% end %>
           </div>
         </div>

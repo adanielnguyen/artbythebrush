@@ -15,13 +15,15 @@ Rails.application.routes.draw do
     resources :favourites, only: [:create]
     resources :likes, only: [:create]
   end
-  resources :favourites, only: [:new] do
-    resources :collections_favourites
-  end
-  
+  resources :favourites, only: [:new]
+  resources :collection_favourites, only: [:create, :destroy]
   resources :favourites, only: [:destroy]
   resources :likes, only: [:destroy]
   resources :collections
   
-  
+  resources :collections, only: [] do
+    resources :artwork, only: [] do
+      resources :collection_favourites, only: [:create]
+    end
+  end
 end
