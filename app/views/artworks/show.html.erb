@@ -35,3 +35,21 @@
 
 </div>
 
+
+<div>
+<br/><br/><br/><br/><br/><br/>
+  <h1>Artist's Other Work </h1>
+</div>
+<div class="masonry-with-columns px-3">
+  <% @artworks.shuffle.each do |artwork| %>
+      <div class="art" >
+        <%= cl_image_tag(artwork.images.first.key)%>
+        <div class="card-description">
+          <p class=""><%= artwork.name %></p>
+
+        </div>
+      </div>
+  <% end %>
+</div>
+
+
