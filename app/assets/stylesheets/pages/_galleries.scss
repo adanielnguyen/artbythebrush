@@ -2,20 +2,31 @@
 .first-component{
   display: flex;
   flex-direction: row;
-  flex-wrap: wrap;
   justify-content: space-between;
+  border: 1px solid black;
+  height: 350px;
 }
 .avatar-gallery {
     text-align: center;
-    width: 145px;
-    margin-right: 166px;
+    width: 204px;
+    margin-right: 169px;
+    border: 1px solid black;
+    position: relative;
+    height: 241px;
+    top: 107px;
 img{
         width: 145px;
         border-radius: 50%;
     }
   button{
+    font-family: 'roboto';
+    font-size: 18px;
+    border-radius: 5px;
     border-color: black;
-    margin-top: 10px;
+    background: white;
+    height: 51px;
+    margin-top: 5px;
+    width: 121px;
   }
 }
 
@@ -24,7 +35,37 @@ img{
   font-family: 'Forum', cursive;
   color: black;
 }
-/*** 
+.description-gallery
+h2{
+  font-family: 'Forum';
+  font-size: 92px;
+  h3{
+  font-family: 'Forum';
+  }
+}
+
+.description-gallery p{
+    text-align: left;
+    width: 900px;
+    font-size: 24px;
+    font-family: 'forum';
+    color: #6D6C6C;
+}
+.description-gallery {
+    margin-left: 47px;
+    border: 1px solid black;
+    width: 1200px;
+}
+
+
+
+
+
+
+
+
+
+/***
 =============================================
     Breadcrumb area style
 =============================================
@@ -50,7 +91,7 @@ img{
   background: rgba(0, 0, 0, 0.03) none repeat scroll 0 0;
   content: "";
   z-index: -1;
-} 
+}
 .breadcrumb-area .inner-content {
   position: relative;
   display: block;
@@ -142,7 +183,7 @@ img{
 }
 .breadcrumb-area .breadcrumb-menu ul li:last-child:before{
   display: none;
-} 
+}
 .breadcrumb-area .breadcrumb-menu ul li a{
   color: #e5f3ff;
   font-size: 18px;
@@ -151,10 +192,10 @@ img{
   transition: all 500ms ease;
 }
 .breadcrumb-area .breadcrumb-menu ul li.active{
-  color: #000000;   
+  color: #000000;
 }
 .breadcrumb-area .breadcrumb-menu ul li a:hover{
-  color: #000000;     
+  color: #000000;
 }
 
 
@@ -184,10 +225,10 @@ img{
 }
 .single-exhibition-box .img-holder img{
     width: 100%;
-    transform: scale(1.0);    
+    transform: scale(1.0);
 }
 .single-exhibition-box:hover .img-holder img {
-    transform:scale(1.2) rotate(1deg);	
+    transform:scale(1.2) rotate(1deg);
 }
 .single-exhibition-box:hover .img-holder .overlay-style-one {
     opacity: 1;
@@ -208,7 +249,7 @@ img{
 .single-exhibition-box:hover .img-holder .overlay-style-one .zoom-button{
     opacity: 1;
     transform: translateX(0px);
-    transition: all 0.8s ease-in-out 0.7s;    
+    transition: all 0.8s ease-in-out 0.7s;
 }
 .single-exhibition-box .img-holder .overlay-style-one .zoom-button a i{
     position: relative;
@@ -303,7 +344,7 @@ img{
     padding-bottom: 0;
 }
 .single-exhibition-box.style4 {
-    margin-bottom: 40px;    
+    margin-bottom: 40px;
 }
 .single-exhibition-box.style4 .text-holder p {
     margin: 0 0 20px;
@@ -350,7 +391,7 @@ img{
   margin-right: 4px;
 }
 .review-box ul li:last-child{
-  margin-right: 0px;    
+  margin-right: 0px;
 }
 .review-box ul li i {
   font-size: 18px;
