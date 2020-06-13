@@ -12,10 +12,13 @@
   <div class="collapse navbar-collapse" id="navbarSupportedContent">
     <ul class="navbar-nav mr-auto">
       <li class="nav-item">
-        <%= link_to "Favourites", "#", class: "nav-link" %>
+        <%= link_to "Collections", collections_path , class: "nav-link" %>
       </li>
       <li class="nav-item">
         <%= link_to "Post my Work", new_artwork_path, class: "nav-link" %>
+      </li>
+      <li class="nav-item">
+        <%= link_to "Galleries", galleries_path, class: "nav-link" %>
       </li>
       <li class="nav-item">
         <%= link_to "Curate my gallery", new_gallery_path, class: "nav-link" %>
