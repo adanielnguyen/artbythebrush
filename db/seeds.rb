@@ -9,9 +9,14 @@
 
 puts "reseting database"
 Follow.destroy_all
+Like.destroy_all
+Tag.destroy_all
+Favourite.destroy_all
+Gallery.destroy_all
 Artwork.destroy_all
 User.destroy_all
-Tag.destroy_all
+
+
 
 puts "creating users"
 user1 = User.create!(email: "henry@gmail.com", password:"password")
@@ -97,3 +102,68 @@ file = URI.open('https://i.pinimg.com/originals/97/20/49/972049d0a1345e177b7a467
 artwork11.images.attach(io: file, filename: 'nes.png', content_type: 'image/png')
 artwork11.save!
 
+artwork12 = Artwork.create!(name: "Cliffs at Pourville (1882) by Claude Monet", description: "Almond Blossoms is from a group of several paintings made in 1888 and 1890 by Vincent van Gogh in Arles and Saint-Rémy, southern France of blossoming almond trees. Flowering trees were special to van Gogh. They represented awakening and hope. He enjoyed them aesthetically and found joy in painting flowering trees.", genre: "Impressionism Painting", user: user2, medium: "Oil Painting" )
+file = URI.open('https://img.rawpixel.com/s3fs-private/rawpixel_images/website_content/pdmonet-a21450.jpg?bg=transparent&con=3&cs=srgb&dpr=1&fm=jpg&ixlib=php-3.1.0&q=80&usm=15&vib=3&w=1300&s=a8c6a4b6061ac49fc999dcfb8a8b1609')
+artwork12.images.attach(io: file, filename: 'nes.png', content_type: 'image/png')
+artwork12.save!
+
+artwork13 = Artwork.create!(name: "Summer Farm by Daniel Keys", description: "Almond Blossoms is from a group of several paintings made in 1888 and 1890 by Vincent van Gogh in Arles and Saint-Rémy, southern France of blossoming almond trees. Flowering trees were special to van Gogh. They represented awakening and hope. He enjoyed them aesthetically and found joy in painting flowering trees.", genre: "Impressionism Painting", user: user2, medium: "Oil Painting" )
+file = URI.open('https://images.squarespace-cdn.com/content/v1/51b4c595e4b087d92d55a28e/1566279415892-3BVQIQ4EA8AXB2WUO5JJ/ke17ZwdGBToddI8pDm48kFZ_TiMCkH0iAeVMJaqkULV7gQa3H78H3Y0txjaiv_0fDoOvxcdMmMKkDsyUqMSsMWxHk725yiiHCCLfrh8O1z4YTzHvnKhyp6Da-NYroOW3ZGjoBKy3azqku80C789l0hHMyhIh2kKzuOL3ydJCryAEoNQwr2VM5LgGEhKvLDjdIpZeiUMl_tpck7juxv3Nlw/IMG_0232.jpg?format=2500w')
+artwork13.images.attach(io: file, filename: 'nes.png', content_type: 'image/png')
+artwork13.save!
+
+artwork14 = Artwork.create!(name: "Summer Farm by Daniel Keys", description: "Almond Blossoms is from a group of several paintings made in 1888 and 1890 by Vincent van Gogh in Arles and Saint-Rémy, southern France of blossoming almond trees. Flowering trees were special to van Gogh. They represented awakening and hope. He enjoyed them aesthetically and found joy in painting flowering trees.", genre: "Impressionism Painting", user: user2, medium: "Oil Painting" )
+file = URI.open('https://images.squarespace-cdn.com/content/v1/51b4c595e4b087d92d55a28e/1566691464247-9RR9I7YV3CM1Y2AK9FLK/ke17ZwdGBToddI8pDm48kPZywt-8BENWjLhsMNQxPyx7gQa3H78H3Y0txjaiv_0fDoOvxcdMmMKkDsyUqMSsMWxHk725yiiHCCLfrh8O1z4YTzHvnKhyp6Da-NYroOW3ZGjoBKy3azqku80C789l0iXS6XmVv7bUJ418E8Yoc1hq-tFSunKypXGy8Xht54XEUtdxEzBS9wkMa88Vfcz7kQ/IMG_0282-2.jpg?format=2500w')
+artwork14.images.attach(io: file, filename: 'nes.png', content_type: 'image/png')
+artwork14.save!
+
+artwork15 = Artwork.create!(name: "Summer Farm by Daniel Keys", description: "Almond Blossoms is from a group of several paintings made in 1888 and 1890 by Vincent van Gogh in Arles and Saint-Rémy, southern France of blossoming almond trees. Flowering trees were special to van Gogh. They represented awakening and hope. He enjoyed them aesthetically and found joy in painting flowering trees.", genre: "Impressionism Painting", user: user2, medium: "Oil Painting" )
+file = URI.open('https://images.squarespace-cdn.com/content/v1/51b4c595e4b087d92d55a28e/1566691464247-9RR9I7YV3CM1Y2AK9FLK/ke17ZwdGBToddI8pDm48kPZywt-8BENWjLhsMNQxPyx7gQa3H78H3Y0txjaiv_0fDoOvxcdMmMKkDsyUqMSsMWxHk725yiiHCCLfrh8O1z4YTzHvnKhyp6Da-NYroOW3ZGjoBKy3azqku80C789l0iXS6XmVv7bUJ418E8Yoc1hq-tFSunKypXGy8Xht54XEUtdxEzBS9wkMa88Vfcz7kQ/IMG_0282-2.jpg?format=2500w')
+artwork15.images.attach(io: file, filename: 'nes.png', content_type: 'image/png')
+artwork15.save!
+
+artwork16 = Artwork.create!(name: "Wythfield by Daniel Nguyen", description: "Almond Blossoms is from a group of several paintings made in 1888 and 1890 by Vincent van Gogh in Arles and Saint-Rémy, southern France of blossoming almond trees. Flowering trees were special to van Gogh. They represented awakening and hope. He enjoyed them aesthetically and found joy in painting flowering trees.", genre: "Impressionism Painting", user: user2, medium: "Oil Painting" )
+file = URI.open('https://66.media.tumblr.com/a6afc823958009102b4759c28bce8f5c/531adec464521959-ab/s1280x1920/207d7aa5c3f2827742dee99ae05bda7865c0e377.png')
+artwork16.images.attach(io: file, filename: 'nes.png', content_type: 'image/png')
+artwork16.save!
+
+
+artwork17 = Artwork.create!(name: "Wythfield by Daniel Nguyen", description: "Almond Blossoms is from a group of several paintings made in 1888 and 1890 by Vincent van Gogh in Arles and Saint-Rémy, southern France of blossoming almond trees. Flowering trees were special to van Gogh. They represented awakening and hope. He enjoyed them aesthetically and found joy in painting flowering trees.", genre: "Impressionism Painting", user: user2, medium: "Oil Painting" )
+file = URI.open('https://66.media.tumblr.com/aeb8418651822754b7b99135d70c6e5b/531adec464521959-93/s540x810/f202043be438ac3df03fd6d797fff867315a839c.jpg')
+artwork17.images.attach(io: file, filename: 'nes.png', content_type: 'image/png')
+artwork17.save!
+
+artwork18 = Artwork.create!(name: "Wythfield by Daniel Nguyen", description: "Almond Blossoms is from a group of several paintings made in 1888 and 1890 by Vincent van Gogh in Arles and Saint-Rémy, southern France of blossoming almond trees. Flowering trees were special to van Gogh. They represented awakening and hope. He enjoyed them aesthetically and found joy in painting flowering trees.", genre: "Impressionism Painting", user: user2, medium: "Oil Painting" )
+file = URI.open('https://66.media.tumblr.com/88afbd2ed21e5bc1e00e55d92ddd9a52/5e30c2f6605cfc4d-b2/s640x960/1e9319dcd95b4d629910ce02cde8bb7ab11de2bb.jpg')
+artwork18.images.attach(io: file, filename: 'nes.png', content_type: 'image/png')
+artwork18.save!
+
+artwork19 = Artwork.create!(name: "Wythfield by Daniel Nguyen", description: "Almond Blossoms is from a group of several paintings made in 1888 and 1890 by Vincent van Gogh in Arles and Saint-Rémy, southern France of blossoming almond trees. Flowering trees were special to van Gogh. They represented awakening and hope. He enjoyed them aesthetically and found joy in painting flowering trees.", genre: "Impressionism Painting", user: user2, medium: "Oil Painting" )
+file = URI.open('https://66.media.tumblr.com/5920915a06625ba93c8aac7d761a6e6d/ce590c3977be00b8-fa/s2048x3072/86a7a0e4aa0e854bfbacf07bb4f11fe813460131.jpg')
+artwork19.images.attach(io: file, filename: 'nes.png', content_type: 'image/png')
+artwork19.save!
+
+artwork20 = Artwork.create!(name: "Wythfield by Daniel Nguyen", description: "Almond Blossoms is from a group of several paintings made in 1888 and 1890 by Vincent van Gogh in Arles and Saint-Rémy, southern France of blossoming almond trees. Flowering trees were special to van Gogh. They represented awakening and hope. He enjoyed them aesthetically and found joy in painting flowering trees.", genre: "Impressionism Painting", user: user2, medium: "Oil Painting" )
+file = URI.open('https://66.media.tumblr.com/5be4958d2f3c8e75ad2d66bf9dde5d20/188bcc8401669f10-a4/s1280x1920/1e16818f6ceb9d802c2a7d70fa88131f95e81047.jpg')
+artwork20.images.attach(io: file, filename: 'nes.png', content_type: 'image/png')
+artwork20.save!
+
+artwork21 = Artwork.create!(name: "Wythfield by Daniel Nguyen", description: "Almond Blossoms is from a group of several paintings made in 1888 and 1890 by Vincent van Gogh in Arles and Saint-Rémy, southern France of blossoming almond trees. Flowering trees were special to van Gogh. They represented awakening and hope. He enjoyed them aesthetically and found joy in painting flowering trees.", genre: "Impressionism Painting", user: user2, medium: "Oil Painting" )
+file = URI.open('https://images.squarespace-cdn.com/content/v1/5121095de4b0b5151b71c80b/1532792989754-RDFEAMAP1R0J8X8J5A1B/ke17ZwdGBToddI8pDm48kJeMm9KtJH4741FW3oskMpB7gQa3H78H3Y0txjaiv_0fDoOvxcdMmMKkDsyUqMSsMWxHk725yiiHCCLfrh8O1z5QPOohDIaIeljMHgDF5CVlOqpeNLcJ80NK65_fV7S1Uc9PmzPJRFa4g8CwUK9Q2KnrcpwiJHXv6SblNo84BXOuZ5819XDE-T-fE_EmFUjQwQ/LP_WHITESANDS_SUNSET.JPG?format=1500w')
+artwork21.images.attach(io: file, filename: 'nes.png', content_type: 'image/png')
+artwork21.save!
+
+artwork22 = Artwork.create!(name: "Wythfield by Daniel Nguyen", description: "Almond Blossoms is from a group of several paintings made in 1888 and 1890 by Vincent van Gogh in Arles and Saint-Rémy, southern France of blossoming almond trees. Flowering trees were special to van Gogh. They represented awakening and hope. He enjoyed them aesthetically and found joy in painting flowering trees.", genre: "Impressionism Painting", user: user2, medium: "Oil Painting" )
+file = URI.open('https://images.squarespace-cdn.com/content/v1/5121095de4b0b5151b71c80b/1532793052662-WLKLKQGQE8TL701IN75B/ke17ZwdGBToddI8pDm48kNiEM88mrzHRsd1mQ3bxVct7gQa3H78H3Y0txjaiv_0fDoOvxcdMmMKkDsyUqMSsMWxHk725yiiHCCLfrh8O1z4YTzHvnKhyp6Da-NYroOW3ZGjoBKy3azqku80C789l0s0XaMNjCqAzRibjnE_wBlkZ2axuMlPfqFLWy-3Tjp4nKScCHg1XF4aLsQJlo6oYbA/Laura_Pritchett_Patience.jpg?format=1500w')
+artwork22.images.attach(io: file, filename: 'nes.png', content_type: 'image/png')
+artwork22.save!
+
+artwork24 = Artwork.create!(name: "Wythfield by Daniel Nguyen", description: "Almond Blossoms is from a group of several paintings made in 1888 and 1890 by Vincent van Gogh in Arles and Saint-Rémy, southern France of blossoming almond trees. Flowering trees were special to van Gogh. They represented awakening and hope. He enjoyed them aesthetically and found joy in painting flowering trees.", genre: "Impressionism Painting", user: user2, medium: "Oil Painting" )
+file = URI.open('https://images.squarespace-cdn.com/content/v1/5121095de4b0b5151b71c80b/1532793366578-H4NWRSS9KFGR3HJQMFQI/ke17ZwdGBToddI8pDm48kGbRiyPki_EyHcjPCyx12CV7gQa3H78H3Y0txjaiv_0fDoOvxcdMmMKkDsyUqMSsMWxHk725yiiHCCLfrh8O1z4YTzHvnKhyp6Da-NYroOW3ZGjoBKy3azqku80C789l0mwD1g8DYbkhCsgrhnj8CXbhR6VpMuMO3VUBAu8HErKUakpOm9R9l-sGhmSz5oguFw/laurapritchett_Above_1.jpg?format=1500w')
+artwork24.images.attach(io: file, filename: 'nes.png', content_type: 'image/png')
+artwork24.save!
+
+artwork25 = Artwork.create!(name: "Laura Pritchett", description: "Almond Blossoms is from a group of several paintings made in 1888 and 1890 by Vincent van Gogh in Arles and Saint-Rémy, southern France of blossoming almond trees. Flowering trees were special to van Gogh. They represented awakening and hope. He enjoyed them aesthetically and found joy in painting flowering trees.", genre: "Impressionism Painting", user: user2, medium: "Oil Painting" )
+file = URI.open('https://images.squarespace-cdn.com/content/v1/5121095de4b0b5151b71c80b/1532793428465-ISJLPZELR04EQCN4MX62/ke17ZwdGBToddI8pDm48kAms-YFqCEzVWtxEmk_n6yJ7gQa3H78H3Y0txjaiv_0fDoOvxcdMmMKkDsyUqMSsMWxHk725yiiHCCLfrh8O1z4YTzHvnKhyp6Da-NYroOW3ZGjoBKy3azqku80C789l0s2R59z2HWVKMNU9GXmUK4W9GsA4lsq1MYoWLKFqhfw8zBms60U-eXAfClfwABDCBA/laurapritchett_thequiet_4.jpg?format=1500w')
+artwork25.images.attach(io: file, filename: 'nes.png', content_type: 'image/png')
+artwork25.save!
