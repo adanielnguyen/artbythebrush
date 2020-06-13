@@ -6,7 +6,7 @@ class FavouritesController < ApplicationController
     @favourite.artwork = @artwork
 
     if @favourite.save
-      redirect_to root_path
+      redirect_to request.referrer
     else
       render 'home'
     end

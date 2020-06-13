@@ -6,7 +6,7 @@ class LikesController < ApplicationController
     @like.artwork = @artwork
 
     if @like.save
-      redirect_to root_path
+      redirect_to request.referrer
     else
       render 'home'
     end
