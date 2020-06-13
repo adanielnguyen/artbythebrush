@@ -1,14 +1,18 @@
 class CollectionFavouritesController < ApplicationController
   def create
-    @collection_favourite = CollectionFavourites.new
+    @collection_favourite = CollectionFavourite.new
     @collection = Collection.find(params[:collection_id])
     @collection_favourite.collection =  @collection
-    @favourite = Favourite.find(params[:favourite_id])
+    @artwork = Artwork.find(params[:artwork_id])
+    @favourite = current_user.favourites.find_by(artwork_id: params[:artwork_id]) || Favourite.create(user: current_user, artwork: @artwork)
+    @collection_favourite.favourite = @favourite
 
     if @collection_favourite.save 
-      redirect_to favourite_collections_path
+      redirect_to request.referrer
     else
       render "new"
     end
   end
+
+  
 end

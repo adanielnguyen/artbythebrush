@@ -14,21 +14,12 @@
         </button>
       </div>
       <div class="modal-body">
-        <% if current_user.favourites.select { |f| f.artwork == artwork}.empty? %>
-  <%= simple_form_for [artwork, @favourite] do |f| %>
-
-    <%= button_tag do %>
-      <i class="far fa-bookmark"></i>
-    <% end %>
-
-  <% end %>
-<% else %>
-<%= link_to favourite_path(current_user.favourites.select { |f| f.artwork == artwork}.first),
-  method: :delete,
-  data: { confirm: "Are you sure?" } do %>
-    <i class="fas fa-bookmark"></i>
-  <% end %>
-<% end %>
+        <% @collections.each do |collection| %>
+          <%= simple_form_for [collection, artwork], url: collection_favourites_path, method: :post do | f | %>
+            <%= f.submit %>
+          <% end %>
+          <%= link_to collection.name, collection_artwork_collection_favourites_path(collection, artwork), method: :post %>
+        <% end %>
       </div>
       <div class="modal-footer">
         <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
