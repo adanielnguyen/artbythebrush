@@ -67,12 +67,10 @@ ActiveRecord::Schema.define(version: 2020_06_12_201551) do
   end
 
   create_table "collections", force: :cascade do |t|
-    t.bigint "favourite_id", null: false
     t.string "name"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
     t.bigint "user_id"
-    t.index ["favourite_id"], name: "index_collections_on_favourite_id"
     t.index ["user_id"], name: "index_collections_on_user_id"
   end
 
@@ -152,7 +150,6 @@ ActiveRecord::Schema.define(version: 2020_06_12_201551) do
   add_foreign_key "artworks", "users"
   add_foreign_key "collection_favourites", "collections"
   add_foreign_key "collection_favourites", "favourites"
-  add_foreign_key "collections", "favourites"
   add_foreign_key "curates", "artworks"
   add_foreign_key "curates", "galleries"
   add_foreign_key "favourites", "artworks"
