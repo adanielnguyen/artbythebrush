@@ -1,6 +1,6 @@
 class LikesController < ApplicationController
   before_action :set_artwork, only: %i[create]
-  before_action :set_like, only %i[destroy]
+  before_action :set_like, only: %i[destroy]
 
     def create
     @like = Like.new
