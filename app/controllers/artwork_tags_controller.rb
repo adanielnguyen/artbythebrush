@@ -1,5 +1,5 @@
 class ArtworkTagsController < ApplicationController
-  before_action :set_artwork_tags, only: %i[new create]
+  before_action :set_artwork_tag, only: %i[new create]
 
   def new
     @artwork_tag = ArtworkTag.new
@@ -16,7 +16,7 @@ class ArtworkTagsController < ApplicationController
 
   private
 
-  def set_artwork_tags
+  def set_artwork_tag
     @artwork = Artwork.find(params[:artwork_id])
   end
 end
