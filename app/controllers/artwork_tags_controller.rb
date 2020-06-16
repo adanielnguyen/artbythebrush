@@ -1,11 +1,11 @@
 class ArtworkTagsController < ApplicationController
+  before_action :set_artwork_tag, only: %i[new create]
+
   def new
     @artwork_tag = ArtworkTag.new
-    @artwork = Artwork.find(params[:artwork_id])
   end
 
   def create
-    @artwork = Artwork.find(params[:artwork_id])
     @tags = Tag.where(id: params[:artwork_tag][:tag])
     @tags.each do |tag|
       @artwork_tag = ArtworkTag.new(artwork: @artwork, tag: tag)
@@ -14,4 +14,9 @@ class ArtworkTagsController < ApplicationController
     redirect_to artwork_path(@artwork)
   end
 
+  private
+
+  def set_artwork_tag
+    @artwork = Artwork.find(params[:artwork_id])
+  end
 end
