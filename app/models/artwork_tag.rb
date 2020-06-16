@@ -1,6 +1,4 @@
 class ArtworkTag < ApplicationRecord
-  belongs_to :tag
   belongs_to :artwork
-
-  validates :tag, uniqueness: { scope: :artwork, message: "was already added"}
+  acts_as_taggable_on :tags
 end
