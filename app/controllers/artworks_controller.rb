@@ -1,10 +1,11 @@
 class ArtworksController < ApplicationController
+  before_action :set_artwork, only: %i[show edit update]
+
   def index
     @artworks = Artwork.all
   end
 
   def show
-    @artwork = Artwork.find(params[:id])
     @favourite = Favourite.new
     @like = Like.new
     @artworks = Artwork.all
@@ -28,17 +29,19 @@ class ArtworksController < ApplicationController
   end
 
   def edit
-    @artwork = Artwork.find(params[:id])
   end
 
   def update
-    @artwork = Artwork.find(params[:id])
     @artwork.update(artwork_update_params)
 
     redirect_to artwork_path
   end
 
   private
+
+  def set_artwork
+    @artwork = Artwork.find(params[:id])
+  end
 
   def artwork_update_params
     params.require(:artwork).permit(:name, :description, :genre, :medium, :date_created, images: [])

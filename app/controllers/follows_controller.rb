@@ -1,6 +1,7 @@
 class FollowsController < ApplicationController
+  before_action :set_follow, only: %i[button]
+  
   def button
-    @follow = Follow.find(params[:fan_id])
     @follow.save
   end
 
@@ -16,5 +17,11 @@ class FollowsController < ApplicationController
     if @follow.save
       redirect_to user_path
     end
+  end
+
+  private
+
+  def set_follow
+    @follow = Follow.find(params[:fan_id])
   end
 end

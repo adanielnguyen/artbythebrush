@@ -1,17 +1,16 @@
 class CollectionsController < ApplicationController
+  before_action :set_collection, only: %i[show windowshow update edit]
+  
   def index
     @collections = current_user.collections
-    
   end
 
   def show
-    @collection = Collection.find(params[:id])
     @artworks = @collection.artworks
-    # @favourites = Favourites.find(params[:id])
+    @favourites = Favourites.find(params[:id])
   end
 
-  def windowshow 
-    @collection = Collection.find(params[:id])
+  def windowshow
     @artworks = Artworks.find(params[:id])
     @favourites = Favourites.find(params[:id])
   end
@@ -21,7 +20,6 @@ class CollectionsController < ApplicationController
   end
 
   def create
-    
     @collection = Collection.new(collection_params)
     @collection.user = current_user
 
@@ -33,18 +31,20 @@ class CollectionsController < ApplicationController
   end
 
   def update
-    @collection = Collection.find(params[:id])
     @collection.update(collection_params)
 
     redirect_to collection_path
   end
 
   def edit
-  @collection = Collection.find(params[:id])
   end
 
 
   private
+
+  def set_collection
+    @collection = Collection.find(params[:id])
+  end
 
   def collection_params
     params.require(:collection).permit(:name, :artwork_id)

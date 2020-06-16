@@ -19,7 +19,7 @@
 </div>
  -->
 <div class="masonry-with-columns px-3">
-  <% @artworks.shuffle.each do |artwork| %>
+  <% @artworks.each do |artwork| %>
     <%= link_to artwork do %>
       <div class="art" >
         <%= cl_image_tag(artwork.images.first.key)%>

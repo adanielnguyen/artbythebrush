@@ -1,4 +1,5 @@
 class GalleriesController < ApplicationController
+  before_action :set_gallery, only: %i[show update edit destroy]
   def index
     @galleries = Gallery.all
   end
@@ -9,7 +10,6 @@ class GalleriesController < ApplicationController
   end
 
   def show
-    @gallery = Gallery.find(params[:id])
   end
 
   def create
@@ -30,22 +30,23 @@ class GalleriesController < ApplicationController
   end
 
   def update
-    @gallery = Gallery.find(params[:id])
     @gallery.update(gallery_params)
 
     redirect_to gallery_path
   end
 
   def edit
-    @gallery = Gallery.find(params[:id])
   end  
 
   def destroy
-    @gallery = Gallery.find(params[:id])
     @gallery.destroy
   end
 
   private
+
+  def set_gallery
+    @gallery = Gallery.find(params[:id])
+  end
 
   def gallery_params
     params.require(:gallery).permit(:start_date, :end_date, :description, :name, images: [])

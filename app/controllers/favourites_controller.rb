@@ -1,4 +1,7 @@
 class FavouritesController < ApplicationController
+  before_action :set_favourite, only %i[destroy]
+  before_action :set_artwork, only %i[create]
+
   def index
     @favourites = Favourite.where("artwork_id = ?", current_user.id)
     @favourites = Favourite.all.select {|favourite| favourite.artwork}
@@ -6,7 +9,6 @@ class FavouritesController < ApplicationController
   
   def create
     @favourite = Favourite.new
-    @artwork = Artwork.find(params[:artwork_id])
     @favourite.user = current_user
     @favourite.artwork = @artwork
 
@@ -18,11 +20,18 @@ class FavouritesController < ApplicationController
   end
 
   def destroy
-    @favourite = Favourite.find(params[:id])
     @favourite.destroy
-
     # no need for app/views/favourites/destroy.html.erb
     redirect_to root_path
+  end
+
+  private
+  def set_favourite
+    @favourite = Favourite.find(params[:id])
+  end
+
+  def set_artwork
+    @artwork = Artwork.find(params[:artwork_id])
   end
 end
 
