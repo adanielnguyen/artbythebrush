@@ -2,21 +2,24 @@
 
 <div class="cards">
 <% @artworks.each do |artwork| %>
-<%= link_to artwork do %>
- <div class="card content" data-aos="fade-up">
-    <div class="card-content">
-      <div class="card-img">
-        <%= cl_image_tag(artwork.images.first.key) %>
-      </div>
-      <div class="card-label">
-        <%= artwork.name %>
-      </div>
-      <div class="card-title">
-        <%= artwork.name %>
+  <%= link_to artwork do %>
+  <div class="card content" data-aos="fade-up">
+      <div class="card-content">
+        <div class="card-img">
+          <%= cl_image_tag(artwork.images.first.key) %>
+        </div>
+        <div class="card-label">
+        </div>
+        <div class="card-title">
+          <%= artwork.name %>
+          <% artwork.tag_list.each do |tag| %>
+            <%= tag.name %>
+            <%= link_to tag, tagged_path(tag: tag) %>
+          <% end %>
+        </div>
       </div>
     </div>
-  </div>
-<% end %>
+  <% end %>
 <% end %>
 
 <a href=""><%= link_to "Create new artwork", new_artwork_path %></a>

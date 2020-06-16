@@ -1,6 +1,14 @@
 class ArtworksController < ApplicationController
   before_action :set_artwork, only: %i[show edit update]
 
+  def tagged
+    if params[:tag].present?
+      @artworks = Artwork.tagged_with(params[:tag])
+    else
+      @artworks = Artwork.all
+    end
+  end
+
   def index
     @artworks = Artwork.all
   end
@@ -9,7 +17,7 @@ class ArtworksController < ApplicationController
     @favourite = Favourite.new
     @like = Like.new
     @artworks = Artwork.all
-    #@displayotherartwork = Artwork.all.select { |artwork| artwork}
+    @related_artworks = @artwork.find_related_tags
   end
 
   def new
@@ -44,11 +52,11 @@ class ArtworksController < ApplicationController
   end
 
   def artwork_update_params
-    params.require(:artwork).permit(:name, :description, :genre, :medium, :date_created, images: [])
+    params.require(:artwork).permit(:name, :description, :genre, :medium, :date_created, images: [], tag_list: [])
   end
 
   def artwork_params
-    params.require(:artwork).permit(:name, :description, :genre, :medium, :date_created, images: [])
+    params.require(:artwork).permit(:name, :description, :genre, :medium, :date_created, images: [], tag_list: [])
   end
 
 end

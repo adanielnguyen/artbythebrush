@@ -19,7 +19,7 @@
 </div>
  -->
 <div class="masonry-with-columns px-3">
-  <% @artworks.shuffle.each do |artwork| %>
+  <% @artworks.each do |artwork| %>
     <%= link_to artwork do %>
       <div class="art" >
         <%= cl_image_tag(artwork.images.first.key)%>
@@ -31,6 +31,9 @@
               <%= render "favourite_button", artwork: artwork %>
               <%= render "like_button", artwork: artwork %>
               <%= render "collection_modal", artwork: artwork %>
+              <% artwork.tag_list.each do |tag| %>
+                <%= link_to tag, tagged_path(tag: tag) %>
+              <% end %>
             <% end %>
           </div>
         </div>

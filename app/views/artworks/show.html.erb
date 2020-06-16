@@ -5,6 +5,12 @@
   <div class="artwork-image">
     <%= cl_image_tag(@artwork.images.first.key) %>
   </div>
+    <h3>Related artworks</h3>
+<ul>
+  <% @related_artworks.each do |r| %>
+    <li><%= r.name %></li>
+  <% end %>
+</ul>
     <%= render "pages/favourite_button", artwork: @artwork %>
     <%= render "pages/like_button", artwork: @artwork %>
     <h2><%= @artwork.name %></h2>
@@ -41,7 +47,7 @@
   <h1>Artist's Other Work </h1>
 </div>
 <div class="masonry-with-columns px-3">
-  <% @artworks.shuffle.each do |artwork| %>
+  <% @artworks.each do |artwork| %>
       <div class="art" >
         <%= cl_image_tag(artwork.images.first.key)%>
         <div class="card-description">

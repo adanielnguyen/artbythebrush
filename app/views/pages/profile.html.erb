@@ -12,7 +12,7 @@
 </div>
 
 <div class="masonry-with-columns px-3">
-  <% @artworks.shuffle.each do |artwork| %>
+  <% @artworks.each do |artwork| %>
       <div class="art" >
         <%= cl_image_tag(artwork.images.first.key)%>
         <div class="card-description">
