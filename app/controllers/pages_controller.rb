@@ -1,5 +1,5 @@
 class PagesController < ApplicationController
-  before_action :set_user, only: i%[profile]
+  before_action :set_user, only: %i[profile]
 
   def home
     @artworks = Artwork.all
