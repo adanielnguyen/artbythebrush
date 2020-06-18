@@ -12,16 +12,19 @@
   <div class="collapse navbar-collapse" id="navbarSupportedContent">
     <ul class="navbar-nav mr-auto">
       <li class="nav-item">
-        <%= link_to "My Collections", collections_path , class: "nav-link" %>
-      </li>
-      <li class="nav-item">
-        <%= link_to "Post My Work", new_artwork_path, class: "nav-link" %>
+        <%= link_to "Post My Art", new_artwork_path, class: "nav-link" %>
       </li>
       <li class="nav-item">
         <%= link_to "Galleries", galleries_path, class: "nav-link" %>
       </li>
       <li class="nav-item">
         <%= link_to "Curate my gallery", new_gallery_path, class: "nav-link" %>
+      </li>
+      <li class="nav-item">
+        <%= link_to "My Collections", collections_path , class: "nav-link" %>
+      </li>
+      <li class="nav-item">
+        <%= link_to "Profile", artist_path(current_user), class: "nav-link" %>
       </li>
       <li class="nav-item dropdown">
         <%= image_tag "https://kitt.lewagon.com/placeholder/users/ssaunier", class: "avatar dropdown-toggle", id: "navbarDropdown", data: { toggle: "dropdown" }, 'aria-haspopup': true, 'aria-expanded': false %>

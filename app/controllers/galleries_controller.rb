@@ -10,6 +10,7 @@ class GalleriesController < ApplicationController
   end
 
   def show
+    @gallery = Gallery.find(params[:id])
   end
 
   def create
@@ -22,7 +23,6 @@ class GalleriesController < ApplicationController
           @curate.gallery = @gallery
           @curate.artwork = Artwork.find(id)
         end
-      raise
       redirect_to gallery_path(@gallery)
     else
       render "new"
