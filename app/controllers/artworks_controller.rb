@@ -9,9 +9,14 @@ class ArtworksController < ApplicationController
     end
   end
 
-  def index
-    @artworks = Artwork.all
-  end
+  # def index
+  #   if params[:tag].present?
+  #     @artworks = Artwork.tagged_with(params[:tag])
+  #   else
+  #     @artworks = Artwork.all
+  #   end
+    
+  # end
 
   def show
     @favourite = Favourite.new

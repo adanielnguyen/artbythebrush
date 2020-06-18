@@ -15,6 +15,10 @@
 <div class="second-banner">
   <h2 class="second-title">Personalising Your Art By The Brush Experience</h2>
   <p class="paragraph">Select Some Genres You’re Interested In To Help Personalize Your Experience<br>Starting With Finding People To Follow</p>
+  <% @top_tags.each do |tag| %>
+    <%= link_to tag, tagged_path(tag: tag.name) %>
+    <%= cl_image_tag(Artwork.tagged_with(tag.name).first.images.first.key)%>
+  <% end %>
 </div>
 
 <!-- <div class="galleries">
@@ -35,7 +39,6 @@
           <% end %>
           <div class="d-flex">
             <% if user_signed_in? %>
-              <%= render "favourite_button", artwork: artwork %>
               <%= render "like_button", artwork: artwork %>
               <%= render "collection_modal", artwork: artwork %>
               <% artwork.tag_list.each do |tag| %>
