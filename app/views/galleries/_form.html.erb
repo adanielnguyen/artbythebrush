@@ -4,13 +4,20 @@
   <%= f.input :start_date %>
   <%= f.input :end_date %>
   <%= f.input :image, as: :file %>
-  <% my_artworks.each do |artwork| %>
-  <input type="checkbox" class="hidden" value="<%= artwork.id %>" name="post[artwork_ids][]" id="post_artwork_ids_<%= artwork.id %>">
-  <label for="post_artwork_ids_<%= artwork.id %>">
-    <%= artwork.name %>
-    <i class="fa fa-check"></i>
-  </label>
-<% end %>
-  
+
+  <div class="masonry-with-columns px-3">
+    <% my_artworks.each do |artwork| %>
+        <input type="checkbox" class="hidden" value="<%= artwork.id %>" name="post[artwork_ids][]" id="post_artwork_ids_<%= artwork.id %>">
+        <div class="art" >
+          <%= cl_image_tag(artwork.images.first.key)%>
+          <div class="card-description">
+            <p class=""><%= artwork.name %></p>
+          </div>
+    <% end %>
+  </div>
+
+
+
+
   <%= f.submit class: "btn btn-primary" %>
 <% end %>~

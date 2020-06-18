@@ -2,14 +2,18 @@
 
 
 <div class="first-component">
-  <div class="description-gallery">
-    <h2><%= @gallery.name %></h2>
-    <h3>Gallery Opening: <%= @gallery.start_date %> - <%@gallery.end_date%></h3>
-    <p> <%= @gallery.description%></p>
-  </div>
-  <div class="avatar-gallery">
-    <img src="https://www.vincentvangogh.org/images/self-portrait.jpg" alt="">
-    <button type="button" class="button">Admire</button>
+  <div>
+    <div class="description-gallery">
+      <h2><%= @gallery.name %></h2>
+      <h3>Gallery Opening: <%= @gallery.start_date %> - <%@gallery.end_date%></h3>
+      <p> <%= @gallery.description%></p>
+    </div>
+    <%= cl_image_tag(@gallery.image.key)%>
+
+    <div class="avatar-gallery">
+      <img src="https://www.vincentvangogh.org/images/self-portrait.jpg" alt="">
+      <button type="button" class="button">Admire</button>
+    </div>
   </div>
 </div>
 

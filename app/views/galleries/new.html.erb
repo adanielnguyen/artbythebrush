@@ -1,16 +1,5 @@
 <h1>Curate a New Gallery</h1>
 <h3>Select Your Artwork for Gallery</h3>
-<div class="masonry-with-columns px-3">
-  <% @artworks.each do |artwork| %>
-      <input type="checkbox" id="selectArtwork" value="selectArtwork">
-      <div class="art" >
-        <%= cl_image_tag(artwork.images.first.key)%>
-        <div class="card-description">
-          <p class=""><%= artwork.name %></p>
-        </div>
-  <% end %>
-</div>
-
 
 <%= render "form", my_artworks: @artworks %>
 
