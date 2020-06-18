@@ -11,7 +11,18 @@ class GalleriesController < ApplicationController
 
   def show
     @gallery = Gallery.find(params[:id])
+    @curates = Curate.all 
+    @artworks = Artwork.all
+    #@artworks = Artwork.where(params[:post]["artwork_ids"])
+    #@artworks = Artwork.all.select { |artwork| curates.artwork == curate}
+  #   @curates.each |curate|
+  #     if curate.gallery = @gallery
+  #       @curate.artwork = Artwork.find(id)
+  #     end
+  #   end
+  #   @artworks = Artwork.all.select { |artwork| curates.artwork == curate}
   end
+ 
 
   def create
     @gallery = Gallery.new(gallery_params)
