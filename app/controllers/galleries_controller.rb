@@ -6,18 +6,34 @@ class GalleriesController < ApplicationController
 
   def new
     @gallery = Gallery.new
-    @artworks = Artwork.all.select { |artwork| artwork.user_id == current_user.id}
+    @artworks = Artwork.all.select { |artwork| artwork.user == current_user}
   end
 
   def show
+    @gallery = Gallery.find(params[:id])
+    @curates = Curate.all 
+    @artworks = Artwork.all
+    #@artworks = Artwork.where(params[:post]["artwork_ids"])
+    #@artworks = Artwork.all.select { |artwork| curates.artwork == curate}
+  #   @curates.each |curate|
+  #     if curate.gallery = @gallery
+  #       @curate.artwork = Artwork.find(id)
+  #     end
+  #   end
+  #   @artworks = Artwork.all.select { |artwork| curates.artwork == curate}
   end
+ 
 
   def create
     @gallery = Gallery.new(gallery_params)
     @gallery.user = current_user
-    
 
     if @gallery.save
+        params[:post]["artwork_ids"].each do |id|
+          @curate = Curate.new
+          @curate.gallery = @gallery
+          @curate.artwork = Artwork.find(id)
+        end
       redirect_to gallery_path(@gallery)
     else
       render "new"

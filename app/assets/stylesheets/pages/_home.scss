@@ -1,16 +1,26 @@
 
+.banner-container {
+  position: relative;
+}
 
 .banner{
-  width: 329px;
-  height: 316px;
-  margin-top: 90px;
+  position: absolute;
+  display: block;
+  z-index: 1;
+  top: 20%;
+  
   margin-left: 95px;
+  margin-right: 200px;
 
+}
+
+.video {
+  position: relative;
 }
 .banner
   h1{
     font-family: 'Forum', cursive;
-    color: black;
+    color: white;
     font-size: 72px;
   }
 .brush-word{

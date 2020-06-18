@@ -54,6 +54,22 @@ h2{
     width: 1200px;
 }
 
+.masonry-with-columns {
+  columns: 6 300px;
+  column-gap: 1rem;
+  padding-top: 40px;
+  .art {
+    width: 150px;
+    display:inline-block;
+    width: 100%;
+    border: 10px;
+    border-color: red;
+
+    img {
+      width: 100%;
+    }
+  }
+}
 
 
 

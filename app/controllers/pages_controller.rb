@@ -4,7 +4,7 @@ class PagesController < ApplicationController
   def home
     @artworks = Artwork.all
     @favourite = Favourite.new
-    @collections = current_user.collections
+    @collections = current_user.collections || []
     @like = Like.new
   end
 
@@ -14,9 +14,11 @@ class PagesController < ApplicationController
     @favourite = Favourite.new
     @like = Like.new
   end
+  
+  private
 
-private
   def set_user
     @artist = User.find(params[:id])
   end
+
 end

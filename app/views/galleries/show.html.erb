@@ -1,14 +1,28 @@
 
+
+
 <div class="first-component">
   <div class="description-gallery">
-    <h2>An Introspective: Monet Claude</h2>
-    <h3>Gallery Opening: June - August 2019</h3>
-    <p> When inspiration comes to an artist, no matter whatever it is and wherever it comes,
-        from it makes him open up, expose his bare feelings to outsiders. It is exactly this openness
-        expressed by paint on canvas that gets noticed and that touches us.</p>
+    <h2><%= @gallery.name %></h2>
+    <h3>Gallery Opening: <%= @gallery.start_date %> - <%@gallery.end_date%></h3>
+    <p> <%= @gallery.description%></p>
   </div>
   <div class="avatar-gallery">
     <img src="https://www.vincentvangogh.org/images/self-portrait.jpg" alt="">
     <button type="button" class="button">Admire</button>
   </div>
 </div>
+
+<div class="masonry-with-columns px-3">
+  <% @artworks.each do |artwork| %>
+    <%= link_to artwork do %>
+      <div class="art" >
+        <%= cl_image_tag(artwork.images.first.key)%>
+        <div class="card-description">
+          <p class=""><%= artwork.name %></p>
+          <% end %> 
+        </div>
+      </div>
+  <% end %>
+</div>
+
