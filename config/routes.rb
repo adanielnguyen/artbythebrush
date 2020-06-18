@@ -3,7 +3,7 @@ Rails.application.routes.draw do
   root to: 'pages#home'
   
   get "artists/:id", to: 'pages#profile', as: "artist"
-  get '/tagged', to: "artworks#tagged", as: :tagged
+  get '/tagged', to: "pages#home", as: :tagged
 
   resources :users, only: [] do
     resources :follows, only: [:new, :create]

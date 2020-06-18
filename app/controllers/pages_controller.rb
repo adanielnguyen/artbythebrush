@@ -2,10 +2,16 @@ class PagesController < ApplicationController
   before_action :set_user, only: %i[profile]
 
   def home
-    @artworks = Artwork.all
+    if params[:tag].present?
+      @artworks = Artwork.tagged_with(params[:tag])
+    else
+      @artworks = Artwork.all
+    end
+
     @favourite = Favourite.new
     @collections = current_user.collections || []
     @like = Like.new
+    @top_tags = ActsAsTaggableOn::Tag.most_used(10)
   end
 
   def profile
