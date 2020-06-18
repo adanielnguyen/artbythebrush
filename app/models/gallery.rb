@@ -1,5 +1,5 @@
 class Gallery < ApplicationRecord
-  has_many_attached :images
+  has_one_attached :image
   belongs_to :user
   has_many :curates
   has_many :artworks, through: :curate
