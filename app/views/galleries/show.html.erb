@@ -14,12 +14,12 @@
 </div>
 
 <div class="masonry-with-columns px-3">
-  <% @artworks.each do |artwork| %>
-    <%= link_to artwork do %>
+  <% @curates.each do |curate| %>
+    <%= link_to curate.artwork do %>
       <div class="art" >
-        <%= cl_image_tag(artwork.images.first.key)%>
+        <%= cl_image_tag(curate.artwork.images.first.key)%>
         <div class="card-description">
-          <p class=""><%= artwork.name %></p>
+          <p class=""><%= curate.artwork.name %></p>
           <% end %> 
         </div>
       </div>

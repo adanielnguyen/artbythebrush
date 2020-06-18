@@ -11,8 +11,9 @@ class GalleriesController < ApplicationController
 
   def show
     @gallery = Gallery.find(params[:id])
-    @curates = Curate.all 
-    @artworks = Artwork.all
+    @curates = @gallery.curates
+
+    #@artworks = Artwork.all.select { |artwork|  }
     #@artworks = Artwork.where(params[:post]["artwork_ids"])
     #@artworks = Artwork.all.select { |artwork| curates.artwork == curate}
   #   @curates.each |curate|
@@ -29,10 +30,12 @@ class GalleriesController < ApplicationController
     @gallery.user = current_user
 
     if @gallery.save
+        
         params[:post]["artwork_ids"].each do |id|
           @curate = Curate.new
           @curate.gallery = @gallery
           @curate.artwork = Artwork.find(id)
+          @curate.save
         end
       redirect_to gallery_path(@gallery)
     else
