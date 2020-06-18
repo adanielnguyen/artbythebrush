@@ -14,6 +14,8 @@ class PagesController < ApplicationController
     @favourite = Favourite.new
     @like = Like.new
   end
+  
+  private
 
   def set_user
     @artist = User.find(params[:id])

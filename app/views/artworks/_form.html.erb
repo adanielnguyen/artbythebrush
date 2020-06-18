@@ -4,6 +4,7 @@
   <%= f.input :genre %>
   <%= f.input :medium %>
   <%= f.input :date_created %>
+  <%= f.input :tag_list, as: :check_boxes, collection: ["yellow", "blue", "baby" ] %>
   <%= f.input :images, as: :file, input_html: { multiple: true} %>
   <%= f.submit class: "btn btn-primary" %>
 <% end %>
