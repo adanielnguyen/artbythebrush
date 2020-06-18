@@ -4,6 +4,8 @@ class PagesController < ApplicationController
   def home
     if params[:tag].present?
       @artworks = Artwork.tagged_with(params[:tag])
+    elsif params[:query].present?
+      @artworks = Artwork.where("name ILIKE ?", "%#{params[:query]}%")
     else
       @artworks = Artwork.all
     end
