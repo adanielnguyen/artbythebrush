@@ -16,11 +16,10 @@ class ArtworksController < ApplicationController
   #     @artworks = Artwork.all
   #   end
     
-  # end
+  # endgit c
 
   def show
-    @collections = current_user.collections
-    @collection = Favourite.new
+    @favourite = Favourite.new
     @like = Like.new
     @artworks = Artwork.all
     @related_artworks = @artwork.find_related_tags
