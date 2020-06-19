@@ -6,7 +6,7 @@
       </div>
       <div class="video">
           <video height="auto" width="100%" autoplay="autoplay" loop muted>
-          <source src="https://res.cloudinary.com/dybthmrxc/video/upload/v1592444312/art_video_veikwz.mov" type="video/mp4">
+          <source src= <%= URI.encode("https://res.cloudinary.com/dybthmrxc/video/upload/v1592444312/art_video_veikwz.mov")%> type="video/mp4">
         Your browser does not support the video tag.
         </video>
     </div>
@@ -50,6 +50,7 @@
       </div>
   <% end %>
 </div>
+
 
 <div class="gallery-card px-3">
   <div class="card-trip">
