@@ -22,7 +22,7 @@
 <div class="card-grid-layout px-3">
   <% @artworks.each do |artwork| %>
     <%= link_to artwork, class: 'link-unstyled' do %>
-      <div class="art" >
+      <div class="art artwork-image" >
         <%= cl_image_tag(artwork.images.first.key)%>
         <div class="card-description">
           <p class="card-details d-flex justify-content-center"><%= artwork.name %></p>
