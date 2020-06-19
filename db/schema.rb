@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_06_16_093122) do
+ActiveRecord::Schema.define(version: 2020_06_19_002836) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -58,12 +58,10 @@ ActiveRecord::Schema.define(version: 2020_06_16_093122) do
   end
 
   create_table "collections", force: :cascade do |t|
-    t.bigint "favourite_id", null: false
     t.string "name"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
     t.bigint "user_id"
-    t.index ["favourite_id"], name: "index_collections_on_favourite_id"
     t.index ["user_id"], name: "index_collections_on_user_id"
   end
 
@@ -154,6 +152,7 @@ ActiveRecord::Schema.define(version: 2020_06_16_093122) do
     t.string "location"
     t.string "biography"
     t.date "DOB"
+    t.string "name"
     t.index ["email"], name: "index_users_on_email", unique: true
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
   end
@@ -162,7 +161,6 @@ ActiveRecord::Schema.define(version: 2020_06_16_093122) do
   add_foreign_key "artworks", "users"
   add_foreign_key "collection_favourites", "collections"
   add_foreign_key "collection_favourites", "favourites"
-  add_foreign_key "collections", "favourites"
   add_foreign_key "curates", "artworks"
   add_foreign_key "curates", "galleries"
   add_foreign_key "favourites", "artworks"
