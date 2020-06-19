@@ -1,6 +1,6 @@
 class CollectionFavouritesController < ApplicationController
-  before_action :set_collection, only %i[create]
-  before_action :set_artwork, only %i[create]
+  before_action :set_collection, only: %i[create]
+  before_action :set_artwork, only: %i[create]
 
   def create
     @collection_favourite = CollectionFavourite.new

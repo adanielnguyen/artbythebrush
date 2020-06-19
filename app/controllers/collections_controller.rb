@@ -7,7 +7,6 @@ class CollectionsController < ApplicationController
 
   def show
     @artworks = @collection.artworks
-    @favourites = Favourites.find(params[:id])
   end
 
   def windowshow

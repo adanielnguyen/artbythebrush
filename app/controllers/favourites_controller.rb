@@ -1,6 +1,6 @@
 class FavouritesController < ApplicationController
-  before_action :set_favourite, only %i[destroy]
-  before_action :set_artwork, only %i[create]
+  before_action :set_favourite, only: %i[destroy]
+  before_action :set_artwork, only: %i[create]
 
   def index
     @favourites = Favourite.where("artwork_id = ?", current_user.id)
