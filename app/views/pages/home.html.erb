@@ -17,7 +17,7 @@
   <p class="paragraph">Select Some Genres You’re Interested In To Help Personalize Your Experience<br>Starting With Finding People To Follow</p>
   <% @top_tags.each do |tag| %>
     <%= link_to tag, tagged_path(tag: tag.name) %>
-    <%= cl_image_tag(Artwork.tagged_with(tag.name).first.images.first.key)%>
+      <%= cl_image_tag(Artwork.tagged_with(tag.name).first.images.first.key, width: 24, height: 24, crop: :thumb) %>
   <% end %>
 </div>
 
