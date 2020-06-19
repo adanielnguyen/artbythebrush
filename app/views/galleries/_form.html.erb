@@ -5,7 +5,7 @@
   <%= f.input :end_date %>
   <%= f.input :image, as: :file %>
 
-  <div class="masonry-with-columns px-3">
+  <div class="card-grid-layout px-3">
     <% my_artworks.each do |artwork| %>
         <input type="checkbox" class="hidden" value="<%= artwork.id %>" name="post[artwork_ids][]" id="post_artwork_ids_<%= artwork.id %>">
         <div class="art" >
