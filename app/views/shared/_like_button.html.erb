@@ -5,7 +5,7 @@
     <% end %>
   <% end %>
 <% else %>
-  <%= link_to like_path(current_user.likes.select { |f| f.artwork == artwork}.first), method: :delete do %>
+  <%= link_to like_path(current_user.likes.select { |f| f.artwork == artwork}.first), method: :delete, class: 'btn btn-link' do %>
     <i class="fas fa-heart"></i>
   <% end %>
 <% end %>
