@@ -1,5 +1,5 @@
 <% if current_user.likes.select { |f| f.artwork == artwork}.empty? %>
-  <%= simple_form_for [artwork, @like] do |f| %>
+  <%= simple_form_for([artwork, @like], remote: true) do |f| %>
     <%= button_tag(type: 'submit', class: 'btn btn-link') do %>
       <i class="far fa-heart"></i>
       <% end %>

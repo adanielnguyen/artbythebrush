@@ -18,7 +18,7 @@
         <div class="card-description">
           <p class=""><%= artwork.name %></p>
           <% if user_signed_in? %>
-            <%= render "shared/favourite_button", artwork: artwork %>
+            <%= render "shared/collection_modal", artwork: artwork %>
             <%= render "shared/like_button", artwork: artwork %>
           <% end %>
         </div>

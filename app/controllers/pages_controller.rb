@@ -20,6 +20,7 @@ class PagesController < ApplicationController
     @artworks = Artwork.all.select {|artwork| artwork.user == current_user}
     @follow = Follow.new
     @favourite = Favourite.new
+    @collections = current_user.collections
     @like = Like.new
   end
   
