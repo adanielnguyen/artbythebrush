@@ -330,3 +330,16 @@
   font-size: 18px;
   color: #ffba00;
 }
+
+
+.form-grid-container {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-template-rows: 1fr;
+  gap: 1px 1px;
+  grid-template-areas: "form-grid artwork-grid";
+}
+
+.form-grid { grid-area: form-grid; }
+
+.artwork-grid { grid-area: artwork-grid; }
