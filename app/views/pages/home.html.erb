@@ -21,21 +21,21 @@
 
 <div class="card-grid-layout px-3">
   <% @artworks.each do |artwork| %>
-    <%= link_to artwork do %>
+    <%= link_to artwork, class: 'link-unstyled' do %>
       <div class="art" >
         <%= cl_image_tag(artwork.images.first.key)%>
         <div class="card-description">
-          <p class=""><%= artwork.name %></p>
+          <p class="card-details d-flex justify-content-center"><%= artwork.name %></p>
           <% end %>
-          <div class="d-flex">
             <% if user_signed_in? %>
-              <%= render "shared/like_button", artwork: artwork %>
+            <div class="d-flex justify-content-center">
+            <%= render "shared/like_button", artwork: artwork %>
               <%= render "shared/collection_modal", artwork: artwork %>
+            </div>
               <% artwork.tag_list.each do |tag| %>
                 <%= link_to tag, tagged_path(tag: tag) %>
               <% end %>
             <% end %>
-          </div>
         </div>
       </div>
   <% end %>
