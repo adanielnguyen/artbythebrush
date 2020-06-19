@@ -1,7 +1,7 @@
 
 
 
-<div class="first-component">
+<div class="">
   <div>
     <div class="description-gallery">
       <h2><%= @gallery.name %></h2>
@@ -17,7 +17,7 @@
   </div>
 </div>
 
-<div class="masonry-with-columns px-3">
+<div class="card-grid-layout px-3">
   <% @curates.each do |curate| %>
     <%= link_to curate.artwork do %>
       <div class="art" >

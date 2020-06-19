@@ -39,8 +39,8 @@
           <% end %>
           <div class="d-flex">
             <% if user_signed_in? %>
-              <%= render "like_button", artwork: artwork %>
-              <%= render "collection_modal", artwork: artwork %>
+              <%= render "shared/like_button", artwork: artwork %>
+              <%= render "shared/collection_modal", artwork: artwork %>
               <% artwork.tag_list.each do |tag| %>
                 <%= link_to tag, tagged_path(tag: tag) %>
               <% end %>
