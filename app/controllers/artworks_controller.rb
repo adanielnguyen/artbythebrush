@@ -19,7 +19,8 @@ class ArtworksController < ApplicationController
   # end
 
   def show
-    @favourite = Favourite.new
+    @collections = current_user.collections
+    @collection = Favourite.new
     @like = Like.new
     @artworks = Artwork.all
     @related_artworks = @artwork.find_related_tags
