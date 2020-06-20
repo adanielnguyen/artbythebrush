@@ -5,6 +5,6 @@
   <%= f.input :medium %>
   <%= f.input :date_created %>
   <%= f.input :tag_list, as: :check_boxes, collection: ["Art", "Paint", "Painting House", "Drawing", "Abstract", "Design", "Nature", "Artist", "Painter"] %>
-  <%= f.input :images, as: :file, input_html: { multiple: true} %>
+  <%= f.input :images, as: :file, input_html: { multiple: true}, class: "js-photo-upload" %>
   <%= f.submit class: "btn btn-primary" %>
 <% end %>
