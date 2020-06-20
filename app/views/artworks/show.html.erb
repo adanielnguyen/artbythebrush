@@ -22,12 +22,11 @@
       <p>
         <%= link_to artist_path(@artwork.user_id) do %>
         <img src="https://www.vincentvangogh.org/images/self-portrait.jpg" class="artist-avatar">
-        <h4 class="forum">Vincent Van Gogh</h3>
-        <p class="garamond"><%= rand(100..1000) %> Admires</p>
+        <h4 class="forum"><%= @artwork.user.name %></h3>
+        <p class="garamond follows-count"><%= @artwork.user.follows.count %> Admires</p>
         <% end %>
         <p>
-          <%= link_to "Follow", user_follows_path(@artwork.user), class: "btn" %>
-          <button type="button" class="button">Contact</button>
+          <%= link_to "Follow", user_follows_path(@artwork.user), method: :post, class: "btn btn-follow", remote: true %>
         </p>
       </p>
     </div>

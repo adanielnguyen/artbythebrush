@@ -1,6 +1,6 @@
 class FollowsController < ApplicationController
   before_action :set_follow, only: %i[button]
-  
+
   def button
     @follow.save
   end
@@ -9,14 +9,15 @@ class FollowsController < ApplicationController
     @follows = Follow.current_user.followed_relationships.all
   end
 
-  def create
-    raise
-    @follow = Follow.new
-    @follow.fan_id = current_user.id
+  def new
 
-    if @follow.save
-      redirect_to user_path
-    end
+  end
+
+  def create
+    @follow = Follow.new
+    @follow.fan = current_user
+    @follow.record = User.find(params[:user_id])
+    @follow.save
   end
 
   private
