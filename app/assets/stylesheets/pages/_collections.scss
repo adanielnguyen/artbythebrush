@@ -1,11 +1,21 @@
 .index-collection-container {
+  width: 100%;
   margin-left: 100px;
+  margin-top: 20px;
 }
 
 #t-cards {
   padding-top: 80px;
-  padding-bottom: 80px;
-  background-color: #345;    
+  padding-bottom: 80px;  
+}
+.collection-grid-container {
+  width: 100%
+}
+
+.img-circle {
+  width: 70px;
+  height: 70px;
+  border-radius: 50%;
 }
 
 /********************************/
@@ -13,7 +23,7 @@
 /********************************/
 .panel.panel-card {
   position: relative;
-  height: 241px;
+  height: 300px;
   border: none;
   overflow: hidden;
 }
@@ -79,6 +89,7 @@
   max-width: 100%;
   margin: 0 auto;
   background-color: #fff;
+
 } 
 
 

@@ -19,10 +19,11 @@
     <div class="container-gallery">
         <div class="row masonary-layout">
             <!--Start single exhibition Box-->
+              <% @galleries.each do |gallery| %>
             <div class="col-xl-4 col-lg-6 col-md-6 col-sm-12">
                 <div class="single-exhibition-box style4">
                     <div class="img-holder">
-                        <img src="http://mehedi.asiandevelopers.com/demo/museum/images/resources/exhibition-1.jpg" alt="Awesome Image">
+                        <%= cl_image_tag(gallery.image.key)%>
                         <div class="overlay-style-one bg1">
                             <div class="zoom-button">
                                 <a class="lightbox-image" data-fancybox="gallery" href="images/resources/exhibition-1.jpg">
@@ -34,8 +35,9 @@
 
                     <div class="text-holder text-center">
                         <span>Exhibition</span>
-                        <h2><a href="#">The Museum is Located in St- Germain Castle</a></h2>
-                        <p>From 6 Sept 2020 until 7 Jan 2020</p>
+                        <h2><%= gallery.name %></h2>
+                        <h4>By <%= gallery.user.name %></h4>
+                        <p>From <%= gallery.start_date %> until <%=gallery.end_date%></p>
                         <div class="bottom">
                             <div class="review-box">
                                 <ul>
@@ -52,40 +54,7 @@
                 </div>
             </div>
         </div>
-        <!--Start single exhibition Box-->
-            <div class="col-xl-4 col-lg-6 col-md-6 col-sm-12">
-                <div class="single-exhibition-box style4">
-                    <div class="img-holder">
-                        <img src="http://mehedi.asiandevelopers.com/demo/museum/images/resources/exhibition-2.jpg" alt="Awesome Image">
-                        <div class="overlay-style-one bg1">
-                            <div class="zoom-button">
-                                <a class="lightbox-image" data-fancybox="gallery" href="images/resources/exhibition-2.jpg">
-                                    <i class="fa fa-search-plus" aria-hidden="true"></i>
-                                </a>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="text-holder text-center">
-                        <span>Display</span>
-                        <h2><a href="#">Healing Arts with Memory, Meaning and Might</a></h2>
-                        <p>From 16 NOV, 2020 Until 7 Jan 2021</p>
-                        <div class="bottom">
-                            <div class="review-box">
-                                <ul>
-                                    <li><i class="fa fa-star"></i></li>
-                                    <li><i class="fa fa-star"></i></li>
-                                    <li><i class="fa fa-star"></i></li>
-                                    <li><i class="fa fa-star"></i></li>
-                                    <li><i class="fa fa-star"></i></li>
-                                </ul>
-                            </div>
-                            <div class="value">$ 60.00</div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-
-
+        <% end %>
 
 
         <div class="row">
