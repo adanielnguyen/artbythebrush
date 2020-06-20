@@ -1,10 +1,13 @@
 <%= simple_form_for @artwork, remote: true do |f| %>
+  <div class="image-form-style">
+    <%= f.input :images, as: :file, input_html: { multiple: true} %>
+  </div>
+  
+  <%= f.input :tag_list, as: :check_boxes, collection: ["Art", "Paint", "Painting House", "Drawing", "Abstract", "Design", "Nature", "Artist", "Painter"] %>
   <%= f.input :name %>
   <%= f.input :description %>
   <%= f.input :genre %>
   <%= f.input :medium %>
   <%= f.input :date_created %>
-  <%= f.input :tag_list, as: :check_boxes, collection: ["Art", "Paint", "Painting House", "Drawing", "Abstract", "Design", "Nature", "Artist", "Painter"] %>
-  <%= f.input :images, as: :file, input_html: { multiple: true} %>
   <%= f.submit class: "btn btn-primary" %>
 <% end %>

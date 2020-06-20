@@ -8,16 +8,7 @@ class ArtworksController < ApplicationController
       @artworks = Artwork.all
     end
   end
-
-  # def index
-  #   if params[:tag].present?
-  #     @artworks = Artwork.tagged_with(params[:tag])
-  #   else
-  #     @artworks = Artwork.all
-  #   end
-    
-  # endgit c
-
+  
   def show
     @favourite = Favourite.new
     @like = Like.new
@@ -47,7 +38,6 @@ class ArtworksController < ApplicationController
 
   def update
     @artwork.update(artwork_update_params)
-
     redirect_to artwork_path
   end
 
