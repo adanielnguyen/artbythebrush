@@ -1,0 +1,6 @@
+function updateDom(){
+  const follows = document.querySelector(".follows-count");
+  follows.innerText = '<%= @follow.record.follows.count%> Admires'
+  // console.log(card);
+}
+updateDom();

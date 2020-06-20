@@ -13,7 +13,7 @@ class LikesController < ApplicationController
     @like.destroy
 
     # no need for app/views/favourites/destroy.html.erb
-    redirect_to root_path
+
   end
 
   private
