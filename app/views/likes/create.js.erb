@@ -1,0 +1,6 @@
+function updateDom(){
+  const card = document.getElementById("artwork-like-panel-<%=@artwork.id%>");
+  card.innerHTML = '<%= j render "shared/like_button", artwork:@artwork%>'
+  // console.log(card);
+}
+updateDom();
