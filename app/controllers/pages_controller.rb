@@ -14,7 +14,7 @@ class PagesController < ApplicationController
     end
 
     @favourite = Favourite.new
-    @collections = current_user.collections || []
+    @collections = current_user ? current_user.collections : []
     @like = Like.new
     @top_tags = ActsAsTaggableOn::Tag.most_used(10)
   end
