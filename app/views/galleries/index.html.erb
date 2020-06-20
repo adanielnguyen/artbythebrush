@@ -1,8 +1,7 @@
 
-<section class="exhibitions-area exhibitions-page">
-    <h4 class="headertext">Current Opening Galleries</h4>
+
 <!--Start breadcrumb area-->
-<section class="breadcrumb-area" style="background-image: url(http://mehedi.asiandevelopers.com/demo/museum/images/slides/v1-3.jpg);">
+<%# <section class="breadcrumb-area" style="background-image: url(https://s3.amazonaws.com/files.collageplatform.com.prod/image_cache/1600x550/5b363dcb6aa72c840f8e552f/96740a9a689ea69190ad5c0088c3edb0.jpeg);">
     <div class="container-gallery">
         <div class="row">
             <div class="col-xl-12">
@@ -14,8 +13,22 @@
             </div>
         </div>
     </div>
-</section>
+</section> %>
+
+<div class="banner-container" height="980px">
+    <div class="banner" >
+      <h1>CURRENT<br> <spam class="brush-word">EXHIBITIONS</spam></h1>
+      </div>
+      <div class="video">
+          <video height="auto" width="100%" autoplay="autoplay" loop muted>
+          <source src= <%= URI.encode("https://res.cloudinary.com/dybthmrxc/video/upload/v1592680176/gallery-short_k5awm0.mov")%> type="video/mp4">
+        Your browser does not support the video tag.
+        </video>
+    </div>
+  </div>
+
 <!--End breadcrumb area-->
+<section class="exhibitions-area exhibitions-page">
     <div class="container-gallery">
         <div class="row masonary-layout">
             <!--Start single exhibition Box-->

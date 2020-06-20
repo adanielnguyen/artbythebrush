@@ -58,6 +58,24 @@
   }
 }
 
+.banner-container {
+  position: relative;
+}
+
+.banner{
+  position: absolute;
+  display: block;
+  z-index: 1;
+  top: 20%;
+  
+  margin-left: 95px;
+  margin-right: 200px;
+
+}
+
+.video2 {
+  position: relative;
+}
 
 
 /***
