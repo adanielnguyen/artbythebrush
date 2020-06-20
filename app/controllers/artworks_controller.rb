@@ -23,6 +23,7 @@ class ArtworksController < ApplicationController
     @like = Like.new
     @artworks = Artwork.all
     @related_artworks = @artwork.find_related_tags
+    @collections = current_user.collections
   end
 
   def new
