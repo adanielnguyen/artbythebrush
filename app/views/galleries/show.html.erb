@@ -1,11 +1,23 @@
 
+<section class="exhibitions-area exhibitions-page">
+    <h4 class="headertext">Current Opening Galleries</h4>
+<!--Start breadcrumb area-->
+<section class="breadcrumb-area cover" style="background-image: url('<%= cl_image_path(@gallery.image.key)%>');">
+    <div class="container-gallery">
+        <div class="row">
+            <div class="col-xl-12">
+                <div class="inner-content clearfix">
+                    <div class="title">
+                        <h1><%= @gallery.name %></h1>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+<!--End breadcrumb area-->
 
-
-<div class="gallery-cover-photo" style="background-image: url('<%= cl_image_path(@gallery.image.key)%>');">
-  
-</div>
-  
-  <div>
+<div class="gallery-show-description">
     <div class="description-gallery">
       <h2><%= @gallery.name %></h2>
       <h3><%= @gallery.user.name %></h3>
@@ -13,12 +25,11 @@
       <p> <%= @gallery.description%></p>
     </div>
 
-
-    <div class="avatar-gallery">
-      <img src="https://www.vincentvangogh.org/images/self-portrait.jpg" alt="">
+    <div class="image-profile">
+      <img src="https://www.vincentvangogh.org/images/self-portrait.jpg" class="avatar-gallery" alt="">
       <button type="button" class="button">Admire</button>
     </div>
-  </div>
+</div>
 
 
 <div class="card-grid-layout px-3">
@@ -33,4 +44,18 @@
       </div>
   <% end %>
 </div>
+
+<div class="gallery-show-layout px-3">
+  <% @curates.each do |curate| %>
+    <%= link_to curate.artwork do %>
+      <div class="art2" >
+        <%= cl_image_tag(curate.artwork.images.first.key)%>
+        <div class="card-description">
+          <p class=""><%= curate.artwork.name %></p>
+          <% end %> 
+        </div>
+      </div>
+  <% end %>
+</div>
+
 

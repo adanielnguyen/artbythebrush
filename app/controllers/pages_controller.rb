@@ -4,10 +4,13 @@ class PagesController < ApplicationController
   def home
     if params[:tag].present?
       @artworks = Artwork.tagged_with(params[:tag])
+      @banner = false
     elsif params[:query].present?
       @artworks = Artwork.where("name ILIKE ?", "%#{params[:query]}%")
+      @banner = false
     else
       @artworks = Artwork.all
+      @banner = true
     end
 
     @favourite = Favourite.new
@@ -23,7 +26,7 @@ class PagesController < ApplicationController
     @collections = current_user.collections
     @like = Like.new
   end
-  
+
   private
 
   def set_user
