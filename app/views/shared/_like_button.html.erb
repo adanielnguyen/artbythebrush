@@ -1,11 +1,13 @@
-<% if current_user.likes.select { |f| f.artwork == artwork}.empty? %>
-  <%= simple_form_for([artwork, @like], remote: true) do |f| %>
-    <%= button_tag(type: 'submit', class: 'btn btn-link') do %>
-      <i class="far fa-heart"></i>
+<div id="artwork-like-panel-<%=artwork.id%>">
+    <% if current_user.likes.select { |f| f.artwork == artwork}.empty? %>
+    <%= simple_form_for([artwork, @like], remote: true) do |f| %>
+      <%= button_tag(type: 'submit', class: 'btn btn-link') do %>
+        <i class="far fa-heart"></i>
+        <% end %>
       <% end %>
+    <% else %>
+      <%= link_to like_path(current_user.likes.select { |f| f.artwork == artwork}.first), method: :delete, class: 'btn btn-link' do %>
+        <i class="fas fa-heart"></i>
     <% end %>
-  <% else %>
-    <%= link_to like_path(current_user.likes.select { |f| f.artwork == artwork}.first), method: :delete, class: 'btn btn-link' do %>
-      <i class="fas fa-heart"></i>
   <% end %>
-<% end %>
+</div>

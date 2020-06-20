@@ -1,4 +1,5 @@
-<div class="banner-container" height="980px">
+<% if @banner %>
+  <div class="banner-container" height="980px">
     <div class="banner" >
       <h1>WELCOME<br>TO<br>ART BY<br>THE <spam class="brush-word">BRUSH</spam></h1>
       </div>
@@ -8,21 +9,22 @@
         Your browser does not support the video tag.
         </video>
     </div>
-</div>
+  </div>
 
-<div class="second-banner">
+  <div class="second-banner">
   <h2 class="second-title">Personalising Your Art By The Brush Experience</h2>
   <p class="paragraph">Select Some Genres You’re Interested In To Help Personalize Your Experience<br>Starting With Finding People To Follow</p>
   <% @top_tags.each do |tag| %>
     <%= link_to tag, tagged_path(tag: tag.name) %>
       <%= cl_image_tag(Artwork.tagged_with(tag.name).first.images.first.key, width: 24, height: 24, crop: :thumb) %>
   <% end %>
-</div>
+  </div>
+<% end %>
 
 <div class="card-grid-layout px-3">
   <% @artworks.each do |artwork| %>
     <%= link_to artwork, class: 'link-unstyled' do %>
-      <div class="art artwork-image" >
+      <div class="art artwork-image" id="artwork-<%= artwork.id %>">
         <%= cl_image_tag(artwork.images.first.key)%>
         <div class="card-description">
           <p class="card-details d-flex justify-content-center"><%= artwork.name %></p>

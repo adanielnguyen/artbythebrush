@@ -2,16 +2,11 @@ class LikesController < ApplicationController
   before_action :set_artwork, only: %i[create]
   before_action :set_like, only: %i[destroy]
 
-    def create
+  def create
     @like = Like.new
     @like.user = current_user
     @like.artwork = @artwork
-
-    if @like.save
-      redirect_to request.referrer
-    else
-      render 'home'
-    end
+    @like.save
   end
 
   def destroy
