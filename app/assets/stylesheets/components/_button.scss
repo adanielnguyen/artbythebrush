@@ -10,6 +10,10 @@
   }
 }
 
+.submit-photo-button {
+  padding-left: 0;
+}
+
 btn:hover .follow-btn {
   color: rgb(166,216,216)!important;
 }
@@ -73,15 +77,3 @@ btn:hover .follow-btn {
   font-size: 14px!important;
 }
 
-//=== Button styling, semi-ignore
-.btn {
-  background: none;
-  border: none;
-  cursor: pointer;
-  line-height: 1.5;
-  font: 400 1.2rem 'forum', sans-serif;
-  letter-spacing: 0.05rem;
-  
-  
-  &:focus { outline: 2px dotted #55d7dc; }
-}
