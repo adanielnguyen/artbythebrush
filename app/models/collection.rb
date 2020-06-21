@@ -4,4 +4,6 @@ class Collection < ApplicationRecord
   has_many :collection_favourites
   has_many :favourites, through: :collection_favourites
   has_many :artworks, through: :favourites
+
+  validates :name, presence: true
 end
