@@ -24,9 +24,9 @@
 <div class="card-grid-layout px-3">
   <% @artworks.each do |artwork| %>
     <%= link_to artwork, class: 'link-unstyled' do %>
-      <div class="art artwork-image" id="artwork-<%= artwork.id %>">
+      <figure class="art card__hover" id="artwork-<%= artwork.id %>">
         <%= cl_image_tag(artwork.images.first.key)%>
-        <div class="card-description mouse-over-view id=">
+        <div class="card-description">
           <p class="card-details d-flex justify-content-center"><%= artwork.name %></p>
           <% end %>
             <% if user_signed_in? %>
@@ -39,7 +39,7 @@
               <% end %>
             <% end %>
         </div>
-      </div>
+      </figure>
   <% end %>
 </div>
 
