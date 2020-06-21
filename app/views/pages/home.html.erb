@@ -26,7 +26,7 @@
     <%= link_to artwork, class: 'link-unstyled' do %>
       <div class="art artwork-image" id="artwork-<%= artwork.id %>">
         <%= cl_image_tag(artwork.images.first.key)%>
-        <div class="card-description">
+        <div class="card-description mouse-over-view id=">
           <p class="card-details d-flex justify-content-center"><%= artwork.name %></p>
           <% end %>
             <% if user_signed_in? %>
