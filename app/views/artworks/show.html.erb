@@ -28,7 +28,7 @@
         <p class="garamond follows-count"><%= @artwork.user.follows.count %> Admires</p>
         <% end %>
         <p>
-          <%= link_to "Follow", user_follows_path(@artwork.user), method: :post, class: "btn btn-follow", remote: true %>
+          <%= link_to "Follow", user_follows_path(@artwork.user), method: :post, class: "linked-unstyled", id: "highlight", remote: true %>
         </p>
       </p>
     </div>
