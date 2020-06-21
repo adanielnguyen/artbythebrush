@@ -1,5 +1,17 @@
-<h1>Curate a New Gallery</h1>
-<h3>Select Your Artwork for Gallery</h3>
+<div class="banner-container" height="980px">
+    <div class="banner" >
+      <h1>CURATE<br> <spam class="brush-word">GALLERY</spam></h1>
+      </div>
+      <div class="video">
+          <video height="auto" width="100%" autoplay="autoplay" loop muted>
+          <source src= <%= URI.encode("https://res.cloudinary.com/dybthmrxc/video/upload/v1592751084/ezgif-3-0bec3ed14ba1_iib8vs.mp4")%> type="video/mp4">
+        Your browser does not support the video tag.
+        </video>
+    </div>
+  </div>
 
-<%= render "form", my_artworks: @artworks %>
+<div class="form-container d-flex justify-content-center garamond"> 
+  <%= render "form", my_artworks: @artworks %>
+</div>
+
 
