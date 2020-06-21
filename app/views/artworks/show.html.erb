@@ -49,12 +49,15 @@
 </div>
 <div class="card-grid-layout px-3">
   <% @artworks.each do |artwork| %>
-      <div class="art" >
-        <%= cl_image_tag(artwork.images.first.key)%>
-        <div class="card-description">
-          <p class=""><%= artwork.name %></p>
-        </div>
-      </div>
+    <%= link_to artwork, class: 'link-upstyled' do %>
+      <figure class="art" >
+          <%= cl_image_tag(artwork.images.first.key)%>
+          <div class="card-description">
+            <p class="card-details"><%= artwork.name %></p>
+          </div>
+        </figure>
+    <% end %>
+      
   <% end %>
 </div>
 
