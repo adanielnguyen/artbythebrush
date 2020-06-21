@@ -1,12 +1,14 @@
 <%= simple_form_for @gallery, class: "forum" do |f| %>
 <div class="form-grid-container">
-  <div class="form-grid">
+  <div class="form-grid image-form-style">
     <%= f.input :name %>
     <%= f.input :description %>
     <%= f.input :start_date %>
     <%= f.input :end_date %>
     <%= f.input :image, as: :file %>
-    <%= f.submit class: "btn btn-primary" %>
+    <div class="" id="highlight">
+      <%= f.submit class: "btn btn-clear submit-photo-button" %>
+    </div>
   </div>
   <div class="artwork-grid">
     <div class="card-grid-layout px-3">
