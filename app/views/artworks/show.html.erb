@@ -10,8 +10,11 @@
     <li><%= r.name %></li>
   <% end %>
 </ul>
-    <%= render "shared/collection_modal", artwork: @artwork %>
+  <div class="d-flex">
     <%= render "shared/like_button", artwork: @artwork %>
+    <%= render "shared/collection_modal", artwork: @artwork %>
+  </div>
+    
     <h2><%= @artwork.name %></h2>
   <div class="flex-info">
     <div class="flex-description">
