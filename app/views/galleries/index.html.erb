@@ -18,21 +18,21 @@
 <div class="banner-container" height="980px">
     <div class="banner" >
       <h1>CURRENT<br> <spam class="brush-word">EXHIBITIONS</spam></h1>
-      </div>
-      <div class="video">
-          <video height="auto" width="100%" autoplay="autoplay" loop muted>
+  </div>
+  <div class="video">
+      <video height="auto" width="100%" autoplay="autoplay" loop muted>
           <source src= <%= URI.encode("https://res.cloudinary.com/dybthmrxc/video/upload/v1592680176/gallery-short_k5awm0.mov")%> type="video/mp4">
-        Your browser does not support the video tag.
+            Your browser does not support the video tag.
         </video>
     </div>
-  </div>
+</div>
 
 <!--End breadcrumb area-->
 <section class="exhibitions-area exhibitions-page">
     <div class="container-gallery">
         <div class="row masonary-layout">
             <!--Start single exhibition Box-->
-              <% @galleries.each do |gallery| %>
+            <% @galleries.each do |gallery| %>
             <div class="col-xl-4 col-lg-6 col-md-6 col-sm-12">
                 <div class="single-exhibition-box style4">
                     <div class="img-holder">
