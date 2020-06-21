@@ -17,15 +17,15 @@
     <div class="flex-description">
       <p class="garamond"><%= @artwork.description %></p>
     </div>
-    <div class="flex-avatar">
+    <div class="flex-avatar text-decoration-none">
       <p>
         <%= link_to artist_path(@artwork.user_id) do %>
         <img src="https://www.vincentvangogh.org/images/self-portrait.jpg" class="artist-avatar">
-        <h4 class="forum"><%= @artwork.user.name %></h3>
-          <p class="garamond follows-count"><%= @artwork.user.follows.count %> Admires</p>
+        <h4 class="forum remove-underline"><%= @artwork.user.name %></h3>
+          <p class="garamond follows-count remove-underline"><%= @artwork.user.follows.count %> Admires</p>
           <% end %>
           <p>
-            <%= link_to "Follow", user_follows_path(@artwork.user), method: :post, class: "linked-unstyled", id: "highlight", remote: true %>
+            <%= link_to "Follow", user_follows_path(@artwork.user), method: :post, class: "btn draw-border", remote: true %>
           </p>
         </p>
       </div>
@@ -47,7 +47,7 @@
   <div class="card-grid-layout px-3">
     <% @artworks.each do |artwork| %>
     <%= link_to artwork, class: 'link-upstyled' do %>
-    <figure class="art" >
+    <figure class="art card__hover" >
       <%= cl_image_tag(artwork.images.first.key)%>
       <div class="card-description">
         <p class="card-details"><%= artwork.name %></p>
