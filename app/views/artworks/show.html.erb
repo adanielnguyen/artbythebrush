@@ -1,21 +1,18 @@
-
-
-
 <div class="artwork-card">
   <div class="artwork-image">
     <%= cl_image_tag(@artwork.images.first.key) %>
   </div>
-<ul>
-  <% @related_artworks.each do |r| %>
+  <ul>
+    <% @related_artworks.each do |r| %>
     <li><%= r.name %></li>
-  <% end %>
-</ul>
+    <% end %>
+  </ul>
   <div class="d-flex">
     <%= render "shared/like_button", artwork: @artwork %>
     <%= render "shared/collection_modal", artwork: @artwork %>
   </div>
-    
-    <h2 class="forum text-left"><%= @artwork.name %></h2>
+
+  <h2 class="forum text-left"><%= @artwork.name %></h2>
   <div class="flex-info">
     <div class="flex-description">
       <p class="garamond"><%= @artwork.description %></p>
@@ -25,40 +22,40 @@
         <%= link_to artist_path(@artwork.user_id) do %>
         <img src="https://www.vincentvangogh.org/images/self-portrait.jpg" class="artist-avatar">
         <h4 class="forum"><%= @artwork.user.name %></h3>
-        <p class="garamond follows-count"><%= @artwork.user.follows.count %> Admires</p>
-        <% end %>
-        <p>
-          <%= link_to "Follow", user_follows_path(@artwork.user), method: :post, class: "linked-unstyled", id: "highlight", remote: true %>
+          <p class="garamond follows-count"><%= @artwork.user.follows.count %> Admires</p>
+          <% end %>
+          <p>
+            <%= link_to "Follow", user_follows_path(@artwork.user), method: :post, class: "linked-unstyled", id: "highlight", remote: true %>
+          </p>
         </p>
-      </p>
+      </div>
     </div>
   </div>
-</div>
 
 
-<div>
+  <div>
 
 
 
-</div>
+  </div>
 
 
-<div>
+  <div>
 
-  <h2 class="forum text-center mt-5">Artist's Other Work </h2>
-</div>
-<div class="card-grid-layout px-3">
-  <% @artworks.each do |artwork| %>
+    <h2 class="forum text-center mt-5">Artist's Other Work </h2>
+  </div>
+  <div class="card-grid-layout px-3">
+    <% @artworks.each do |artwork| %>
     <%= link_to artwork, class: 'link-upstyled' do %>
-      <figure class="art" >
-          <%= cl_image_tag(artwork.images.first.key)%>
-          <div class="card-description">
-            <p class="card-details"><%= artwork.name %></p>
-          </div>
-        </figure>
+    <figure class="art" >
+      <%= cl_image_tag(artwork.images.first.key)%>
+      <div class="card-description">
+        <p class="card-details"><%= artwork.name %></p>
+      </div>
+    </figure>
     <% end %>
-      
-  <% end %>
-</div>
+
+    <% end %>
+  </div>
 
 

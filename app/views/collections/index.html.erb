@@ -1,24 +1,24 @@
-<head>    
+<head>
 
-<script src="//code.jquery.com/jquery-1.11.1.min.js"></script>
-<!------ Include the above in your HEAD tag ---------->
+    <script src="//code.jquery.com/jquery-1.11.1.min.js"></script>
+    <!------ Include the above in your HEAD tag ---------->
 </head>
 
 
 
 
-<div class="index-collection-container"> 
+<div class="index-collection-container">
   <h1>My Collections </h1>
   <a href=""><%= link_to  "Create new collection", new_collection_path %></a>
 
 </div>
 
 
-  <section id="t-cards">
+<section id="t-cards">
 
     <div class="container">
         <div class="row">
-        <% @collections.each do |collection| %>
+            <% @collections.each do |collection| %>
 
             <div class="col-sm-6 col-md-3">
                 <div class="panel panel-default panel-card">
@@ -31,35 +31,35 @@
                     </div>
                     <div class="panel-body text-center">
                         <%= link_to collection do %>
-                          <div class="">
+                        <div class="">
                           <p><%= collection.name %></p>
-                          </div>
-                          <% end %>
-                    </div>
-                    <div class="panel-thumbnails">
-                        <div class="row">
-                            <div class="col-xs-4">
-                                <div class="thumbnail">
-                                    <img src="https://i.pinimg.com/originals/97/20/49/972049d0a1345e177b7a4676514b9bc4.jpg" />
-                                </div>
+                      </div>
+                      <% end %>
+                  </div>
+                  <div class="panel-thumbnails">
+                    <div class="row">
+                        <div class="col-xs-4">
+                            <div class="thumbnail">
+                                <img src="https://i.pinimg.com/originals/97/20/49/972049d0a1345e177b7a4676514b9bc4.jpg" />
                             </div>
-                            <div class="col-xs-4">
-                                <div class="thumbnail">
-                                    <img src="http://placemi.com/71mf8/60x60" />
-                                </div>
+                        </div>
+                        <div class="col-xs-4">
+                            <div class="thumbnail">
+                                <img src="http://placemi.com/71mf8/60x60" />
                             </div>
-                            <div class="col-xs-4">
-                                <div class="thumbnail">
-                                    <img src="http://placemi.com/1pdrw/60x60" />
-                                </div>
+                        </div>
+                        <div class="col-xs-4">
+                            <div class="thumbnail">
+                                <img src="http://placemi.com/1pdrw/60x60" />
                             </div>
                         </div>
                     </div>
-            	</div>   
-    		</div>
+                </div>
+            </div>
+        </div>
         <% end %>
-	    </div>
     </div>
-    
+</div>
+
 </section>
 
