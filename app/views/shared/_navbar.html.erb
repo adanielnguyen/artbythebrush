@@ -2,7 +2,7 @@
   <div class="d-flex">
     <%=link_to image_tag("https://res.cloudinary.com/dybthmrxc/image/upload/v1592450846/logo_e3ccce.png", :style => "height:65px"), "/", class: "navbar-brand"%>
 
-    <%= form_tag root_path, class: "d-flex p-2", remote: true do %>
+    <%= form_tag root_path, class: "d-flex p-2 search-width", remote: true do %>
       <%= text_field_tag :query,
         params[:query],
         class: "form-control search-center border-0",
