@@ -75,6 +75,7 @@ $headline-font: forum;
 
 .search-width {
   min-width: 350px;
+  border-color: rgb(180,223,222);
 }
 
 .navbar-lewagon .navbar-collapse {
@@ -90,4 +91,5 @@ $headline-font: forum;
 .search-center {
   margin: auto;
   font-family: $main-font;
+  padding-left: 12px!important;
 }
