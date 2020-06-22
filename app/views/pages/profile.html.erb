@@ -11,19 +11,19 @@
   <img src="https://www.vincentvangogh.org/images/self-portrait.jpg" class="card-trip-user avatar-bordered" />
 </div>
 
-<div class="card-grid-layout px-3">
+<div class="card-grid-layout px-3 mb-3">
   <% @artworks.each do |artwork| %>
-      <div class="art card__hover" >
+      <figure class="art card__hover" >
         <%= cl_image_tag(artwork.images.first.key)%>
         <div class="card-description">
           <p class="card-details"><%= artwork.name %></p>
           <% if user_signed_in? %>
             <div class="d-flex justify-content-center">
-              <%= render "shared/collection_modal", artwork: artwork %>
               <%= render "shared/like_button", artwork: artwork %>
+              <%= render "shared/collection_modal", artwork: artwork %>
             </div>
           <% end %>
         </div>
-      </div>
+      </figure>
   <% end %>
 </div>
