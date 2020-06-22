@@ -1,61 +1,112 @@
+<body data-spy="scroll" data-target="#myScrollspy" data-offset="1">
 
-<section class="exhibitions-area exhibitions-page">
-    <h4 class="headertext">Current Opening Galleries</h4>
-<!--Start breadcrumb area-->
-<section class="breadcrumb-area cover" style="background-image: url('<%= cl_image_path(@gallery.image.key)%>');">
-    <div class="container-gallery">
+<div class="container-fluid">
+  <div class="row">
+    
+    <nav class="col-sm-3 col-4" id="myScrollspy">
+
+      <ul class="nav nav-pills flex-column">
+        <div class="gallery-description-corner">
+          <h1 class="corner-h1"><%= @gallery.user.name %></h1>
+          <h2 class="corner-h2"><%= @gallery.name %></h2>
+          <h2 class="subtitle2">New York, US</h2>
+          <h2 class="subtitle2"><%= @gallery.start_date.strftime("%d %B %Y") %> – <%= @gallery.end_date.strftime("%d %B %Y") %></h2>
+        </div>
+        <li class="nav-item">
+          <a class="nav-link active" href="#section1">Press Release</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="#section2">Selected Works</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="#section3">Artist Information</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="#section4">Artist Profile</a>
+        </li>
+        
+      </ul>
+    </nav>
+    <div class="col-sm-9 col-8">
+      <div id="section1" class="bg-success."> 
         <div class="row">
-            <div class="col-xl-12">
-                <div class="inner-content clearfix">
-                    <div class="title">
-                        <h1><%= @gallery.name %></h1>
-                    </div>
-                </div>
+            <div class="col-sm"> 
+              <h1><%= @gallery.name %></h1>
+            </div>
+        </div>   
+        <div class="row">
+            <div class="col-sm-8">
+                <p><%= @gallery.description%></h1></p>
+            </div>
+           
+            <div class="col-sm-4" id="pictureANDbutton">
+             <img src="https://www.vincentvangogh.org/images/self-portrait.jpg" class="avatar-gallery" alt="">
+              <br/><br/>
+              <button type="button" class="buttonGalleryAdmire">Admire</button>
+              
             </div>
         </div>
-    </div>
-</section>
-<!--End breadcrumb area-->
-
-<div class="gallery-show-description">
-    <div class="description-gallery">
-      <h2><%= @gallery.name %></h2>
-      <h3><%= @gallery.user.name %></h3>
-      <h3>Gallery Opening: <%= @gallery.start_date %> - <%@gallery.end_date%></h3>
-      <p> <%= @gallery.description%></p>
-    </div>
-
-    <div class="image-profile">
-      <img src="https://www.vincentvangogh.org/images/self-portrait.jpg" class="avatar-gallery" alt="">
-      <button type="button" class="button">Admire</button>
-    </div>
-</div>
-
-
-<div class="card-grid-layout px-3">
-  <% @curates.each do |curate| %>
-    <%= link_to curate.artwork do %>
-      <div class="art" >
-        <%= cl_image_tag(curate.artwork.images.first.key)%>
-        <div class="card-description">
-          <p class=""><%= curate.artwork.name %></p>
-          <% end %> 
+      <hr>
+  
+      <!--Start displaying artworks-->
+      <% @curates.each do |curate| %>
+      <div id="section2"> 
+        <div class="row">
+          <div class="col-sm-8">
+            <%= link_to curate.artwork do %>
+            <%= cl_image_tag(curate.artwork.images.first.key, :class => "image-placeholder") %>
+            <% end %> 
+          </div>
+          <div class="col-sm-4">
+               <div class="artwork-description-corner">
+                  <h3 class="artwork-h1"><%= @gallery.user.name %></h3>
+                   <h2 class="artwork-h2"><%= curate.artwork.name%>, <%= curate.artwork.date_created %></h2>
+                   <h2 class="artwork-subtitle"><%=curate.artwork.medium%></h2>
+                  <br>
+                  <h2 class="artwork-subtitle"><%= curate.artwork.description%></h2>
+              </div>
+          </div>
         </div>
       </div>
-  <% end %>
+      <% end %> 
+      <!-- displaying profile-->
+      <div id="section3" >         
+        <hr>
+        <p id="section3-artistprofile">Billy Childish (b. 1959, Chatham, Kent, United Kingdom; lives and works in Whitstable, Kent) is known for his introspective, autobiographical, and deeply emotional paintings, writing, and music. After leaving secondary school at age 16, Childish worked at the Naval Dockyard in Chatham as an apprentice stonemason. Initially denied an interview to the local art school, he produced hundreds of drawings that gained him entry to London’s Saint Martin's School of Art. Childish's defiance of authority led to his eventual expulsion from art school in 1981. Since then, Childish has gained something of a cult status worldwide, writing and publishing five novels and more than 40 volumes of confessional poetry, recording more than 150 LPs, and painting several hundred works. Through all of these disciplines, Childish addresses social, political, and personal issues such as war, protest, his turbulent childhood, and his struggles with addiction. While his confessional poetry and music explore these issues with startling honesty, Childish’s paintings are more subtle. His subjects are often drawn from his environment or are people he knows or admires: birch forests, self-portraits, a lone figure in a pastoral English landscape, and his wife as a reclining female nude. Childish works quickly and intuitively, making spare marks on raw canvas that leave much of it visible. He identifies with artists who worked outside a group or movement, intrigued by their outsider roles in society, such as Vincent van Gogh, Kurt Schwitters, and Edvard Munch. Labeling himself a “radical traditionalist,” Childish has a reverence for traditional oil painting yet has resolutely resisted any connection with a particular group or artistic movement.</p>
+        <hr>
+      </div>
+         <div id="section4" class="bg-success">         
+        <h1>Section 3</h1>
+        <p>Try to scroll this section and look at the navigation list while scrolling!</p>
+      </div>
+
+    </div>
+  </div>
 </div>
 
-<div class="gallery-show-layout px-3">
-  <% @curates.each do |curate| %>
-    <%= link_to curate.artwork do %>
-      <div class="art2" >
-        <%= cl_image_tag(curate.artwork.images.first.key)%>
-        <div class="card-description">
-          <p class=""><%= curate.artwork.name %></p>
-          <% end %> 
-        </div>
-      </div>
-  <% end %>
-</div>
+</body>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
