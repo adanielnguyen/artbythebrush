@@ -13,13 +13,15 @@
 
 <div class="card-grid-layout px-3">
   <% @artworks.each do |artwork| %>
-      <div class="art" >
+      <div class="art card__hover" >
         <%= cl_image_tag(artwork.images.first.key)%>
         <div class="card-description">
-          <p class=""><%= artwork.name %></p>
+          <p class="card-details"><%= artwork.name %></p>
           <% if user_signed_in? %>
-            <%= render "shared/collection_modal", artwork: artwork %>
-            <%= render "shared/like_button", artwork: artwork %>
+            <div class="d-flex justify-content-center">
+              <%= render "shared/collection_modal", artwork: artwork %>
+              <%= render "shared/like_button", artwork: artwork %>
+            </div>
           <% end %>
         </div>
       </div>
