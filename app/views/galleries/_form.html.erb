@@ -1,6 +1,6 @@
 <%= simple_form_for @gallery, class: "forum" do |f| %>
-  <div class="form-grid-container">
-    <div class="form-grid image-form-style">
+  <%# <div class="form-grid-container"> %>
+    <div class="image-form-style">
       <%= f.input :name %>
       <%= f.input :description %>
       <%= f.input :start_date %>
@@ -22,5 +22,5 @@
         <% end %>
       </div>
     </div>
-  </div>
+  <%# </div> %>
 <% end %>
