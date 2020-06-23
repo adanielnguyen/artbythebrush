@@ -28,6 +28,7 @@
         <%= cl_image_tag(artwork.images.first.key)%>
         <div class="card-description">
           <p class="card-details d-flex justify-content-center"><%= artwork.name %></p>
+          <% end %>
             <% if user_signed_in? %>
             <div class="d-flex justify-content-center">
             <%= render "shared/like_button", artwork: artwork %>
@@ -40,7 +41,7 @@
         </div>
       </figure>
     <% end %>
-  <% end %>
+  
 </div>
 
 <div class="banner-container" height="980px">
@@ -55,7 +56,7 @@
     </div>
   </div>
 
-
+<%# 
 <div class="gallery-card px-3">
   <div class="card-trip">
       <img src="https://images.unsplash.com/photo-1545033131-485ea67fd7c3?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=800&q=60" />
@@ -76,9 +77,9 @@
         <img src="https://images.unsplash.com/photo-1591647862759-bdf6ef08ae78?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=800&q=60" alt="">
       </div>
     </div>
-  </div>
+  </div> %>
 
-  <div class="card-trip">
+  <%# <div class="card-trip">
       <img src="https://images.unsplash.com/photo-1545033131-485ea67fd7c3?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=800&q=60" />
     <div class="card-trip-infos">
       <div class="w-100">
@@ -108,7 +109,7 @@
     </div>
   </div>
 
-</div>
+</div> %>
 
 <div class="similar">
   <h2>Follow Similar Artists</h2>
