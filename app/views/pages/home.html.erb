@@ -23,11 +23,12 @@
 
 <div class="card-grid-layout px-3">
   <% @artworks.each do |artwork| %>
-    <%= link_to artwork, class: 'link-unstyled' do %>
+    <%= link_to artwork do %>
       <figure class="art card__hover" id="artwork-<%= artwork.id %>">
         <%= cl_image_tag(artwork.images.first.key)%>
         <div class="card-description">
           <p class="card-details d-flex justify-content-center"><%= artwork.name %></p>
+          <% end %>
             <% if user_signed_in? %>
             <div class="d-flex justify-content-center">
             <%= render "shared/like_button", artwork: artwork %>
@@ -40,7 +41,7 @@
         </div>
       </figure>
     <% end %>
-  <% end %>
+  
 </div>
 
 <div class="banner-container" height="980px">
@@ -54,7 +55,6 @@
         </video>
     </div>
   </div>
-
 
 
 

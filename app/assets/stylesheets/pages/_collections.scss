@@ -2,11 +2,23 @@
   width: 100%;
   margin-left: 100px;
   margin-top: 20px;
+  h1{
+    font-family: 'Forum', cursive;
+  }
+  a{
+    font-family: "eb garamond";
+  }
+}
+.collection-name p{
+  font-family: 'Forum', cursive;
+}
+.panel-heading button{
+  font-family: 'Forum', cursive;
 }
 
 #t-cards {
   padding-top: 80px;
-  padding-bottom: 80px;  
+  padding-bottom: 80px;
 }
 .collection-grid-container {
   width: 100%
@@ -33,7 +45,7 @@
   height: 120px;
   border-bottom-color: #fff;
   overflow: hidden;
-  
+
   -webkit-transition: height 600ms ease-in-out;
           transition: height 600ms ease-in-out;
 }
@@ -43,7 +55,7 @@
   left: 50%;
   z-index: 1;
   width: 120%;
-  
+
   -webkit-transform: translate3d(-50%,-50%,0);
           transform: translate3d(-50%,-50%,0);
 }
@@ -65,10 +77,10 @@
   opacity: 1;
   -webkit-box-shadow: 0 0 0 3px #fff;
           box-shadow: 0 0 0 3px #fff;
-  
+
   -webkit-transform: translate3d(-50%,-50%,0);
           transform: translate3d(-50%,-50%,0);
-  
+
   -webkit-transition: opacity 400ms ease-in-out;
           transition: opacity 400ms ease-in-out;
 }
@@ -79,7 +91,7 @@
 
   -webkit-transition: padding 400ms ease-in-out;
           transition: padding 400ms ease-in-out;
-} 
+}
 
 .panel.panel-card .panel-thumbnails {
   padding: 0 15px 20px;
@@ -90,24 +102,24 @@
   margin: 0 auto;
   background-color: #fff;
 
-} 
+}
 
 
 .panel.panel-card:hover .panel-heading {
   height: 55px;
-  
+
   -webkit-transition: height 400ms ease-in-out;
           transition: height 400ms ease-in-out;
 }
 .panel.panel-card:hover .panel-figure {
   opacity: 0;
-  
+
   -webkit-transition: opacity 400ms ease-in-out;
           transition: opacity 400ms ease-in-out;
 }
 .panel.panel-card:hover .panel-body {
   padding-top: 20px;
-  
+
   -webkit-transition: padding 400ms ease-in-out;
           transition: padding 400ms ease-in-out;
 }
