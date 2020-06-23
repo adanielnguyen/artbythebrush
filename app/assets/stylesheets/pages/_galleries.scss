@@ -9,6 +9,7 @@ div.col-8 div {
   padding-top: 6px;
 
 }
+
 .avatar-gallery {
 border-radius: 50%;
 height: 155px;
@@ -120,6 +121,12 @@ font-kerning: none;
 letter-spacing: -.2px;
 margin: 0;
 }
+.card-img-top{
+    z-index: 2;
+    height: 180px;
+    border-bottom-color: #fff;
+    overflow: hidden;
+}
 
 .artwork-subtitle {
 font-family: 'Univers LT W01_45 Light1475944';
@@ -201,6 +208,7 @@ margin-top: -15px;
 text-align: center;
 font-family: "eb garamond" !important;
 color: #5B5A5A;
+font-size: 12px;
 }
 .gallery-name-text {
 margin-top: -10px;
@@ -208,15 +216,14 @@ text-align: center;
 font-family: "eb garamond" !important;
 color: #5B5A5A;
 font-style: oblique;
+font-size: 14px;
 }
 
 .gallery-card {
   max-width: 300px;
-
+  margin-bottom: 100px;
 
 }
-
-
 
 
 

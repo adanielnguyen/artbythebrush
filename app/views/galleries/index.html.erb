@@ -30,24 +30,30 @@
 
 <!--End breadcrumb area-->
 
+  <%# <% @curates.each do |curate| %>
+<%# <%= cl_image_tag(curate.artwork.images.first.key, :class => "card-img-top") %> 
+
 <div class="container">
     <div class="row">
+        <% @galleries.each do |gallery| %>
         <div class="col-sm-4">
+            <%= link_to gallery_path(gallery) do %>
             <div class="gallery-card ">
-               <img src="https://miro.medium.com/proxy/1*U_EBuE5o9Urc31tqAkFDOQ.jpeg" class="card-img-top" alt="...">
+                <%= cl_image_tag(gallery.image.key, :class => "card-img-top")%>
                 
                 <div class="gallery-card-avatar">
                     <img class="image-circle" src="https://www.vincentvangogh.org/images/self-portrait.jpg"/>
                 </div>
                 <div class="card-body">
-                    <p class="gallery-artist-name-text">Vincent Van Gogh</p>
-                    <p class="gallery-name-text">In Retrospective.</p>
-                    <p class="card-text">Oil on Charcoal</p>
-                    <p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p>
+                    <p class="gallery-artist-name-text"><%= gallery.user.name %></p>
+                    <p class="gallery-name-text"><%= gallery.name %></p>
+                    <p class="card-text">Oil Paint on Canvas</p>
+                    <p class="card-text"><small class="text-muted"><%= gallery.start_date.strftime("%d %B %Y") %> – <%= gallery.end_date.strftime("%d %B %Y") %></small></p>
                     <div class="panel-thumbnails">
                         <div class="row">
                             <div class="col-sm-4" id="img-row">
                                 <div class="thumbnail">
+
                                     <img class="thumbnail-img" src="https://i.pinimg.com/originals/8e/6f/bb/8e6fbbadcaa7a61da620e4f3c52caa4f.jpg" />
                                 </div>
                             </div>
@@ -65,16 +71,15 @@
                         </div>
                     </div>
                </div>
+               <% end %> 
             </div>
         </div>
+        <% end %> 
     </div>
 </div>
 
 
 
-
-
-<a href=""><%= link_to "Create new gallery", new_gallery_path %></a>
 
 
 
