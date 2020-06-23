@@ -54,7 +54,7 @@
         <div class="row">
           <div class="col-sm-8">
             <%= link_to curate.artwork do %>
-            <%= cl_image_tag(curate.artwork.images.first.key, :class => "image-placeholder", :quality=>"auto", :fetch_format=>:auto) %>
+            <%= cl_image_tag(curate.artwork.images.first.key, :class => "image-placeholder") %>
             <% end %> 
           </div>
           <div class="col-sm-4">

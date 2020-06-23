@@ -48,7 +48,7 @@
     <% @artworks.each do |artwork| %>
     <%= link_to artwork, class: 'link-upstyled' do %>
     <figure class="art card__hover" >
-      <%= cl_image_tag(artwork.images.first.key, :quality=>"auto", :fetch_format=>:auto, :width=>361)%>
+      <%= cl_image_tag(artwork.images.first.key)%>
       <div class="card-description">
         <p class="card-details"><%= artwork.name %></p>
       </div>
