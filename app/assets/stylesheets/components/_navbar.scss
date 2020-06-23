@@ -68,13 +68,14 @@ $headline-font: forum;
     font-weight: 500;
     text-transform: capitalize;
   }
+}
 
-  
-
+input#query:focus {
+  box-shadow: none;
 }
 
 .search-width {
-  min-width: 350px;
+  min-width: 630px;
   border-color: rgb(180,223,222);
 }
 
