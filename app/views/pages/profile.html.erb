@@ -1,6 +1,6 @@
 <div class="artist-profile" style="background-image: linear-gradient(rgba(0, 0, 0, 0.1), rgba(0, 0, 0, 0.1)), url(https://cdn11.bigcommerce.com/s-vx5jp8mgcz/images/stencil/1280x1280/products/1295/1465/t_Turner-Coast_of_Northumberland__44763.1547318751.jpg?c=2&imbypass=on)";>
   <div class="artist-text">
-    <h1>I am <%#= @artist.name %></h1>
+    <h1>I am <%= @current_user.name %></h1>
     <p>And I'm a Painter</p>
     <%= @artist.email  %>
         <%= simple_form_for [@artist, @follow] do |f| %>

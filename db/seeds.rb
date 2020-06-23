@@ -22,7 +22,7 @@ User.destroy_all
 
 
 puts "creating users"
-user1 = User.create!(name: "Henry Lay", email: "henry@gmail.com", password:"password")
+user1 = User.create!(name: "Daniel Nguyen", email: "daniel@gmail.com", password:"password")
 user2 = User.create!(name: "Vincent Van Gogh", email: "user2@hotmail.com", password:"password")
 user3 = User.create!(email: "user3@hotmail.com", password:"password")
 user4 = User.create!(email: "user4@hotmail.com", password:"password")
@@ -171,3 +171,4 @@ artwork25 = Artwork.create!(name: "Laura Pritchett", description: "Almond Blosso
 file = URI.open('https://images.squarespace-cdn.com/content/v1/5121095de4b0b5151b71c80b/1532793428465-ISJLPZELR04EQCN4MX62/ke17ZwdGBToddI8pDm48kAms-YFqCEzVWtxEmk_n6yJ7gQa3H78H3Y0txjaiv_0fDoOvxcdMmMKkDsyUqMSsMWxHk725yiiHCCLfrh8O1z4YTzHvnKhyp6Da-NYroOW3ZGjoBKy3azqku80C789l0s2R59z2HWVKMNU9GXmUK4W9GsA4lsq1MYoWLKFqhfw8zBms60U-eXAfClfwABDCBA/laurapritchett_thequiet_4.jpg?format=1500w')
 artwork25.images.attach(io: file, filename: 'nes.png', content_type: 'image/png')
 artwork25.save!
+
