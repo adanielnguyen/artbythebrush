@@ -28,7 +28,6 @@
         <%= cl_image_tag(artwork.images.first.key, :width=>361, :quality=>"auto", :fetch_format=>:auto)%>
         <div class="card-description">
           <p class="card-details d-flex justify-content-center"><%= artwork.name %></p>
-          <% end %>
             <% if user_signed_in? %>
             <div class="d-flex justify-content-center">
             <%= render "shared/like_button", artwork: artwork %>
@@ -41,7 +40,9 @@
         </div>
       </figure>
     <% end %>
-  
+
+  <% end %>
+
 </div>
 
 <div class="banner-container" height="980px">
