@@ -32,6 +32,7 @@
 
   <%# <% @curates.each do |curate| %>
 <%# <%= cl_image_tag(curate.artwork.images.first.key, :class => "card-img-top") %> 
+<%# <%= cl_image_tag((gallery.curates).artwork.images.first.key, :class => "thumbnail-img") %> 
 
 <div class="container">
     <div class="row">
@@ -51,22 +52,14 @@
                     <p class="card-text"><small class="text-muted"><%= gallery.start_date.strftime("%d %B %Y") %> – <%= gallery.end_date.strftime("%d %B %Y") %></small></p>
                     <div class="panel-thumbnails">
                         <div class="row">
+                            <% gallery.curates.sample(3).each do |curate| %>
                             <div class="col-sm-4" id="img-row">
                                 <div class="thumbnail">
-
-                                    <img class="thumbnail-img" src="https://i.pinimg.com/originals/8e/6f/bb/8e6fbbadcaa7a61da620e4f3c52caa4f.jpg" />
+                                    <%= cl_image_tag(curate.artwork.images.first.key, :class => "thumbnail-img") %> 
+                                
                                 </div>
                             </div>
-                            <div class="col-sm-4" id="img-row">
-                                <div class="thumbnail">
-                                    <img class="thumbnail-img" src="https://images.saatchiart.com/saatchi/830679/art/5524997/4594809-OTYKQZZE-7.jpg" />
-                                </div>
-                            </div>
-                          <div class="col-sm-4" id="img-row">
-                                <div class="thumbnail">
-                                    <img class="thumbnail-img" src="https://images.saatchiart.com/saatchi/830679/art/5524997/4594809-OTYKQZZE-7.jpg" />
-                                </div>
-                            </div>
+                            <% end %>
                         
                         </div>
                     </div>
@@ -77,8 +70,6 @@
         <% end %> 
     </div>
 </div>
-
-
 
 
 
