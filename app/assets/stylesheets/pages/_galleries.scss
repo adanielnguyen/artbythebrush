@@ -181,7 +181,7 @@ margin-bottom: 0px;
 }
 
 .thumbnail-img {
-width: 130px;
+height:100%;
   
 } 
 #img-row {
@@ -190,6 +190,9 @@ overflow: hidden;
 
 }
 
+.thumbnail {
+  height: 100%;
+}
 .panel-thumbnails {
   margin-left: -25px;
 }
@@ -227,15 +230,19 @@ font-size: 14px;
 
 
 
+// galleries css grid
 
+.form-gallery-container {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-template-rows: 1fr;
+  gap: 1px 1px;
+  grid-template-areas: "gallery-form gallery-artwork";
+}
 
+.gallery-form { grid-area: gallery-form; }
 
-
-
-
-
-
-
+.gallery-artwork { grid-area: gallery-artwork; }
 
 
 // Previous Design before 22nd June

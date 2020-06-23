@@ -2,6 +2,9 @@ class GalleriesController < ApplicationController
   before_action :set_gallery, only: %i[show update edit destroy]
   def index
     @galleries = Gallery.all
+    # @curates = Curate.find()
+    # @artworks = Artwork.all 
+    
   end
 
   def new

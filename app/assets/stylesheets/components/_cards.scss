@@ -15,7 +15,7 @@
 }
 
 .card__hover {
-  transition: transform .5s;
+  transition: all 0.5s;
 
   &::after {
     position: absolute;
@@ -32,7 +32,9 @@
 
   &:hover,
   &:focus {
-    transform: scale3d(1.006, 1.006, 1);
+    // transform: scale3d(1.006, 1.006, 1);
+    box-shadow: 0 8px 17px 0 rgba(0, 0, 0, .2), 0 6px 20px 0 rgba(0, 0, 0, .15);
+    
 
     &::after {
       opacity: 1;
