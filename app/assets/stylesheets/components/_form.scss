@@ -12,6 +12,16 @@
 //   position: relative;
 // }
 
+.form-sticky {
+  position: sticky;
+  top: 0;
+}
+
+.form-margin {
+  margin-left: 3em;
+  padding-top: 2em;
+}
+
 .image-preview {
   flex: 1;
   background: none;
