@@ -10,8 +10,34 @@
     </div>
   </div>
 
-<%# <div class="form-container d-flex justify-content-center garamond">  %>
-  <%= render "form", my_artworks: @artworks %>
-<%# </div> %>
+<%= simple_form_for @gallery, class: "forum" do |f| %>
+<div class="form-gallery-container">
+  <div class="gallery-form">
+      <%= f.input :name %>
+      <%= f.input :description %>
+      <%= f.input :start_date %>
+      <%= f.input :end_date %>
+      <%= f.input :image, as: :file %>
+      <div class="" id="highlight">
+        <%= f.submit class: "btn btn-clear submit-photo-button" %>
+      </div>
+  </div>
+  <div class="gallery-artwork">
+    <div class="card-grid-layout px-3">
+      <% @artworks.each do |artwork| %>
+        <input type="checkbox" class="hidden" value="<%= artwork.id %>" name="post[artwork_ids][]"  id="post_artwork_ids_<%= artwork.id %>">
+        <div class="art" >
+          <%= cl_image_tag(artwork.images.first.key)%>
+          <div class="card-description">
+            <p class=""><%= artwork.name %></p>
+          </div>
+        </div>
+      <% end %>
+        </div>
+      </div>
+    </div>
 
+  </div>
+</div>
+<% end %>
 
