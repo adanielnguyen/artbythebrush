@@ -142,10 +142,68 @@ width: 100%;
 height: auto;
 }
 
+// Gallery Cards CSS
 
+.gallery-card-avatar {
+  top: auto;
+  margin-left: 50%;
+  margin-bottom: -50px;
+  z-index: 3;
+  width: 100px;
+  height: 100px;
+  background-color: #fff;
+  border-radius: 50%;
+  opacity: 1;
+  -webkit-box-shadow: 0 0 0 3px #fff;
+          box-shadow: 0 0 0 3px #fff;
+  
+  -webkit-transform: translate3d(-50%,-50%,0);
+          transform: translate3d(-50%,-50%,0);
+  
+  -webkit-transition: opacity 400ms ease-in-out;
+          transition: opacity 400ms ease-in-out;
+}
 
+.image-circle {
+border-radius: 50%;
+width: 100px;
+height: 100px;
+margin-bottom: 0px;
+}
 
+.thumbnail-img {
+width: 110px;
+overflow: hidden;
+display: flex;
+justify-content: center;
+  
+} 
+#img-row {
+height:130px;
+overflow: hidden;
+}
 
+.card-title {
+text-align: center;
+font-family: "eb garamond" !important;
+color: #5B5A5A;
+ margin-top: -10px;
+margin-bottom: -30px;
+}
+
+.card-text {
+margin-top: -15px;
+text-align: center;
+font-family: "eb garamond" !important;
+color: #5B5A5A;
+}
+.gallery-name-text {
+margin-top: -10px;
+text-align: center;
+font-family: "eb garamond" !important;
+color: #5B5A5A;
+font-style: oblique;
+}
 
 
 

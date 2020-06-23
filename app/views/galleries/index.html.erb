@@ -15,6 +15,7 @@
     </div>
 </section> %>
 
+
 <div class="banner-container" height="980px">
     <div class="banner" >
       <h1>CURRENT<br> <spam class="brush-word">EXHIBITIONS</spam></h1>
@@ -28,57 +29,51 @@
 </div>
 
 <!--End breadcrumb area-->
-<section class="exhibitions-area exhibitions-page">
-    <div class="container-gallery">
-        <div class="row masonary-layout">
-            <!--Start single exhibition Box-->
-            <% @galleries.each do |gallery| %>
-            <div class="col-xl-4 col-lg-6 col-md-6 col-sm-12">
-                <div class="single-exhibition-box style4">
-                    <div class="img-holder">
-                        <%= cl_image_tag(gallery.image.key)%>
-                        <div class="overlay-style-one bg1">
-                            <div class="zoom-button">
-                                <a class="lightbox-image" data-fancybox="gallery" href="images/resources/exhibition-1.jpg">
-                                    <i class="fa fa-search-plus" aria-hidden="true"></i>
-                                </a>
+
+<div class="container">
+    <div class="row">
+        <div class="col-sm-6 py-2">
+            <div class="card">
+               <img src="https://miro.medium.com/proxy/1*U_EBuE5o9Urc31tqAkFDOQ.jpeg" class="card-img-top" alt="...">
+                
+                <div class="gallery-card-avatar">
+                    <img class="image-circle" src="https://www.vincentvangogh.org/images/self-portrait.jpg"/>
+                </div>
+                <div class="card-body">
+                    <h5 class="card-title">Card title</h5>
+                    <p class="gallery-name-text">In Retrospective.</p>
+                    <p class="card-text">Oil on Charcoal</p>
+                    <p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p>
+                    <div class="panel-thumbnails">
+                        <div class="row">
+                            <div class="col-sm-3" id="img-row">
+                                <div class="thumbnail">
+                                    <img class="thumbnail-img" src="https://i.pinimg.com/originals/8e/6f/bb/8e6fbbadcaa7a61da620e4f3c52caa4f.jpg" />
+                                </div>
+                            </div>
+                            <div class="col-sm-3" id="img-row">
+                                <div class="thumbnail">
+                                    <img class="thumbnail-img" src="https://images.saatchiart.com/saatchi/830679/art/5524997/4594809-OTYKQZZE-7.jpg" />
+                                </div>
+                            </div>
+                          <div class="col-sm-3" id="img-row">
+                                <div class="thumbnail">
+                                    <img class="thumbnail-img" src="https://images.saatchiart.com/saatchi/830679/art/5524997/4594809-OTYKQZZE-7.jpg" />
+                                </div>
+                            </div>
+                            <div class="col-sm-3">
+                                <div class="thumbnail" id="img-row">
+                                    <img class="thumbnail-img" src="https://www.christies.com/img/LotImages/2018/CKS/2018_CKS_15483_0018B_000(claude_monet_coup_de_vent).jpg" />
+                                </div>
                             </div>
                         </div>
                     </div>
-
-                    <div class="text-holder text-center">
-                        <span>Exhibition</span>
-                        <h2><%= gallery.name %></h2>
-                        <h4>By <%= gallery.user.name %></h4>
-                        <p>From <%= gallery.start_date %> until <%=gallery.end_date%></p>
-                        <div class="bottom">
-                            <div class="review-box">
-                                <ul>
-                                    <li><i class="fa fa-star"></i></li>
-                                    <li><i class="fa fa-star"></i></li>
-                                    <li><i class="fa fa-star"></i></li>
-                                    <li><i class="fa fa-star"></i></li>
-                                    <li><i class="fa fa-star"></i></li>
-                                </ul>
-                            </div>
-                            <div class="value">$ 60.00</div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-        <% end %>
-
-
-        <div class="row">
-            <div class="col-xl-12">
-                <div class="view-more-button text-center">
-                    <a class="btn-two" href="#">View More</a>
-                </div>
+               </div>
             </div>
         </div>
     </div>
-</section>
+</div>
+
 
 
 
