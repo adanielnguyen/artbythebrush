@@ -40,7 +40,7 @@
         <div class="col-sm-4">
             <%= link_to gallery_path(gallery) do %>
             <div class="gallery-card ">
-                <%= cl_image_tag(gallery.image.key, :class => "card-img-top")%>
+                <%= cl_image_tag(gallery.image.key, :class => "card-img-top", :quality=>"auto", :fetch_format=>:auto)%>
                 
                 <div class="gallery-card-avatar">
                     <img class="image-circle" src="https://www.vincentvangogh.org/images/self-portrait.jpg"/>
