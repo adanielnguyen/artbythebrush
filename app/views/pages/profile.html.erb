@@ -2,11 +2,11 @@
   <div class="artist-text">
     <h1>I am <%#= @artist.name %></h1>
     <p>And I'm a Painter</p>
-    <%= @artist.email  %>
+    <%= @artist.email%>
         <%= simple_form_for [@artist, @follow] do |f| %>
           <%= f.button :submit  %>
         <% end %>
-        
+
   </div>
   <img src="https://www.vincentvangogh.org/images/self-portrait.jpg" class="card-trip-user avatar-bordered" />
 </div>

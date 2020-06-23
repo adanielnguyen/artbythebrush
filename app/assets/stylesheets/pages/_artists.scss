@@ -21,8 +21,17 @@
   left: 50%;
   transform: translate(-50%, -50%);
   color: white;
+  font-family: 'Forum', cursive;
+  h1{
+    font-family: 'Forum', cursive;
+  }
+  p{
+    font-family: "eb garamond";
+  }
 }
-
+// .artist-email{
+//   font-family: "eb garamond";
+// }
 .card-trip-user {
     position: absolute;
     height: 11vh;
