@@ -19,7 +19,15 @@
         <% @collections.each do |collection| %>
         <%= link_to collection do %>
         <div class="collection-card-flex">
-            <div class="collection-text-area" ><h1 class="collection-text-flex"><%= collection.name.titleize %></h1></div>
+            <div class="collection-text-area" >
+                <h1 class="collection-text-flex"><%= collection.name.titleize %></h1>
+                
+                        <video class="video-collections" height="300px" width="300px%" autoplay="autoplay" loop muted>
+                        <source src= <%= URI.encode("https://res.cloudinary.com/dybthmrxc/video/upload/v1593028512/ezgif-3-8f8b23933a3f_f1dgyr.mp4")%> type="video/mp4">
+                        Your browser does not support the video tag.
+                </video>
+            </div>
+            
             <% collection.artworks.sample(3).each do |artwork| %>
                 <div class="collection-card-thumbnail" style="background-image: url('<%= cl_image_path(artwork.images.first.key)%>')"></div>
             <% end %>
