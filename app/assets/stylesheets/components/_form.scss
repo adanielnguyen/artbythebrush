@@ -18,8 +18,12 @@
 }
 
 .form-margin {
-  margin-left: 8em;
+  margin: 7% 10%;
   padding-top: 2em;
+}
+
+.form-group abbr[title] {
+  display: none;
 }
 
 .image-preview {
