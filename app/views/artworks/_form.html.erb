@@ -4,8 +4,8 @@
   <div class="image-form-style">
       <%= f.input :images, as: :file, input_html: { multiple: true}, label: false %>
     </div>
-    <div class="" id="remove-checkbox" label="">
-      <%= f.input :tag_list, as: :check_boxes, collection: ["Art", "Paint", "Painting House", "Drawing", "Abstract", "Design", "Nature", "Artist", "Painter"] %>
+    <div class="" id="tags" label="">
+      <%= f.input :tag_list, as: :check_boxes, collection: ["Art", "Paint", "Painting House", "Drawing", "Abstract", "Design", "Nature", "Artist", "Painter"], class: "hidden" %>
     </div>
     
     <%= f.input :name %>

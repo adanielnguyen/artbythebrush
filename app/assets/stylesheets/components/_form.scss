@@ -17,6 +17,10 @@
   top: 0;
 }
 
+.form-check-input .check_boxes .optional {
+  display: hidden;
+}
+
 .form-margin {
   margin: 7% 10%;
   padding-top: 2em;
@@ -50,13 +54,9 @@
 }
 
 .form-check {
-  background: #eee;
-  padding: 2px;
-  margin: 5px;
   display: inline-flex;
-  align-items: center;  
-  padding: 3px 10px;
-  border-radius: 5px;
+  align-items: center; 
+  padding-left: 0;
 }
 
 .form-check-input {
