@@ -1,8 +1,4 @@
-<head>
 
-    <script src="//code.jquery.com/jquery-1.11.1.min.js"></script>
-    <!------ Include the above in your HEAD tag ---------->
-</head>
 
 <%# Collecions Banner %>
  <div class="banner-container" height="980px">
@@ -17,60 +13,26 @@
     </div>
   </div>
 
+<a href=""><%= link_to  "Create new collection", new_collection_path %></a>
 
-<div class="index-collection-container">
-  <a href=""><%= link_to  "Create new collection", new_collection_path %></a>
-
-</div>
-
-
-
-<section id="t-cards">
-
-    <div class="container">
-        <div class="row">
-            <% @collections.each do |collection| %>
-
-            <div class="col-sm-6 col-md-3">
-                <div class="panel panel-default panel-card">
-                    <div class="panel-heading">
-                        <img src="https://www.vincentvangogh.org/images/self-portrait.jpg" />
-                        <button class="btn btn-primary btn-sm" role="button">Delete</button>
-                    </div>
-                    <div class="panel-figure">
-                        <img class="img-responsive img-circle" src="https://res.cloudinary.com/dybthmrxc/image/upload/v1592631133/Screen_Shot_2020-06-20_at_3.31.30_pm_o3lljh.png" />
-                    </div>
-                    <div class="panel-body text-center">
-                        <%= link_to collection do %>
-                        <div class="collection-name">
-                          <p><%= collection.name %></p>
-                      </div>
-                      <% end %>
-                  </div>
-                  <div class="panel-thumbnails">
-                    <div class="row">
-                        <div class="col-xs-4">
-                            <div class="thumbnail">
-                                <img src="https://i.pinimg.com/originals/97/20/49/972049d0a1345e177b7a4676514b9bc4.jpg" />
-                            </div>
-                        </div>
-                        <div class="col-xs-4">
-                            <div class="thumbnail">
-                                <img src="http://placemi.com/71mf8/60x60" />
-                            </div>
-                        </div>
-                        <div class="col-xs-4">
-                            <div class="thumbnail">
-                                <img src="http://placemi.com/1pdrw/60x60" />
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
+<div class ="flex-container-collection">
+        <% @collections.each do |collection| %>
+        <%= link_to collection do %>
+        <div class="collection-card-flex">
+            <div class="collection-text-area" ><h1 class="collection-text-flex"><%= collection.name.titleize %></h1></div>
+            <% collection.artworks.sample(3).each do |artwork| %>
+                <div class="collection-card-thumbnail" style="background-image: url('<%= cl_image_path(artwork.images.first.key)%>')"></div>
+            <% end %>
+             <% if collection.artworks.length < 3 %>
+                <% (3-collection.artworks.length).times do %>
+                    <div class="collection-card-thumbnail" style="background-image: url('https://images.pond5.com/4k-plus-sign-spinning-icon-footage-072479606_prevstill.jpeg')"></div>
+                <% end %>
+            <% end %>
         </div>
         <% end %>
-    </div>
+        <% end %>
 </div>
 
-</section>
+
+
 

@@ -3,7 +3,6 @@ class CollectionsController < ApplicationController
   
   def index
     @collections = current_user.collections
-    @artworks =  Artwork.all.first
   end
 
   def show

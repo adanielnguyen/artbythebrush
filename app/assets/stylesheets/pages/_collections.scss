@@ -1,205 +1,51 @@
-.index-collection-container {
+
+
+// FLEX BOX
+.flex-container-collection {
+  display: flex;
   width: 100%;
-  margin-left: 100px;
-  margin-top: 20px;
-  h1{
-    font-family: 'Forum', cursive;
-  }
-  a{
-    font-family: "eb garamond";
-  }
+  flex-wrap: wrap;
+  padding-left: 200px;
 }
-.collection-name p{
-  font-family: 'Forum', cursive;
-}
-.panel-heading button{
-  font-family: 'Forum', cursive;
-}
-
-#t-cards {
-  padding-top: 80px;
-  padding-bottom: 80px;
-}
-.collection-grid-container {
-  width: 100%
-}
-
-.img-circle {
-  width: 70px;
-  height: 70px;
-  border-radius: 50%;
-}
-
-/********************************/
-/*          Panel cards         */
-/********************************/
-.panel.panel-card {
-  position: relative;
+.collection-card-flex {
+  display: grid;
+  grid-template-columns: auto auto;
+  grid-template-rows: auto auto;
+  width: 600px;
   height: 300px;
-  border: none;
-  overflow: hidden;
-}
-.panel.panel-card .panel-heading {
-  position: relative;
-  z-index: 2;
-  height: 120px;
-  border-bottom-color: #fff;
-  overflow: hidden;
+  margin: 100px;
 
-  -webkit-transition: height 600ms ease-in-out;
-          transition: height 600ms ease-in-out;
-}
-.panel.panel-card .panel-heading img {
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  z-index: 1;
-  width: 120%;
-
-  -webkit-transform: translate3d(-50%,-50%,0);
-          transform: translate3d(-50%,-50%,0);
-}
-.panel.panel-card .panel-heading button {
-  position: absolute;
-  top: 10px;
-  right: 15px;
-  z-index: 3;
-}
-.panel.panel-card .panel-figure {
-  position: absolute;
-  top: auto;
-  left: 50%;
-  z-index: 3;
-  width: 70px;
-  height: 70px;
-  background-color: #fff;
-  border-radius: 50%;
-  opacity: 1;
-  -webkit-box-shadow: 0 0 0 3px #fff;
-          box-shadow: 0 0 0 3px #fff;
-
-  -webkit-transform: translate3d(-50%,-50%,0);
-          transform: translate3d(-50%,-50%,0);
-
-  -webkit-transition: opacity 400ms ease-in-out;
-          transition: opacity 400ms ease-in-out;
+  margin-bottom:350px;
 }
 
-.panel.panel-card .panel-body {
-  padding-top: 40px;
-  padding-bottom: 20px;
-
-  -webkit-transition: padding 400ms ease-in-out;
-          transition: padding 400ms ease-in-out;
+.collection-text-area {
+  width: 300px;
+  height: 300px;
+  border-style: solid;
+  border-width: 1px; 
+  border-color: rgb(137, 207, 240);
+  display: flex;
+  justify-content: center; /* align horizontal */
+align-items: center; /* align vertical */
+border-radius: 100%;
 }
 
-.panel.panel-card .panel-thumbnails {
-  padding: 0 15px 20px;
-}
-.panel-thumbnails .thumbnail {
-  width: 60px;
-  max-width: 100%;
-  margin: 0 auto;
-  background-color: #fff;
-
-}
-
-
-.panel.panel-card:hover .panel-heading {
-  height: 55px;
-
-  -webkit-transition: height 400ms ease-in-out;
-          transition: height 400ms ease-in-out;
-}
-.panel.panel-card:hover .panel-figure {
-  opacity: 0;
-
-  -webkit-transition: opacity 400ms ease-in-out;
-          transition: opacity 400ms ease-in-out;
-}
-.panel.panel-card:hover .panel-body {
-  padding-top: 20px;
-
-  -webkit-transition: padding 400ms ease-in-out;
-          transition: padding 400ms ease-in-out;
+.collection-card-thumbnail {
+  width: 300px;
+  height: 300px;
+  background-position: center center;
+  background-size: cover;
+  border-style: solid;
+  border-width: 1px; 
+  border-color: rgb(137, 207, 240);
+  border-radius: 100%;
 }
 
-// Collection Cards CSS
-// Collection Cards CSS
-// Collection Cards CSS
-
-.gallery-card-avatar {
-  top: auto;
-  margin-left: 50%;
-  margin-bottom: -50px;
-  z-index: 3;
-  width: 100px;
-  height: 100px;
-  background-color: #fff;
-  border-radius: 50%;
-  opacity: 1;
-  -webkit-box-shadow: 0 0 0 3px #fff;
-          box-shadow: 0 0 0 3px #fff;
-  
-  -webkit-transform: translate3d(-50%,-50%,0);
-          transform: translate3d(-50%,-50%,0);
-  
-  -webkit-transition: opacity 400ms ease-in-out;
-          transition: opacity 400ms ease-in-out;
-}
-
-.image-circle {
-border-radius: 50%;
-width: 100px;
-height: 100px;
-margin-bottom: 0px;
-}
-
-.thumbnail-img {
-height:100%;
-  
-} 
-#img-row {
-height:130px;
-overflow: hidden;
-
-}
-
-.thumbnail {
-  height: 100%;
-}
-.panel-thumbnails {
-  margin-left: -25px;
-}
-
-
-.gallery-artist-name-text {
-  text-align: center;
-  font-family: "eb garamond" !important;
-  color: #5B5A5A; 
-  margin-bottom: 3px;
-  margin-top: -20px;
-}
-
-.card-text {
-margin-top: -15px;
+.collection-text-flex {
+  font-family: 'eb-garamond';
+  font-size: 18px;
+  font-weight: 500;
+color:rgba(0, 0, 0, 0.5);
 text-align: center;
-font-family: "eb garamond" !important;
-color: #5B5A5A;
-font-size: 12px;
-}
-.gallery-name-text {
-margin-top: -10px;
-text-align: center;
-font-family: "eb garamond" !important;
-color: #5B5A5A;
-font-style: oblique;
-font-size: 14px;
-}
-
-.gallery-card {
-  max-width: 300px;
-  margin-bottom: 100px;
 
 }
-
