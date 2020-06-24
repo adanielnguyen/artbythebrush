@@ -87,62 +87,28 @@ $grey: #bbbbbb;
   }
 }
 
-//=== Drawing effect
-
-@mixin btn-border-drawing($color: #ccc, $hover: black, $width: 2px, $vertical: top, $horizontal: left, $duration: 0.25s) {
-  box-shadow: inset 0 0 0 $width $color;
-  color: $color;
-  transition: color $duration $duration/3;
-  position: relative;
-  
-  &::before,
-  &::after {
-    border: 0 solid transparent;
-    box-sizing: border-box;
-    content: '';
-    pointer-events: none;
-    position: absolute;
-    width: 0; height: 0;
-    
-    #{$vertical}: 0; 
-    #{$horizontal}: 0;
-  }
-
-  &::before {
-    $h-side: if($horizontal == 'left', 'right', 'left');
-    
-    border-#{$vertical}-width: $width;
-    border-#{$h-side}-width: $width;
-  }
-  
-  &::after {
-    $v-side: if($vertical == 'top', 'bottom', 'top');
-    
-    border-#{$v-side}-width: $width;
-    border-#{$horizontal}-width: $width;
-  }
+.btn-follow, .btn-follow:link, .btn-follow:visited {
+  padding: 13px 15px;
+  border: 1.5px solid $trademarkblue;
+  border-radius: 15px;
+  color: gray;
+  font-weight: bold;
+  font-family: 'forum';
+  text-transform: capitalize;
+  font-size: 16px;
+  letter-spacing: 3px;
+  transition: all .2s ease-in-out;
+  text-decoration: none;
   
   &:hover {
-    color: $hover;
-    
-    &::before,
-    &::after {
-      border-color: $hover;
-      transition: border-color 0s, width $duration, height $duration;
-      width: 100%;
-      height: 100%;
-    }
-    
-    &::before { transition-delay: 0s, 0s, $duration; }
-    
-    &::after { transition-delay: 0s, $duration, 0s; }
+    background: $trademarkblue;
+    border: 1px solid $trademarkblue;
+    color: #fefefe;
+    border-radius: 15px;
   }
 }
 
-.draw-border {
-  @include btn-border-drawing(rgb(0, 0, 0), rgb(179,222,222), 2px, bottom, right);
-  padding: 10px 8px!important;
-  font-family: "eb garamond"!important;
-  font-size: 14px!important;
+a .no-underline {
+  text-decoration: none;
 }
 
