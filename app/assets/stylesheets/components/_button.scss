@@ -10,12 +10,77 @@
   }
 }
 
-.submit-photo-button {
-  padding-left: 0;
-}
-
 btn:hover .follow-btn {
   color: rgb(166,216,216)!important;
+}
+
+// Submit Button
+
+$trademarkblue: #82B7DB;
+$grey: #bbbbbb;
+
+.btn-bespoke {
+  outline:none;
+  height: 40px;
+  text-align: center;
+  width: 130px;
+  border-radius:40px;
+  background: #fff;
+  border: 2px solid $trademarkblue;
+  color:$trademarkblue;
+  letter-spacing:1px;
+  text-shadow:0;
+  font:{
+    size:12px;
+    weight:bold;
+  }
+  cursor: pointer;
+  transition: all 0.25s ease;
+  &:hover {
+    color:white;
+    background: $trademarkblue;
+  }
+  &:active {
+    //letter-spacing: 2px;
+    letter-spacing: 2px ;
+  }
+  &:after {
+    content:"Create Artwork";
+  }
+}
+.onclic {
+  width: 40px;
+  border-color:$grey;
+  border-width:3px;
+  font-size:0;
+  border-left-color:$trademarkblue;
+  animation: rotating 2s 0.25s linear infinite;
+
+  &:after {
+    content:"";
+  }
+  &:hover {
+    color:$trademarkblue;
+    background: white;
+  }
+}
+.validate {
+  font-size:13px;
+  color: white;
+  background: $trademarkblue;
+  &:after {
+    font-family:'FontAwesome';
+    content:"\f00c";
+  }
+}
+
+@keyframes rotating {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
 }
 
 //=== Drawing effect
