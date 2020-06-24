@@ -1,7 +1,7 @@
 .artwork-card{
   justify-content: center;
   width: 1000px;
-  height: 760px;
+  min-height: 760px;
   margin: auto;
   h2{
     text-align: center;
@@ -11,11 +11,15 @@
   }
 }
 
+.artwork-image {
+  height: 70vh;
+  display: flex;
+  justify-content: center;
+}
+
 .artwork-image img {
-  height: 500px;
-  width: 100%;
-  object-fit: cover;
-  border-radius: 3px;
+  height: 100%;
+  border-radius: 2px;
 }
 .flex-info{
   display: flex;

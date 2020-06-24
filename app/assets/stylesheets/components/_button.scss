@@ -16,7 +16,7 @@ btn:hover .follow-btn {
 
 // Submit Button
 
-$trademarkblue: #82B7DB;
+$trademarkblue: #ABDCDA;
 $grey: #bbbbbb;
 
 .btn-bespoke {
@@ -41,7 +41,6 @@ $grey: #bbbbbb;
     background: $trademarkblue;
   }
   &:active {
-    //letter-spacing: 2px;
     letter-spacing: 2px ;
   }
   &:after {
