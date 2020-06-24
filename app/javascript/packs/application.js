@@ -8,7 +8,7 @@ require("turbolinks").start()
 require("@rails/activestorage").start()
 require("channels")
 require("packs/form")
-
+require("packs/btn-bespoke")
 require("../custom.js")
 
 
