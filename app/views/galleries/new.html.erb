@@ -18,10 +18,8 @@
       <%= f.input :description %>
       <%= f.input :start_date %>
       <%= f.input :end_date %>
-      <%= f.input :image, as: :file %>
-      <div class="" id="highlight">
-        <%= f.submit class: "btn btn-clear submit-photo-button" %>
-      </div>
+      <%= f.input :image, as: :file, label: "Add a Cover Photo"%>
+      <%= f.submit class: "btn-bespoke submit-photo-button btn-submit-position" %>
     </section>      
   </div>
   <div class="gallery-artwork w-65">
@@ -31,7 +29,7 @@
         <div class="art" >
           <%= cl_image_tag(artwork.images.first.key)%>
           <div class="card-description">
-            <p class=""><%= artwork.name %></p>
+            <p class="card-details"><%= artwork.name %></p>
           </div>
         </div>
       <% end %>
