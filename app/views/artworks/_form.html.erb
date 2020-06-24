@@ -1,21 +1,17 @@
 <%= simple_form_for @artwork, remote: true do |f| %>
-<h1 class="text-capitalize center add-creation-text">add your creation</h1>
-<div class="form-style">
-  <div class="image-form-style">
-      <%= f.input :images, as: :file, input_html: { multiple: true}, label: false %>
-    </div>
-    <div class="" id="tags" label="">
-      <%= f.input :tag_list, as: :check_boxes, collection: ["Art", "Paint", "Painting House", "Drawing", "Abstract", "Design", "Nature", "Artist", "Painter"], class: "hidden" %>
-    </div>
-    
-    <%= f.input :name %>
-    <%= f.input :description %>
-    <%= f.input :genre %>
-    <%= f.input :medium %>
-    <%= f.input :date_created %>
-
+  <h1 class="text-capitalize form-heading">add your creation</h1>
+  <div class="form-body">
+    <div class="image-form-style">
+        <%= f.input :images, as: :file, input_html: { multiple: true}, label: false %>
+      </div>
+      <div class="" id="tags" label="">
+        <%= f.input :tag_list, as: :check_boxes, collection: ["Art", "Paint", "Painting House", "Drawing", "Abstract", "Design", "Nature", "Artist", "Painter"], class: "hidden" %>
+      </div>
+      <%= f.input :name, label: "Title" %>
+      <%= f.input :description %>
+      <%= f.input :genre %>
+      <%= f.input :medium %>
+      <%= f.input :date_created %>
       <%= f.submit class: "btn-bespoke submit-photo-button", label: false %>
-    
-</div>
-  
+  </div>
 <% end %>

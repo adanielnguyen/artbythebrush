@@ -12,6 +12,19 @@
 //   position: relative;
 // }
 
+.form-heading {
+  color: gray;
+  font-family: 'forum';
+  font-size: 20px;
+  padding-bottom: 20px;
+  font-weight: 700;
+}
+
+.form-body {
+  color: gray;
+  font-size: 14px;
+}
+
 .form-sticky {
   position: sticky;
   top: 0;
@@ -64,8 +77,4 @@
   margin-top: 0;
   margin-left: 0;
   margin-right: 6px;
-}
-
-.form-style {
-  color: grey;
 }

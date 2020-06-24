@@ -31,15 +31,13 @@
           <% end %>
             <% if user_signed_in? %>
             <div class="d-flex justify-content-center">
-            <%= render "shared/like_button", artwork: artwork %>
+              <%= render "shared/like_button", artwork: artwork %>
               <%= render "shared/collection_modal", artwork: artwork %>
             </div>
         </div>
       </figure>
     <% end %>
-
   <% end %>
-
 </div>
 
 <div class="banner-container" height="980px">
