@@ -22,8 +22,8 @@
         <%= link_to artist_path(@artwork.user_id), class: "no-underline" do %>
         <img src="https://www.vincentvangogh.org/images/self-portrait.jpg" class="artist-avatar">
         <h4 class="forum remove-underline"><%= @artwork.user.name %></h4>
-          <p class="garamond follows-count"><%= @artwork.user.follows.count %> Admires</p>
-          <% end %>
+        <% end %>
+          <p class="garamond follows-count"><%= @artwork.user.follows.count %> Admires</p>  
           <p>
             <%= link_to "Follow", user_follows_path(@artwork.user), method: :post, class: "btn-follow", remote: true %>
           </p>
