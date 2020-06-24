@@ -15,7 +15,8 @@
   <div class="gallery-form garamond form-sticky">
     <section class="form-sticky form-margin">
     <h2 class="text-capitalize forum mb-3" id ="highlight">select your artwork</h2>
-    <%= f.input :name, label: "Gallery Name" %>
+    <div class="form-body">
+      <%= f.input :name, label: "Gallery Name" %>
       <%= f.input :description %>
       <%= f.input :start_date %>
       <%= f.input :end_date %>
@@ -23,6 +24,7 @@
       <%= f.input :image, as: :file, label: "Add a Cover Photo"%>
       <br>
       <%= f.submit class: "btn-bespoke submit-photo-button btn-submit-position" %>
+    </div>
     </section>      
   </div>
   <div class="gallery-artwork w-65">

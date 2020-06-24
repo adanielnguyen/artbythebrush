@@ -28,21 +28,16 @@
         <%= cl_image_tag(artwork.images.first.key)%>
         <div class="card-description">
           <p class="card-details d-flex justify-content-center"><%= artwork.name %></p>
+          <% end %>
             <% if user_signed_in? %>
             <div class="d-flex justify-content-center">
-            <%= render "shared/like_button", artwork: artwork %>
+              <%= render "shared/like_button", artwork: artwork %>
               <%= render "shared/collection_modal", artwork: artwork %>
             </div>
-              <% artwork.tag_list.each do |tag| %>
-                <%= link_to tag, tagged_path(tag: tag) %>
-              <% end %>
-            <% end %>
         </div>
       </figure>
     <% end %>
-
   <% end %>
-
 </div>
 
 <div class="banner-container" height="980px">
