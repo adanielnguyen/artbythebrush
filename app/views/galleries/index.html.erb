@@ -43,7 +43,7 @@
                 <%= cl_image_tag(gallery.image.key, :class => "card-img-top")%>
                 
                 <div class="gallery-card-avatar">
-                    <img class="image-circle" src="https://www.vincentvangogh.org/images/self-portrait.jpg"/>
+                    <%= cl_image_tag(gallery.user.avatar.key, :class => "image-circle") %>
                 </div>
                 <div class="card-body">
                     <p class="gallery-artist-name-text"><%= gallery.user.name %></p>

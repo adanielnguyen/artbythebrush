@@ -4,7 +4,7 @@ class Gallery < ApplicationRecord
   has_many :curates
   has_many :artworks, through: :curate
 
-  validates :name, :description, :image, presence: true
+  validates :name, :description, presence: true
   validates :start_date, :end_date, presence: true
 
   private

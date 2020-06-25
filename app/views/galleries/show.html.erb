@@ -40,7 +40,7 @@
             </div>
            
             <div class="col-sm-4" id="pictureANDbutton">
-             <img src="https://www.vincentvangogh.org/images/self-portrait.jpg" class="avatar-gallery" alt="">
+             <%= cl_image_tag(@gallery.user.avatar.key, :class => "avatar-gallery") %>
               <br/><br/>
               <button type="button" class="buttonGalleryAdmire">Admire</button>
               
