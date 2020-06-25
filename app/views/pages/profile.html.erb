@@ -2,7 +2,7 @@
   <div class="artist-text">
     <h1><%= @artist.name %></h1>
     <p>Fine Art Painter</p>
-    <%= @artist.email%>
+    <p class="garamond follows-count"><%= @artist.follows.count %> Admires</p> 
         <%= simple_form_for [@artist, @follow] do |f| %>
           <%= f.button :submit  %>
         <% end %>
