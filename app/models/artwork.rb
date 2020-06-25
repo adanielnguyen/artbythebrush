@@ -3,5 +3,5 @@ class Artwork < ApplicationRecord
   belongs_to :user
   acts_as_taggable_on :tags
 
-  validates :name, :description, :genre, :medium, :date_created, :images, presence: true
+  validates :name, :description, :genre, :medium, presence: true
 end

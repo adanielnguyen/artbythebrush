@@ -25,6 +25,7 @@ class PagesController < ApplicationController
     @favourite = Favourite.new
     @collections = current_user.collections
     @like = Like.new
+    @artist = User.find(params[:id])
   end
 
   private

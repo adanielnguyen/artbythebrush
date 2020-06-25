@@ -3,10 +3,14 @@ class CollectionsController < ApplicationController
   
   def index
     @collections = current_user.collections
+    
   end
 
   def show
     @artworks = @collection.artworks
+    respond_to |format|
+       format.js
+    end
   end
 
   def windowshow
@@ -48,4 +52,4 @@ class CollectionsController < ApplicationController
   def collection_params
     params.require(:collection).permit(:name, :artwork_id)
   end
-end
+
