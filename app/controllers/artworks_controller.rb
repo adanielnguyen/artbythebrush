@@ -12,9 +12,14 @@ class ArtworksController < ApplicationController
   def show
     @favourite = Favourite.new
     @like = Like.new
-    @artworks = Artwork.all
+   
     @related_artworks = @artwork.find_related_tags
     @collections = current_user.collections
+    @artwork = Artwork.find(params[:id])
+    @artist = @artwork.user
+    @artworks =  Artwork.all.select {|artwork| artwork.user == @artist}
+  
+  
   end
 
   def new
