@@ -8,7 +8,8 @@
         <% end %>
 
   </div>
-  <img src="https://www.vincentvangogh.org/images/self-portrait.jpg" class="card-trip-user avatar-bordered" />
+   <%= cl_image_tag(@artist.avatar.key, :class => "card-trip-user avatar-bordered") %>
+
 </div>
 
 <div class="card-grid-layout px-3 mb-3">

@@ -8,6 +8,7 @@
 # require "open-uri"
 
 puts "reseting database"
+Artwork.destroy_all
 Follow.destroy_all
 Like.destroy_all
 Tag.destroy_all
@@ -22,7 +23,11 @@ User.destroy_all
 
 
 puts "creating users"
-user1 = User.create!(name: "Henry Lay", email: "henry@gmail.com", password:"password")
+user1 = User.create!(name: "Daniel Nguyen", email: "daniel@gmail.com", password:"password")
+file = URI.open('https://res.cloudinary.com/dybthmrxc/image/upload/v1593055803/Screen_Shot_2020-06-25_at_1.29.26_pm_hmg1z4.png')
+user1.avatar.attach(io: file, filename: 'nes.png', content_type: 's/png')
+user1.save!
+
 user2 = User.create!(name: "Vincent Van Gogh", email: "user2@hotmail.com", password:"password")
 user3 = User.create!(email: "user3@hotmail.com", password:"password")
 user4 = User.create!(email: "user4@hotmail.com", password:"password")
@@ -38,7 +43,7 @@ user4 = User.create!(email: "user4@hotmail.com", password:"password")
 # FollowedRelationship.create!(record: black, user: user1)
 
 puts "creating artworks"
-artwork1 = Artwork.create!(name: "Water Lilies 1906 - Claude Monet", description: "One instant, one aspect of nature contains it all, said Claude Monet, referring to his late masterpieces, the water landscapes that he produced at his home in Giverny between 1897 and his death in 1926. These works replaced the varied contemporary subjects he had painted from the 1870s through the 1890s with a single, timeless motif—water lilies. The focal point of these paintings was the artist’s beloved flower garden, which featured a water garden and a smaller pond spanned by a Japanese footbridge.", genre: "Impressionism Painting", user: user1, medium: "Oil Painting"  )
+artwork1 = Artwork.create!(name: "Water Lilies 1906 - Claude Monet", description: "One instant, one aspect of nature contains it all, said Claude Monet, referring to his late masterpieces, the water landscapes that he produced at his home in Giverny between 1897 and his death in 1926. These works replaced the varied contemporary subjects he had painted from the 1870s through the 1890s with a single, timeless motif—water lilies. The focal point of these paintings was the artist’s beloved flower garden, which featured a water garden and a smaller pond spanned by a Japanese footbridge.", genre: "Impressionism Painting", user: user1, medium: "Oil Painting", date_created: "2007/11/10" )
 file = URI.open('http://art-monet.com/image/1900/1906%20Water%20Lilies7.jpg')
 artwork1.images.attach(io: file, filename: 'nes.png', content_type: 's/png')
 artwork1.save!

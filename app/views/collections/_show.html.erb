@@ -1,0 +1,19 @@
+
+
+<h1><%= @collection.name %></h1>
+ 
+
+
+<div class="cards-grid-layout px-3">
+  <% @artworks.each do |artwork| %>
+    <%= link_to artwork do %>
+      <div class="art" >
+        <%= cl_image_tag(artwork.images.first.key)%>
+        <div class="card-description">
+          <p class=""><%= artwork.name %></p>
+          <% end %>
+        
+        </div>
+      </div>
+  <% end %>
+</div>
