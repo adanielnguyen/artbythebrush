@@ -20,12 +20,13 @@ class PagesController < ApplicationController
   end
 
   def profile
-    @artworks = Artwork.all.select {|artwork| artwork.user == current_user}
+    @artist = User.find(params[:id])
+    @artworks = Artwork.all.select {|artwork| artwork.user == @artist}
     @follow = Follow.new
     @favourite = Favourite.new
     @collections = current_user.collections
     @like = Like.new
-    @artist = User.find(params[:id])
+    
   end
 
   private
