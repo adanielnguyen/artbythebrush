@@ -8,7 +8,7 @@
         <%= f.input :tag_list, as: :check_boxes, collection: ["Art", "Paint", "Painting House", "Drawing", "Abstract", "Design", "Nature", "Artist", "Painter"], class: "hidden" %>
       </div>
       <%= f.input :name, label: "Title" %>
-      <%= f.input :description, :rows => 10 %>
+      <%= f.input :description %>
       <%= f.input :genre %>
       <%= f.input :medium %>
       <%= f.input :date_created %>

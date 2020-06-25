@@ -30,9 +30,11 @@
   <div class="gallery-artwork w-65">
     <div class="card-grid-layout px-3">
       <% @artworks.each do |artwork| %>
-        <input type="checkbox" class="hidden" value="<%= artwork.id %>" name="post[artwork_ids][]"  id="post_artwork_ids_<%= artwork.id %>">
-        <div class="art" >
+        <div class="form-check art" id="gallery">
+          <input type="checkbox" class="form-check-input check_boxes optional" value="<%= artwork.id %>" name="post[artwork_ids][]"  id="post_artwork_ids_<%= artwork.id %> gallery">
+          <label class="form-check-label collection_check_boxes" for="post_artwork_ids_<%= artwork.id %> gallery">
           <%= cl_image_tag(artwork.images.first.key, :width=> 250 , :quality=>"auto", :fetch_format=>:auto)%>
+          </label>
         </div>
       <% end %>
         </div>
