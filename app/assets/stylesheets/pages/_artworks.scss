@@ -103,27 +103,3 @@
   transition: color 0.3s ease-in;
 }
 
-#gallery input[type="checkbox"] {
-  display: none;
-}
-
-
-#gallery input[type="checkbox"] + label {
-  margin-bottom: 1rem;
-  opacity: 0.4;
-  transition: opacity 0.5s ease-in, box-shadow 0.5s ease-in;
-}
-
-#gallery input[type="checkbox"]:checked + label {
-  opacity: 1;
-  box-shadow: 0 8px 17px 0 rgba(0, 0, 0, .2), 0 6px 20px 0 rgba(0, 0, 0, .15);
-}
-
-#gallery input[type="checkbox"] {
-  background: #eee;
-  margin: 5px; 
-  padding: 3px 10px;
-  border-radius: 5px;
-  transition: background 0.3s ease-in;
-  transition: color 0.3s ease-in;
-}

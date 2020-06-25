@@ -1,5 +1,5 @@
-const loadFile = (event) => {
-  const output = document.getElementById('output');
+var loadFile = function(event) {
+  var output = document.getElementById('output');
   output.style.backgroundImage = 'url(' + URL.createObjectURL(event.target.files[0]) + ')';
   output.onload = function() {
     URL.revokeObjectURL(output.src)
