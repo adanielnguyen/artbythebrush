@@ -8,13 +8,14 @@
 # require "open-uri"
 
 puts "reseting database"
-Artwork.destroy_all
+
 Follow.destroy_all
 Like.destroy_all
 Tag.destroy_all
 CollectionFavourite.destroy_all
 Favourite.destroy_all
 Curate.destroy_all
+Artwork.destroy_all
 Collection.destroy_all
 Gallery.destroy_all
 Artwork.destroy_all
@@ -28,9 +29,56 @@ file = URI.open('https://res.cloudinary.com/dybthmrxc/image/upload/v1593055803/S
 user1.avatar.attach(io: file, filename: 'nes.png', content_type: 's/png')
 user1.save!
 
-user2 = User.create!(name: "Vincent Van Gogh", email: "user2@hotmail.com", password:"password")
-user3 = User.create!(email: "user3@hotmail.com", password:"password")
-user4 = User.create!(email: "user4@hotmail.com", password:"password")
+user2 = User.create!(name: "Laura Pritchett", email: "user2@hotmail.com", password:"password")
+file = URI.open('https://res.cloudinary.com/dybthmrxc/image/upload/v1593065122/Screen_Shot_2020-06-25_at_4.04.31_pm_klq0mh.png')
+user2.avatar.attach(io: file, filename: 'nes.png', content_type: 's/png')
+user2.save!
+
+
+user3 = User.create!(name: "Claude Monet", email: "user3@hotmail.com", password:"password")
+file = URI.open('https://www.biography.com/.image/t_share/MTIwNjA4NjMzOTE3NzY5MjI4/claude-monet-wc-9411771-2-402.jpg')
+user3.avatar.attach(io: file, filename: 'nes.png', content_type: 's/png')
+user3.save!
+
+user4 = User.create!(name: "Vincent Van Gogh", email: "user4@hotmail.com", password:"password")
+file = URI.open('https://www.biography.com/.image/t_share/MTY2NTIzMzc4MTI2MDM4MjM5/vincent_van_gogh_self_portrait_painting_musee_dorsay_via_wikimedia_commons_promojpg.jpg')
+user4.avatar.attach(io: file, filename: 'nes.png', content_type: 's/png')
+user4.save!
+
+gallery1 = Gallery.create!(name: "Impression Sunrise", start_date: "2019/01/02", end_date: "2020/03/04", description: "Claude Monet’s Impression, sunrise has had a lasting impact on modern art and led to the naming of one of its best-known movements—Impressionism. But Monet did not create his painting in a vacuum. Various artists and their painting techniques helped the young man to develop his ideas and to hone the now-signature rough, immediate and unfinished style captured so distinctively in this seminal work. Monet’s influences stretched beyond his friends, teachers and mentors such as Eugène Boudin and Johan Barthold Jongkind, to artists working earlier in the nineteenth century, a period when landscape painting changed dramatically. British painters, especially JMW Turner and Richard Parkes Bonington, had inspired the French Barbizon School and Realist artists including Charles Daubigny, Camille Corot, Gustave Courbet. In the late nineteenth century, pure landscape became recognised as a serious and meaningful genre of painting. Monet was central: using oil paint on canvas to capture fleeting moments and fluctuating conditions, he forever changed attitudes to landscape, painting and art.", user_id: user3.id)
+file = URI.open('http://art-monet.com/image/1900/1906%20Water%20Lilies7.jpg')
+gallery1.image.attach(io: file, filename: 'nes.png', content_type: 's/png')
+gallery1.save!
+
+
+
+artwork26 = Artwork.create!(name: "Les Tuileries 1876 - Claude Monet", description: "In Monet’s Les Tuileries 1876 we feel the harsh light and suffocating heat of a Parisian summer. The scene, although recognisably urban,1 seems devoid of human life: it’s as if the visitors have taken refuge in the shade, leaving garden sculptures to stand in their places. But gradually small figures holding parasols aloft are discernible around the arch of the pool and along the avenue. The painter’s marks, which build the mass of trees in the foreground, gradually dissolve into a haze of buildings and vegetation on the horizon. Here is the enveloppe of light which so fascinated Monet and which, from the 1880s, he explored in greater detail through various series, most famously the Haystacks.", medium: "oil on canvas", genre: "Impressionism Painting", user: user3 )
+file = URI.open('https://upload.wikimedia.org/wikipedia/commons/2/2b/Monet-Tuileries-Marmottan.jpg')
+artwork26.images.attach(io: file, filename: 'nes.png', content_type: 'image/png')
+artwork26.save!
+
+artwork27 = Artwork.create!(name: "The rowing boat [La Barque] 1887 - Claude Monet", description: "In his early years at Giverny Monet painted several canvases with rowboats—sometimes with people, occasionally without. His subject was, of course, the surface of the water and the reflections in it, but he used the simplified structure of the vessel, and his stepdaughters Suzanne and Blanche Hoschedé, to animate the composition. Elsewhere the young women are shown fishing and navigating a skiff—In the ‘norvegienne’ c 1887 or The pink skiff 1890—sitting in the garden or walking in the meadows, a seemingly bucolic existence.2 In these paintings, many of them sketch‑like and apparently unfinished, the figures appear meditative, their stillness emphasised by reflections. After 1890, the human form is entirely absent from Monet’s work.", medium: "oil on canvas", genre: "Impressionism Painting", user: user3)
+file = URI.open('https://i.pinimg.com/originals/3c/35/36/3c3536a1a84779227905c812e740709f.jpg')
+artwork27.images.attach(io: file, filename: 'nes.png', content_type: 'image/png')
+artwork27.save!
+
+artwork28 = Artwork.create!(name: "On the beach at Trouville [Sur la plage à Trouville] 1870", description: "On 8 April 1867, long before their marriage took place, Monet had written from Paris to advise his father Alphonse of the imminent birth of his child with Camille Doncieux. His father, supported by his aunt, Madame Lecadre, responded by threatening to cancel the family’s financial support for Monet unless he abandoned Camille and their illegitimate child. Monet was distraught by the impossible choice between leaving his mistress and child and losing the family allowance which helped to support them and allowed him to continue as a painter. His solution was a ruse, agreeing to leave the pregnant Camille and return to the family fold, while secretly providing for his pregnant mistress in part by selling his painting Women in the garden 1866–67,1 featuring Camille, to his friend Jean‑Frèdèric Bazille. Monet moved to the family villa at Sainte‑Adresse, once a modest location for fisherman and now a fashionable seaside resort north‑west of Le Havre. Here he created multiple seascapes, some of which included his father and Madame Lecadre, but with Camille noticeably absent.", medium: "oil on canvas", genre: "Impressionism Painting", user: user3)
+file = URI.open('https://i.pinimg.com/originals/fe/8a/3e/fe8a3e6775dd926112a6af2521c353b9.jpg')
+artwork28.images.attach(io: file, filename: 'nes.png', content_type: 'image/png')
+artwork28.save!
+
+curate1 = Curate.create!(artwork: artwork26, gallery: gallery1)
+curate2 = Curate.create!(artwork: artwork27, gallery: gallery1)
+curate3 = Curate.create!(artwork: artwork28, gallery: gallery1)
+
+collection1 = Collection.create!(name: "Favourite Impressionism Paintings")
+
+favourite1 = Favourite.create!(artwork: artwork26, user: user1)
+favourite2 = Favourite.create!(artwork: artwork26, user: user1)
+favourite3 = Favourite.create!(artwork: artwork26, user: user1)
+
+
+collection_favourite1 = Collection_Favourites.create!(collection: collection1, favourite: favourite1)
 
 # oil = Tag.create!(text: "oil")
 # pastel = Tag.create!(text: "pastel")

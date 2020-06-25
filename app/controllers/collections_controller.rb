@@ -8,9 +8,9 @@ class CollectionsController < ApplicationController
 
   def show
     @artworks = @collection.artworks
-    respond_to |format|
-       format.js
-    end
+    # respond_to |format|
+    #    format.js
+    # end
   end
 
   def windowshow
@@ -53,3 +53,4 @@ class CollectionsController < ApplicationController
     params.require(:collection).permit(:name, :artwork_id)
   end
 
+end
