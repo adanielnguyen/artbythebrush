@@ -71,14 +71,14 @@ curate1 = Curate.create!(artwork: artwork26, gallery: gallery1)
 curate2 = Curate.create!(artwork: artwork27, gallery: gallery1)
 curate3 = Curate.create!(artwork: artwork28, gallery: gallery1)
 
-collection1 = Collection.create!(name: "Favourite Impressionism Paintings")
+collection1 = Collection.create!(name: "Favourite Impressionism Paintings", user: user1)
 
 favourite1 = Favourite.create!(artwork: artwork26, user: user1)
 favourite2 = Favourite.create!(artwork: artwork26, user: user1)
 favourite3 = Favourite.create!(artwork: artwork26, user: user1)
 
 
-collection_favourite1 = Collection_Favourites.create!(collection: collection1, favourite: favourite1)
+collection_favourite1 = CollectionFavourite.create!(collection: collection1, favourite: favourite1)
 
 # oil = Tag.create!(text: "oil")
 # pastel = Tag.create!(text: "pastel")

@@ -1,3 +1,3 @@
 
 
-$('#collection-artworks').html("<%= render :partial => '_show.html.erb' %>");
+$("#collection-artworks").html("<%= escape_javascript(render partial: 'show', locals: { collection: @collection } ) %>");

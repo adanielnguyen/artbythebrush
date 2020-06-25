@@ -18,7 +18,9 @@
 <div class ="flex-container-collection">
         <% @collections.each do |collection| %>
         
-        <%= link_to "Collection", collection do %>
+        
+        <%= link_to collection_path(collection), method: :get, :remote => true do %>
+        
         <div class="collection-card-flex">
             <div class="collection-text-area" >
                 <h1 class="collection-text-flex"><%= collection.name.titleize %></h1>
@@ -42,10 +44,10 @@
         <% end %>
 </div>
 
-<%# <div class = "collection-artworks"> %>
+<div id = "collection-artworks">
     <%# This will will contain the partial  %>
-   
-<%# </div> %>
+ 
+</div>
 
 
 
