@@ -4,7 +4,6 @@ Rails.application.routes.draw do
 
   get "artists/:id", to: 'pages#profile', as: "artist"
   get '/tagged', to: "pages#home", as: :tagged
-  get 'collections/:id', to: 'collections#collection-artworks'
   post "/" , to: "pages#home"
 
 

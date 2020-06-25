@@ -1,3 +1,6 @@
+(function () {
+  const collectionContainer = document.getElementById("collection-artworks");
+  collectionContainer.innerHTML = '<%= j render "shared/collection", artworks:@artworks %>'
+})();
 
 
-$("#collection-artworks").html("<%= escape_javascript(render partial: 'show', locals: { collection: @collection } ) %>");

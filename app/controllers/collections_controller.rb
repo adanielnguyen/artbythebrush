@@ -8,10 +8,6 @@ class CollectionsController < ApplicationController
 
   def show
     @artworks = @collection.artworks
-
-    respond_to do |format|
-      format.js {render layout: false} # Add this line to you respond_to block
-    end
   end
 
   def windowshow
