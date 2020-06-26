@@ -11,6 +11,7 @@ puts "reseting database"
 
 Follow.destroy_all
 Like.destroy_all
+#Taggings.destroy_all
 Tag.destroy_all
 CollectionFavourite.destroy_all
 Favourite.destroy_all
@@ -44,6 +45,8 @@ user4 = User.create!(name: "Vincent Van Gogh", email: "user4@hotmail.com", passw
 file = URI.open('https://www.biography.com/.image/t_share/MTY2NTIzMzc4MTI2MDM4MjM5/vincent_van_gogh_self_portrait_painting_musee_dorsay_via_wikimedia_commons_promojpg.jpg')
 user4.avatar.attach(io: file, filename: 'nes.png', content_type: 's/png')
 user4.save!
+
+
 
 gallery1 = Gallery.create!(name: "Impression Sunrise", start_date: "2019/01/02", end_date: "2020/03/04", description: "Claude Monet’s Impression, sunrise has had a lasting impact on modern art and led to the naming of one of its best-known movements—Impressionism. But Monet did not create his painting in a vacuum. Various artists and their painting techniques helped the young man to develop his ideas and to hone the now-signature rough, immediate and unfinished style captured so distinctively in this seminal work. Monet’s influences stretched beyond his friends, teachers and mentors such as Eugène Boudin and Johan Barthold Jongkind, to artists working earlier in the nineteenth century, a period when landscape painting changed dramatically. British painters, especially JMW Turner and Richard Parkes Bonington, had inspired the French Barbizon School and Realist artists including Charles Daubigny, Camille Corot, Gustave Courbet. In the late nineteenth century, pure landscape became recognised as a serious and meaningful genre of painting. Monet was central: using oil paint on canvas to capture fleeting moments and fluctuating conditions, he forever changed attitudes to landscape, painting and art.", user_id: user3.id)
 file = URI.open('http://art-monet.com/image/1900/1906%20Water%20Lilies7.jpg')
@@ -79,6 +82,18 @@ favourite3 = Favourite.create!(artwork: artwork26, user: user1)
 
 
 collection_favourite1 = CollectionFavourite.create!(collection: collection1, favourite: favourite1)
+
+
+#-----------------------------------------
+# Daniel's exhibition and artworks
+
+artwork29 = Artwork.create!(name: "Garden of Roses - Daniel Nguyen", description: "In Monet’s Les Tuileries 1876 we feel the harsh light and suffocating heat of a Parisian summer. The scene, although recognisably urban,1 seems devoid of human life: it’s as if the visitors have taken refuge in the shade, leaving garden sculptures to stand in their places. But gradually small figures holding parasols aloft are discernible around the arch of the pool and along the avenue. The painter’s marks, which build the mass of trees in the foreground, gradually dissolve into a haze of buildings and vegetation on the horizon. Here is the enveloppe of light which so fascinated Monet and which, from the 1880s, he explored in greater detail through various series, most famously the Haystacks.", medium: "Oil On Canvas", genre: "Impressionism", user: user1 )
+file = URI.open('https://upload.wikimedia.org/wikipedia/commons/2/2b/Monet-Tuileries-Marmottan.jpg')
+artwork29.images.attach(io: file, filename: 'nes.png', content_type: 'image/png')
+artwork29.save!
+
+
+
 
 # oil = Tag.create!(text: "oil")
 # pastel = Tag.create!(text: "pastel")
