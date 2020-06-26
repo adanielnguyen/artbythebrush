@@ -39,7 +39,7 @@
     <h2 class="forum text-center mt-5">Artist's Other Work </h2>
   </div>
   <div class="card-grid-layout px-3">
-    <% @artworks.each do |artwork| %>
+    <% @artworks.first(8).each do |artwork| %>
     <%= link_to artwork, class: 'link-upstyled' do %>
     <figure class="art card__hover" >
       <%= cl_image_tag(artwork.images.first.key, :quality=>"auto", :fetch_format=>:auto, :width=> 361)%>
