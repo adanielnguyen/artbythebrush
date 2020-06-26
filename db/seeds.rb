@@ -87,8 +87,12 @@ collection_favourite1 = CollectionFavourite.create!(collection: collection1, fav
 #-----------------------------------------
 # Daniel's exhibition and artworks
 
-artwork29 = Artwork.create!(name: "Garden of Roses - Daniel Nguyen", description: "In Monet’s Les Tuileries 1876 we feel the harsh light and suffocating heat of a Parisian summer. The scene, although recognisably urban,1 seems devoid of human life: it’s as if the visitors have taken refuge in the shade, leaving garden sculptures to stand in their places. But gradually small figures holding parasols aloft are discernible around the arch of the pool and along the avenue. The painter’s marks, which build the mass of trees in the foreground, gradually dissolve into a haze of buildings and vegetation on the horizon. Here is the enveloppe of light which so fascinated Monet and which, from the 1880s, he explored in greater detail through various series, most famously the Haystacks.", medium: "Oil On Canvas", genre: "Impressionism", user: user1 )
-file = URI.open('https://upload.wikimedia.org/wikipedia/commons/2/2b/Monet-Tuileries-Marmottan.jpg')
+artwork29 = Artwork.create!(name: "Garden of Roses - Daniel Nguyen", description: "rollerskates, aluminum foil, soccer balls.
+
+  This work is a fantastical, documentary series of film stills consisting of visceral exploration of domesticity which is reminiscent of narratives of identity, mortality, loss and love.
+  
+  The work deploys the front-page layout design of the New York Times as a way to capture this specific moment in American History.", medium: "Oil On Canvas", genre: "Impressionism", user: user1 )
+file = URI.open('https://res.cloudinary.com/dybthmrxc/image/upload/v1593171451/Daniel_s_Painting_ohktmv.png')
 artwork29.images.attach(io: file, filename: 'nes.png', content_type: 'image/png')
 artwork29.save!
 
