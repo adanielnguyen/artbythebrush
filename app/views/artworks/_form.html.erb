@@ -5,7 +5,7 @@
         <%= f.input :images, as: :file, input_html: { multiple: true}, label: false %>
       </div>
       <div class="" id="tags" label="">
-        <%= f.input :tag_list, as: :check_boxes, collection: ["Art", "Paint", "Painting House", "Drawing", "Abstract", "Design", "Nature", "Artist", "Painter"], class: "hidden" %>
+        <%= f.input :tag_list, as: :check_boxes, collection: ['Acrylic', 'Charcoal', 'Oil Watercolor', 'Ink', 'Paint', 'Spray Paint', 'Sculpturing', 'Pastel', 'Pencil', 'Fine Art', 'Abstract', 'Expressionism', 'Impressionism', 'Photorealism', 'Pop Art', 'Portraiture'], class: "hidden" %>
       </div>
       <%= f.input :name, label: "Title" %>
       <%= f.input :description %>
