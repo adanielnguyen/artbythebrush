@@ -21,7 +21,6 @@ class PagesController < ApplicationController
   end
 
   def profile
-    @artist = User.find(params[:id])
     @artworks = Artwork.all.select {|artwork| artwork.user == @artist}
     @follow = Follow.new
     @favourite = Favourite.new
