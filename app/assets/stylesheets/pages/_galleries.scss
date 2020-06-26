@@ -280,6 +280,40 @@ font-size: 14px;
 .gallery-artwork { grid-area: gallery-artwork; }
 
 
+// SIDE NAV BAR
+.sidenav {
+  height: 100%; /* Full-height: remove this if you want "auto" height */
+  width: 160px; /* Set the width of the sidebar */
+  position: absolute; /* Fixed Sidebar (stay in place on scroll) */
+  z-index: 1; /* Stay on top */
+  top: 0; /* Stay at the top */
+  left: 0;
+  background-color: transparent; /* Black */
+  overflow-x: hidden; /* Disable horizontal scroll */
+  padding-top: 20px;
+}
+
+.menu-position {
+  font-family: "eb garamond";
+  top: 33rem;
+  position: absolute;
+  list-style: none;
+  font-size: 14px;
+  a {
+    text-decoration: none;
+    color: gray;
+  }
+  a:hover {
+    color: black;
+  }
+  #active-li {
+    color: black;
+  }
+  li {
+    margin-bottom: 4px;
+  }
+}
+
 // Previous Design before 22nd June
 
 // // CSS for Gallery Show Page
