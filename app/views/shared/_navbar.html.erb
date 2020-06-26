@@ -31,8 +31,8 @@
       <li class="nav-item">
         <%= link_to "My Collections", collections_path, id: "highlight", class: "nav-link" %>
       </li>
-      <li class="nav-item">
-        <%= link_to "Profile", artist_path(current_user), id: "highlight", class: "nav-link" %>
+      <li class="nav-item space-between-image">
+        <%= link_to "Portfolio", artist_path(current_user), id: "highlight", class: "nav-link" %>
       </li>
       <li class="nav-item dropdown">
      <%# cl_image_path(current_user.avatar.key) %>

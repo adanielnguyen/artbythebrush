@@ -74,8 +74,12 @@ input#query:focus {
   box-shadow: none;
 }
 
+.space-between-image {
+  margin-right: .5rem;
+}
+
 .search-width {
-  min-width: 530px;
+  min-width: 12rem;
   border-color: rgb(180,223,222);
 }
 
