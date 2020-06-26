@@ -10,7 +10,7 @@
       <%= f.input :name, label: "Title" %>
       <%= f.input :description %>
       <%= f.input :genre, collection: ['Fine Art', 'Abstract', 'Expressionism', 'Figurative', 'Impressionism', 'Photorealism', 'Pop Art', 'Portraiture', 'Conceptual', 'Street Art'] %>
-      <%= f.input :medium, collection: [] %>
+      <%= f.input :medium, collection: ['Acrylic', 'Charcoal', 'Oil Watercolor', 'Ink', 'Paint', 'Pastel', 'Pencil', 'Spray Paint', 'Sculpturing'] %>
       <%= f.input :date_created %>
       <%= f.submit class: "btn-bespoke submit-photo-button", label: false %>
   </div>
