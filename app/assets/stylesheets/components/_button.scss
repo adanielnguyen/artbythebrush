@@ -1,8 +1,4 @@
-.follow-btn {
-  text-decoration: none!important;
-  font-family: "forum"!important;
-  color: black;
-}
+
 
 .remove-underline {
   a {
@@ -97,14 +93,14 @@ $grey: #bbbbbb;
   border: 1.5px solid $trademarkblue;
   border-radius: 15px!important;
   color: gray;
-  font-weight: bold;
+  font-weight: bold!important;
   font-family: 'forum';
   text-transform: capitalize;
   font-size: 16px;
-  letter-spacing: 3px;
+  letter-spacing: 1.5px;
   transition: all .2s ease-in-out;
   text-decoration: none;
-  background-color: #fff;
+  background-color: transparent;
 
   
   &:hover {
