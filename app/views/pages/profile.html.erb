@@ -1,12 +1,13 @@
 <div class="artist-profile" style="background-image: linear-gradient(rgba(0, 0, 0, 0.1), rgba(0, 0, 0, 0.1)), url(https://cdn11.bigcommerce.com/s-vx5jp8mgcz/images/stencil/1280x1280/products/1295/1465/t_Turner-Coast_of_Northumberland__44763.1547318751.jpg?c=2&imbypass=on)";>
   <div class="artist-text">
-    <h1><%= @artist.name %></h1>
+    <%= cl_image_tag(@artist.avatar.key, :class => "card-trip-user avatar-bordered") %>
+    <h3><%= @artist.name %></h3>
     <p class="mb-0">Fine Art Painter</p>
     <p class="follows-count"><%= @artist.follows.count %> Admires</p> 
     <p>
       <%= link_to "Admire", user_follows_path(@artist), method: :post, class: "btn-follow", remote: true %>
     </p>
-    <%= cl_image_tag(@artist.avatar.key, :class => "card-trip-user avatar-bordered") %>
+    
   </div>
 </div>
 
@@ -14,7 +15,6 @@
   <% @artworks.each do |artwork| %>
       <figure class="art card__hover" >
         <%= cl_image_tag(artwork.images.first.key)%>
-        
         <div class="card-description">
           <p class="card-details"><%= artwork.name %></p>
           <% if user_signed_in? %>
