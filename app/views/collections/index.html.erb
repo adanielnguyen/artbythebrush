@@ -13,42 +13,46 @@
     </div>
   </div>
 
-<a href=""><%= link_to  "Create new collection", new_collection_path %></a>
 
-<div class ="flex-container-collection">
-        <% @collections.each do |collection| %>
-        
-        
-        <%= link_to collection_path(collection), method: :get, remote: true do %>
-        
-        <div class="collection-card-flex">
-            <div class="collection-text-area" >
-                <h1 class="collection-text-flex"><%= collection.name.titleize %></h1>
-                
-                        <video class="video-collections" height="300px" width="300px%" autoplay="autoplay" loop muted>
-                        <source src= <%= URI.encode("https://res.cloudinary.com/dybthmrxc/video/upload/v1593028512/ezgif-3-8f8b23933a3f_f1dgyr.mp4")%> type="video/mp4">
-                        Your browser does not support the video tag.
-                </video>
-            </div>
+<div class= "collection-container">
+    <a href=""><%= link_to  "Create new collection", new_collection_path %></a>
+   
+    <div class ="flex-container-collection">
+            <% @collections.each do |collection| %>
             
-            <% collection.artworks.sample(3).each do |artwork| %>
-                <div class="collection-card-thumbnail" style="background-image: url('<%= cl_image_path(artwork.images.first.key)%>')"></div>
-            <% end %>
-             <% if collection.artworks.length < 3 %>
-                <% (3-collection.artworks.length).times do %>
-                    <div class="collection-card-thumbnail" style="background-image: url('https://images.pond5.com/4k-plus-sign-spinning-icon-footage-072479606_prevstill.jpeg')"></div>
+            
+            <%= link_to collection_path(collection), method: :get, remote: true do %>
+            
+            <div class="collection-card-flex">
+                <div class="collection-text-area" >
+                    <div class ="text-avatar-grid">
+                            <h1 class="collection-text-flex"><%= collection.name.titleize %></h1>
+                    
+                    </div>
+                            <video class="video-collections" height="360px" width="360px" autoplay="autoplay" loop muted>
+                            <source src= <%= URI.encode("https://res.cloudinary.com/dybthmrxc/video/upload/v1593028512/ezgif-3-8f8b23933a3f_f1dgyr.mp4")%> type="video/mp4">
+                            Your browser does not support the video tag.
+                    </video>
+                </div>
+                
+                <% collection.artworks.sample(3).each do |artwork| %>
+                    <div class="collection-card-thumbnail" style="background-image: url('<%= cl_image_path(artwork.images.first.key)%>')"></div>
                 <% end %>
+                <% if collection.artworks.length < 3 %>
+                    <% (3-collection.artworks.length).times do %>
+                        <div class="collection-card-thumbnail-add" style="background-image: url('https://images.pond5.com/4k-plus-sign-spinning-icon-footage-072479606_prevstill.jpeg')"></div>
+                    <% end %>
+                <% end %>
+            </div>
             <% end %>
-        </div>
-        <% end %>
-        <% end %>
+            <% end %>
+    </div>
+
+    <div id = "collection-artworks">
+        <%# This will will contain the partial  %>
+    
+    </div>
+
+
+
 </div>
-
-<div id = "collection-artworks">
-    <%# This will will contain the partial  %>
- 
-</div>
-
-
-
-

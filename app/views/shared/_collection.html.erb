@@ -1,15 +1,15 @@
-<h1> working</h1>
-<div class="cards-grid-layout px-3">
-  <% artworks.each do |artwork| %>
-    <%= link_to artwork do %>
-      <div class="art" >
-        <%= cl_image_tag(artwork.images.first.key)%>
-        <div class="card-description">
-          <p class=""><%= artwork.name %></p>
-          <% end %>
+
+
+    <div class="collection-card-grid-layout">
+      <% @artworks.each do |artwork| %>
+        <%= link_to artwork do %>
+         
+          <%= cl_image_tag(artwork.images.first.key, :width=> 550 , :quality=>"auto", :fetch_format=>:auto)%>
         
         </div>
+        <% end %>
+      <% end %>
+        </div>
       </div>
-  <% end %>
-</div>
+ 
 
