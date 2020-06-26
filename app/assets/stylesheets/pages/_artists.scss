@@ -14,6 +14,7 @@
 
 /* Place text in the middle of the image */
 .artist-text {
+  padding-top: 5.5rem;
   text-align: center;
   align-items: center;
   position: absolute;
@@ -33,13 +34,7 @@
 //   font-family: "eb garamond";
 // }
 .card-trip-user {
-    position: absolute;
     height: 11vh;
     width: 11vh;
-    left: 47%;
-    top: 23vh;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    
+    margin-top: 1rem;
 }

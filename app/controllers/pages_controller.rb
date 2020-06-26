@@ -14,13 +14,13 @@ class PagesController < ApplicationController
     end
 
     @favourite = Favourite.new
+    @artist = current_user
     @collections = current_user ? current_user.collections : []
     @like = Like.new
     @top_tags = ActsAsTaggableOn::Tag.most_used(10)
   end
 
   def profile
-    @artist = User.find(params[:id])
     @artworks = Artwork.all.select {|artwork| artwork.user == @artist}
     @follow = Follow.new
     @favourite = Favourite.new
