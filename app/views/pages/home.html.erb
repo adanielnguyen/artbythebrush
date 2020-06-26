@@ -22,7 +22,7 @@
 <% end %>
 
 <div class="card-grid-layout px-3">
-  <% @artworks.each do |artwork| %>
+  <% @artworks.first(24).each do |artwork| %>
     <%= link_to artwork do %>
       <figure class="art card__hover" id="artwork-<%= artwork.id %>">
         <%= cl_image_tag(artwork.images.first.key, :width=>361, :quality=>"auto", :fetch_format=>:auto)%>
