@@ -1,10 +1,10 @@
-#modal-style-body {
+.modal-style-body {
   flex-direction: column;
   font-family: "eb garamond";
   color: gray;
 }
 
-#modal-style-body:hover + a {
+.modal-style-body:hover {
   text-decoration: none!important;
   color: $trademarkblue;
 }
