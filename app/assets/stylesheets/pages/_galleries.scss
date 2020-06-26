@@ -14,6 +14,10 @@ div.col-8 div {
   display: none;
 }
 
+.nav-pills .nav-link.active, .nav-pills .show > .nav-link {
+  background-color: $trademarkblue;
+  border-radius: 12px;
+}
 
 #gallery input[type="checkbox"] + label {
   margin-bottom: 1rem;
