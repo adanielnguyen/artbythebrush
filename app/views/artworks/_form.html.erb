@@ -9,8 +9,8 @@
       </div>
       <%= f.input :name, label: "Title" %>
       <%= f.input :description %>
-      <%= f.input :genre %>
-      <%= f.input :medium %>
+      <%= f.input :genre, collection: ['Fine Art', 'Abstract', 'Expressionism', 'Figurative', 'Impressionism', 'Photorealism', 'Pop Art', 'Portraiture', 'Conceptual', 'Street Art'] %>
+      <%= f.input :medium, collection: [] %>
       <%= f.input :date_created %>
       <%= f.submit class: "btn-bespoke submit-photo-button", label: false %>
   </div>

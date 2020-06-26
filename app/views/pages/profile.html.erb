@@ -15,7 +15,6 @@
   <% @artworks.each do |artwork| %>
       <figure class="art card__hover" >
         <%= cl_image_tag(artwork.images.first.key)%>
-        
         <div class="card-description">
           <p class="card-details"><%= artwork.name %></p>
           <% if user_signed_in? %>
