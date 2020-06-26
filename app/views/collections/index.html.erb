@@ -15,7 +15,6 @@
 
 
 <div class= "collection-container">
-    <a href=""><%= link_to  "Create new collection", new_collection_path %></a>
    
     <div class ="flex-container-collection">
             <% @collections.each do |collection| %>
@@ -46,7 +45,9 @@
             </div>
             <% end %>
             <% end %>
+
     </div>
+                <%= link_to  "Create new collection", new_collection_path %>
 
     <div id = "collection-artworks">
         <%# This will will contain the partial  %>
