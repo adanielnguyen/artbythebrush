@@ -87,10 +87,15 @@ $grey: #bbbbbb;
   }
 }
 
+#admire-gallery-button-size {
+  width: 155.78px;
+  font-size: 20px;
+}
+
 .btn-follow, .btn-follow:link, .btn-follow:visited {
   padding: 13px 15px;
   border: 1.5px solid $trademarkblue;
-  border-radius: 15px;
+  border-radius: 15px!important;
   color: gray;
   font-weight: bold;
   font-family: 'forum';
@@ -99,6 +104,8 @@ $grey: #bbbbbb;
   letter-spacing: 3px;
   transition: all .2s ease-in-out;
   text-decoration: none;
+  background-color: #fff;
+
   
   &:hover {
     background: $trademarkblue;
