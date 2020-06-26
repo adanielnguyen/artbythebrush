@@ -22,7 +22,7 @@
 
 .form-body {
   color: gray;
-  font-size: 14px;
+  font-size: 16px;
 }
 
 .form-sticky {
@@ -39,10 +39,6 @@
   padding-top: 2em;
 }
 
-.preview {
-  width: 100%;
-  height: 100%;
-}
 
 .form-group abbr[title] {
   display: none;
@@ -54,6 +50,7 @@
   background-repeat: no-repeat;
   background-size: contain;
   background-position: center;
+  margin-left: 1em;
 }
 
 .image-form-style {
