@@ -2,7 +2,7 @@
   const collectionContainer = document.getElementById("collection-artworks");
   collectionContainer.innerHTML = '<%= j render "shared/collection", artworks:@artworks %>'
   document.getElementById('collection-artworks').setAttribute("style","height:1500px");
-  document.getElementById('collection-artworks').scrollIntoView();
+  document.getElementById('collection-artworks').scrollIntoView({behavior: 'smooth'});
 })();
 
 
