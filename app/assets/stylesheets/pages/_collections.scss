@@ -97,3 +97,71 @@ text-align: center;
     }
   }
 }
+
+.btn-collection-style {
+  outline:none;
+  height: 60px;
+  text-align: center;
+  width: 30%;
+  border-radius:40px;
+  background: #fff;
+  border: 2px solid $trademarkblue;
+  color:$trademarkblue;
+  letter-spacing:1.5px;
+  text-shadow:0;
+  padding: 1rem;
+  font:{
+    size:16px;
+    font-weight:300;
+  }
+  cursor: pointer;
+  transition: all 0.25s ease;
+  &:hover {
+    color:white;
+    background: $trademarkblue;
+    text-decoration: none;
+  }
+  &:active {
+    letter-spacing: 2px ;
+  }
+  &:after {
+    content:"Create Collection";
+  }
+  a {
+    text-decoration: none;
+  }
+}
+.onclic {
+  width: 40px;
+  border-color:$grey;
+  border-width:3px;
+  font-size:0;
+  border-left-color:$trademarkblue;
+  animation: rotating 2s 0.25s linear infinite;
+
+  &:after {
+    content:"";
+  }
+  &:hover {
+    color:$trademarkblue;
+    background: white;
+  }
+}
+.validate {
+  font-size:13px;
+  color: white;
+  background: $trademarkblue;
+  &:after {
+    font-family:'FontAwesome';
+    content:"\f00c";
+  }
+}
+
+@keyframes rotating {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
