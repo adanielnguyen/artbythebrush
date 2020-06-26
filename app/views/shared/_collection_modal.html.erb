@@ -18,7 +18,7 @@
           <%#= simple_form_for [collection, artwork], url: collection_favourites_path, method: :post, remote: true  do | f | %>
             <%#= f.submit %>
           <%# end %>
-          <%= link_to collection.name, collection_artwork_collection_favourites_path(collection, artwork), method: :post, class: "d-flex modal-style-body" %>
+          <span id="modal-style-body"></span><%= link_to collection.name, collection_artwork_collection_favourites_path(collection, artwork), method: :post, class: "d-flex modal-style-body" %>
         <% end %>
       </div>
     </div>
