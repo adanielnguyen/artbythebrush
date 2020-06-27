@@ -20,7 +20,7 @@
             <% @collections.each do |collection| %>
             
             
-            <%= link_to collection_path(collection), method: :get, remote: true do %>
+            <%= link_to collection_path(collection), method: :get, remote:true do %>
             
             <div class="collection-card-flex">
                 <div class="collection-text-area" >
@@ -34,7 +34,7 @@
                     </video>
                 </div>
                 
-                <% collection.artworks.sample(3).each do |artwork| %>
+                <% collection.artworks.first(3).each do |artwork| %>
                     <div class="collection-card-thumbnail" style="background-image: url('<%= cl_image_path(artwork.images.first.key)%>')"></div>
                 <% end %>
                 <% if collection.artworks.length < 3 %>
@@ -45,6 +45,7 @@
             </div>
             <% end %>
             <% end %>
+
 
     </div>
             <%= link_to "" , new_collection_path, class: "btn-collection-style btn-submit-position" %>
