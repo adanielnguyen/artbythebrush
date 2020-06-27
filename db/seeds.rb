@@ -413,11 +413,6 @@ curate24 = Curate.create!(artwork: artwork51, gallery: gallery6)
 #------------------------------------------------------
 #henry's artworks
 
-artwork51 = Artwork.create!(name: "Water Lillies - Henry Lay 2020", description: "In Henry's Water Lillies, we feel the light and the afternoon heat of an Australian summer. The scene, showcases a Garden of Roses from a vineyard in Mt Dandenong. leaving garden sculptures to stand in their places. But gradually small figures holding parasols aloft are discernible around the arch of the pool and along the avenue. The painter’s marks, which build the mass of trees in the foreground, gradually dissolve into a haze of buildings and vegetation on the horizon. Here is the enveloppe of light which so fascinated Monet and which, from the 2010s, he explored in greater detail through various series, most famously the Haystacks.", medium: "Oil On Canvas", genre: "Impressionism", user: user6 )
-file = URI.open('https://lh3.googleusercontent.com/proxy/HH-KARaedqqVxT9mpdtui0692nB5nQbyFObfTf0Zt3s6R45fcUJGnzFL0JAnNHO3NOfJuoTs9V_fr-ObxoLuo3uaY7NuKOMeGGFX5FM_TchTr8j9yhq8_7qwLYJgHuom0HQkZUHU')
-artwork51.images.attach(io: file, filename: 'nes.png', content_type: 'image/png')
-artwork51.save!
-
 artwork52 = Artwork.create!(name: "Water Lillies - Henry Lay 2020", description: "In Henry's Water Lillies, we feel the light and the afternoon heat of an Australian summer. The scene, showcases a Garden of Roses from a vineyard in Mt Dandenong. leaving garden sculptures to stand in their places. But gradually small figures holding parasols aloft are discernible around the arch of the pool and along the avenue. The painter’s marks, which build the mass of trees in the foreground, gradually dissolve into a haze of buildings and vegetation on the horizon. Here is the enveloppe of light which so fascinated Monet and which, from the 2010s, he explored in greater detail through various series, most famously the Haystacks.", medium: "Oil On Canvas", genre: "Impressionism", user: user6 )
 file = URI.open('https://2.bp.blogspot.com/-QVL6ljipZx4/UDQ2G7rvwFI/AAAAAAAAFYU/sGCdtjbox3A/s1600/monet2.JPG')
 artwork52.images.attach(io: file, filename: 'nes.png', content_type: 'image/png')
