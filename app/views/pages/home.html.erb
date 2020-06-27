@@ -13,7 +13,7 @@
   <% if user_signed_in? %>
   <div class="second-banner">
   <h2 class="second-title">Welcome <%= @artist.name.split.first %>!</h2>
-  <p class="paragraph">Let Art Tell Your Story. Select Some Genres You’re Interested In To Help Personalize Your Experience<br>Starting With Finding People To Follow</p>
+  <p class="paragraph">Let Art Tell Your Story. <br>Personalizing Your Feed To Help Find Your Daily Inspiration</p>
   <% @top_tags.each do |tag| %>
     <%= link_to tag, tagged_path(tag: tag.name) %>
       <%= cl_image_tag(Artwork.tagged_with(tag.name).first.images.first.key, width: 24, height: 24, crop: :thumb, :quality=>"auto", :fetch_format=>:auto) %>
@@ -120,15 +120,15 @@
   <h2>Follow Similar Artists</h2>
   <div class="similar-flex">
     <div class="avatar"></div>
-      <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn%3AANd9GcQCkG1DRSavF9tqFQFwctuLwm_P3rT0ylNIkSbmfbFb9jPwQij2&usqp=CAU" alt="">
+      <img src="https://res.cloudinary.com/dybthmrxc/image/upload/v1593065122/Screen_Shot_2020-06-25_at_4.04.31_pm_klq0mh.png" alt="">
     <div class="avatar"></div>
-      <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn%3AANd9GcQCkG1DRSavF9tqFQFwctuLwm_P3rT0ylNIkSbmfbFb9jPwQij2&usqp=CAU" alt="">
+      <img src="https://res.cloudinary.com/dybthmrxc/image/upload/v1593065122/Screen_Shot_2020-06-25_at_4.04.31_pm_klq0mh.png" alt="">
     <div class="avatar"></div>
-      <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn%3AANd9GcQCkG1DRSavF9tqFQFwctuLwm_P3rT0ylNIkSbmfbFb9jPwQij2&usqp=CAU" alt="">
+      <img src="https://www.biography.com/.image/t_share/MTIwNjA4NjMzOTE3NzY5MjI4/claude-monet-wc-9411771-2-402.jpg" alt="">
     <div class="avatar"></div>
-      <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn%3AANd9GcQCkG1DRSavF9tqFQFwctuLwm_P3rT0ylNIkSbmfbFb9jPwQij2&usqp=CAU" alt="">
+      <img src="https://www.biography.com/.image/t_share/MTY2NTIzMzc4MTI2MDM4MjM5/vincent_van_gogh_self_portrait_painting_musee_dorsay_via_wikimedia_commons_promojpg.jpg" alt="">
     <div class="avatar"></div>
-      <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn%3AANd9GcQCkG1DRSavF9tqFQFwctuLwm_P3rT0ylNIkSbmfbFb9jPwQij2&usqp=CAU" alt="">
+      <img src="https://res.cloudinary.com/dybthmrxc/image/upload/v1593176733/Screen_Shot_2020-06-26_at_11.04.57_pm_l8boei.png" alt="">
     <div class="avatar"></div>
   </div>
 </div>

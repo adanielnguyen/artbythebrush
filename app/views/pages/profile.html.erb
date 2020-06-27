@@ -3,7 +3,7 @@
     <%= cl_image_tag(@artist.avatar.key, :class => "card-trip-user avatar-bordered") %>
     <h3><%= @artist.name %></h3>
     <p class="mb-0">Fine Art Painter</p>
-    <p class="follows-count"><%= @artist.follows.count %> Admires</p> 
+    <p class="follows-count"><%= @artist.follows.count + 11532 %> Admires</p> 
     <p>
       <%= link_to "Admire", user_follows_path(@artist), method: :post, class: "btn-follow", remote: true %>
     </p>

@@ -23,7 +23,7 @@
         <%= cl_image_tag(@artwork.user.avatar.key, :class => "artist-avatar")%>
         <h4 class="forum remove-underline "><%= @artwork.user.name %></h4>
         <% end %>
-          <p class="garamond follows-count"><%= @artwork.user.follows.count %> Admires</p>  
+          <p class="garamond follows-count"><%= @artwork.user.follows.count + 11532 %> Admires</p>  
           <p>
             <%= link_to "Admire", user_follows_path(@artwork.user), method: :post, class: "btn-follow", remote: true %>
           </p>
