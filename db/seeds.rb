@@ -57,12 +57,12 @@ user6.avatar.attach(io: file, filename: 'nes.png', content_type: 's/png')
 user6.save!
 
 user7 = User.create!(name: "Karen Margulis", email: "user6@hotmail.com", password:"password")
-file = URI.open('https://lh3.googleusercontent.com/proxy/4sBcyPAvQatdb3U3knl32uG14WcRxG5F63oNdHf-iq3ZnIppC02HfWxjPLk8yov0BokXOBu1XbvWSDKcj7PQ1XvTCDw90jYvGryM_E5OK9VEBget9N7czHZrp4kR6dc0')
+file = URI.open('https://i.etsystatic.com/iusa/e06956/37184188/iusa_400x400.37184188_2n39.jpg?version=0')
 user7.avatar.attach(io: file, filename: 'nes.png', content_type: 's/png')
 user7.save!
 
 user8 = User.create!(name: "Gosia", email: "user7@hotmail.com", password:"password")
-file = URI.open('https://lh3.googleusercontent.com/proxy/4sBcyPAvQatdb3U3knl32uG14WcRxG5F63oNdHf-iq3ZnIppC02HfWxjPLk8yov0BokXOBu1XbvWSDKcj7PQ1XvTCDw90jYvGryM_E5OK9VEBget9N7czHZrp4kR6dc0')
+file = URI.open('https://d38we5ntdyxyje.cloudfront.net/940038/profile/BMYAUMHO_avatar_medium_square.jpg')
 user8.avatar.attach(io: file, filename: 'nes.png', content_type: 's/png')
 user8.save!
 
