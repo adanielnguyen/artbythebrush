@@ -16,3 +16,25 @@
   </div>
 </div>
 
+<script>
+(function(){
+  artwork = document.querySelector('.form-control-file');
+
+  const loadFile = (e) => {
+    if (artwork) { 
+
+      console.log("hi")
+      const output = document.getElementById('output');
+      output.style.backgroundImage = 'url(' + URL.createObjectURL(e.target.files[0]) + ')';
+      output.onload = function() {
+        URL.revokeObjectURL(output.src)
+      }
+
+    
+    }
+  }
+
+  artwork.addEventListener('change', loadFile)
+})();
+
+</script>
