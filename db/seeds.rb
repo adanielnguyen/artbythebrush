@@ -381,7 +381,7 @@ curate11 = Curate.create!(artwork: artwork33, gallery: gallery3)
 curate12 = Curate.create!(artwork: artwork34, gallery: gallery3)
 curate13 = Curate.create!(artwork: artwork35, gallery: gallery3)
 curate14 = Curate.create!(artwork: artwork36, gallery: gallery3)
-curate15 = Curate.create!(artwork: artwork37, gallery: gallery3)
+# curate15 = Curate.create!(artwork: artwork37, gallery: gallery3)
 
 
 
