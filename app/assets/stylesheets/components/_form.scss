@@ -100,7 +100,11 @@
     margin-bottom: 30px;
     text-align: center;
   }
-  label, a, .form-control {
+  label, a{
+    font-family: "eb garamond";
+  }
+
+  .form-action .btn {
     font-family: "eb garamond";
   }
   
