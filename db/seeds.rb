@@ -333,17 +333,17 @@ artwork32.images.attach(io: file, filename: 'nes.png', content_type: 'image/png'
 artwork32.save!
 
 artwork33 = Artwork.create!(name: "Bright Autumn Falls - Daniel Nguyen 2015", description: "In Autumn, in the meadows in Mount Macedon, we feel the light and the afternoon heat of an Australian summer. The scene, showcases a Garden of Roses from a vineyard in Mt Dandenong. leaving garden sculptures to stand in their places. But gradually small figures holding parasols aloft are discernible around the arch of the pool and along the avenue. The painter’s marks, which build the mass of trees in the foreground, gradually dissolve into a haze of buildings and vegetation on the horizon.", medium: "Oil On Canvas", genre: "Impressionism", user: user1 )
-file = URI.open('https://images.fasosites.com/18545_3542595x2560+v=202004202008/texas-red.jpg')
+file = URI.open('https://res.cloudinary.com/dybthmrxc/image/upload/v1593357734/texas-red_mqoer3.jpg')
 artwork33.images.attach(io: file, filename: 'nes.png', content_type: 'image/png')
 artwork33.save!
 
 artwork34 = Artwork.create!(name: "Spring Interlude - Daniel Nguyen 2014", description: "In Autumn, in the meadows in Mount Macedon, we feel the light and the afternoon heat of an Australian summer. The scene, showcases a Garden of Roses from a vineyard in Mt Dandenong. leaving garden sculptures to stand in their places. But gradually small figures holding parasols aloft are discernible around the arch of the pool and along the avenue. The painter’s marks, which build the mass of trees in the foreground, gradually dissolve into a haze of buildings and vegetation on the horizon.", medium: "Oil On Canvas", genre: "Impressionism", user: user1 )
-file = URI.open('https://images.fasosites.com/18545_550161xl.jpg?sold=Sold&hdots=False&v=201711030026&cv=201711030026')
+file = URI.open('https://res.cloudinary.com/dybthmrxc/image/upload/v1593357915/18545_550161xl_n5hcce.jpg')
 artwork34.images.attach(io: file, filename: 'nes.png', content_type: 'image/png')
 artwork34.save!
 
 artwork35 = Artwork.create!(name: "Spring Interlude II - Daniel Nguyen 2016", description: "In Autumn, in the meadows in Mount Macedon, we feel the light and the afternoon heat of an Australian summer. The scene, showcases a Garden of Roses from a vineyard in Mt Dandenong. leaving garden sculptures to stand in their places. But gradually small figures holding parasols aloft are discernible around the arch of the pool and along the avenue. The painter’s marks, which build the mass of trees in the foreground, gradually dissolve into a haze of buildings and vegetation on the horizon.", medium: "Oil On Canvas", genre: "Impressionism", user: user1 )
-file = URI.open('https://images.fasosites.com/18545_550140xl.jpg?sold=Sold&hdots=False&v=201711030026&cv=201711030026')
+file = URI.open('https://res.cloudinary.com/dybthmrxc/image/upload/v1593357972/18545_550140xl_hlhxna.jpg')
 artwork35.images.attach(io: file, filename: 'nes.png', content_type: 'image/png')
 artwork35.save!
 
@@ -353,24 +353,24 @@ artwork36.images.attach(io: file, filename: 'nes.png', content_type: 'image/png'
 artwork36.save!
 
 artwork37 = Artwork.create!(name: "Roses Meadow - Daniel Nguyen 2013", description: "In Autumn, in the meadows in Mount Macedon, we feel the light and the afternoon heat of an Australian summer. The scene, showcases a Garden of Roses from a vineyard in Mt Dandenong. leaving garden sculptures to stand in their places. But gradually small figures holding parasols aloft are discernible around the arch of the pool and along the avenue. The painter’s marks, which build the mass of trees in the foreground, gradually dissolve into a haze of buildings and vegetation on the horizon.", medium: "Pastel On Canvas", genre: "Impressionism", user: user1 )
-file = URI.open('https://1.bp.blogspot.com/-7IiCw5zRvHg/XvNFfCldL9I/AAAAAAAA2TY/fKaOEEghR50XCC3Fb1xJ3AHiZ8WidAJ2QCLcBGAsYHQ/s1600/fullsizeoutput_a1f.jpeg')
+file = URI.open('https://res.cloudinary.com/dybthmrxc/image/upload/v1593358042/fullsizeoutput_a1f_yxmwb7.jpg')
 artwork36.images.attach(io: file, filename: 'nes.png', content_type: 'image/png')
 artwork36.save!
 
 
 
 artwork38 = Artwork.create!(name: "Wheatfields - Daniel Nguyen 2013", description: "In Autumn, in the meadows in Mount Macedon, we feel the light and the afternoon heat of an Australian summer. The scene, showcases a Garden of Roses from a vineyard in Mt Dandenong. leaving garden sculptures to stand in their places. But gradually small figures holding parasols aloft are discernible around the arch of the pool and along the avenue. The painter’s marks, which build the mass of trees in the foreground, gradually dissolve into a haze of buildings and vegetation on the horizon.", medium: "Pastel On Canvas", genre: "Impressionism", user: user1 )
-file = URI.open('https://1.bp.blogspot.com/-TxtitSWTtU8/Xs-wSNa2wiI/AAAAAAAA2OU/WxnPk3rFF64gaSBGiz6_J6SAUkhHIvO1QCLcBGAsYHQ/s1600/fullsizeoutput_9a8.jpeg')
+file = URI.open('https://res.cloudinary.com/dybthmrxc/image/upload/v1593358093/fullsizeoutput_9a8_pawkrf.jpg')
 artwork38.images.attach(io: file, filename: 'nes.png', content_type: 'image/png')
 artwork38.save!
 
 artwork39 = Artwork.create!(name: "Garden Fields - Daniel Nguyen 2013", description: "In Autumn, in the meadows in Mount Macedon, we feel the light and the afternoon heat of an Australian summer. The scene, showcases a Garden of Roses from a vineyard in Mt Dandenong. leaving garden sculptures to stand in their places. But gradually small figures holding parasols aloft are discernible around the arch of the pool and along the avenue. The painter’s marks, which build the mass of trees in the foreground, gradually dissolve into a haze of buildings and vegetation on the horizon.", medium: "Pastel On Canvas", genre: "Impressionism", user: user1 )
-file = URI.open('https://1.bp.blogspot.com/-1J3EdgT_ql8/Xsqb-crhMNI/AAAAAAAA2L4/spXdrEg62UweGUqVDEM9L4Tof5jP5fftQCLcBGAsYHQ/s1600/fullsizeoutput_993.jpeg')
+file = URI.open('https://res.cloudinary.com/dybthmrxc/image/upload/v1593358143/fullsizeoutput_993_lcqvmk.jpg')
 artwork39.images.attach(io: file, filename: 'nes.png', content_type: 'image/png')
 artwork39.save!
 
 artwork39a = Artwork.create!(name: "Purple Roses - Daniel Nguyen 2013", description: "In Autumn, in the meadows in Mount Macedon, we feel the light and the afternoon heat of an Australian summer. The scene, showcases a Garden of Roses from a vineyard in Mt Dandenong. leaving garden sculptures to stand in their places. But gradually small figures holding parasols aloft are discernible around the arch of the pool and along the avenue. The painter’s marks, which build the mass of trees in the foreground, gradually dissolve into a haze of buildings and vegetation on the horizon.", medium: "Pastel On Canvas", genre: "Impressionism", user: user1 )
-file = URI.open('https://1.bp.blogspot.com/-enIaQOkqgMc/XsVfn5_cygI/AAAAAAAA2Kc/9KEdd8oEzBwcFbjIB69cPKsqfWzQUywEgCLcBGAsYHQ/s1600/fullsizeoutput_979.jpeg')
+file = URI.open('https://res.cloudinary.com/dybthmrxc/image/upload/v1593358200/fullsizeoutput_979_itdhyp.jpg')
 artwork39a.images.attach(io: file, filename: 'nes.png', content_type: 'image/png')
 artwork39a.save!
 
@@ -381,7 +381,7 @@ curate11 = Curate.create!(artwork: artwork33, gallery: gallery3)
 curate12 = Curate.create!(artwork: artwork34, gallery: gallery3)
 curate13 = Curate.create!(artwork: artwork35, gallery: gallery3)
 curate14 = Curate.create!(artwork: artwork36, gallery: gallery3)
-# curate15 = Curate.create!(artwork: artwork37, gallery: gallery3)
+curate15 = Curate.create!(artwork: artwork37, gallery: gallery3)
 
 
 
