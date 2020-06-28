@@ -328,7 +328,7 @@ artwork30.images.attach(io: file, filename: 'nes.png', content_type: 'image/png'
 artwork30.save!
 
 artwork32 = Artwork.create!(name: "Mount Macedon - Daniel Nguyen 2015", description: "In the meadows in Mount Macedon, we feel the light and the afternoon heat of an Australian summer. The scene, showcases a Garden of Roses from a vineyard in Mt Dandenong. leaving garden sculptures to stand in their places. But gradually small figures holding parasols aloft are discernible around the arch of the pool and along the avenue. The painter’s marks, which build the mass of trees in the foreground, gradually dissolve into a haze of buildings and vegetation on the horizon. ", medium: "Oil On Canvas", genre: "Impressionism", user: user1 )
-file = URI.open('https://images.fasosites.com/18545_686458xl.jpg?sold=Sold&hdots=False&v=201711030026&cv=201711030026')
+file = URI.open('https://res.cloudinary.com/dybthmrxc/image/upload/v1593359379/18545_686458xl_q4zma8.jpg')
 artwork32.images.attach(io: file, filename: 'nes.png', content_type: 'image/png')
 artwork32.save!
 
