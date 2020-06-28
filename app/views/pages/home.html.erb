@@ -12,11 +12,11 @@
   </div>
   <% if user_signed_in? %>
     <div class="second-banner">
-      <h2 class="second-title">Welcome <%= @artist.name.split.first %></h2>
+      <h2 class="second-title">Welcome <%= @artist.name.partition(" ").first %></h2>
       <p class="paragraph text-capitalize">
         let art tell your story
         <br>
-        find your inspiration
+        Personalizing Your Feed To Help Find Your Daily Inspiration
       </p>
       <%# @top_tags.each do |tag| %>
         <%#= link_to tag, tagged_path(tag: tag.name) %>

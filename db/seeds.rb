@@ -448,7 +448,7 @@ file = URI.open('https://3.bp.blogspot.com/-5JIKBiBwCg8/TrxJGwc-9EI/AAAAAAAAD4o/
 artwork57.images.attach(io: file, filename: 'nes.png', content_type: 'image/png')
 artwork57.save!
 
-#collections
+#collections for Henry's account
 
 collection2 = Collection.create!(name: "Australian Painters", user: user6)
 
@@ -474,6 +474,41 @@ favourite9 = Favourite.create!(artwork: artwork22, user: user6)
 favourite11 = Favourite.create!(artwork: artwork9, user: user6)
 favourite12 = Favourite.create!(artwork: artwork34, user: user6)
 favourite13 = Favourite.create!(artwork: artwork35, user: user6)
+
+
+collection_favourite8 = CollectionFavourite.create!(collection: collection3, favourite: favourite8)
+collection_favourite9 = CollectionFavourite.create!(collection: collection3, favourite: favourite9)
+# collection_favourite10 = CollectionFavourite.create!(collection: collection3, favourite: favourite10)
+collection_favourite11 = CollectionFavourite.create!(collection: collection3, favourite: favourite11)
+collection_favourite14 = CollectionFavourite.create!(collection: collection3, favourite: favourite12)
+collection_favourite15 = CollectionFavourite.create!(collection: collection3, favourite: favourite13)
+
+#collections for Daniel's account
+
+collection2 = Collection.create!(name: "Australian Painters", user: user1)
+
+favourite4 = Favourite.create!(artwork: artwork40, user: user1)
+favourite5 = Favourite.create!(artwork: artwork41, user: user1)
+favourite6 = Favourite.create!(artwork: artwork42, user: user1)
+favourite7 = Favourite.create!(artwork: artwork43, user: user1)
+favourite12 = Favourite.create!(artwork: artwork32, user: user1)
+favourite13 = Favourite.create!(artwork: artwork33, user: user1)
+
+collection_favourite4 = CollectionFavourite.create!(collection: collection2, favourite: favourite4)
+collection_favourite5 = CollectionFavourite.create!(collection: collection2, favourite: favourite5)
+collection_favourite6 = CollectionFavourite.create!(collection: collection2, favourite: favourite6)
+collection_favourite7 = CollectionFavourite.create!(collection: collection2, favourite: favourite7)
+collection_favourite12 = CollectionFavourite.create!(collection: collection2, favourite: favourite12)
+collection_favourite13 = CollectionFavourite.create!(collection: collection2, favourite: favourite13)
+
+collection3 = Collection.create!(name: "Pastel Paintings", user: user1)
+
+favourite8 = Favourite.create!(artwork: artwork8, user: user1)
+favourite9 = Favourite.create!(artwork: artwork22, user: user1)
+# favourite10 = Favourite.create!(artwork: artwork37, user: user1)
+favourite11 = Favourite.create!(artwork: artwork9, user: user1)
+favourite12 = Favourite.create!(artwork: artwork34, user: user1)
+favourite13 = Favourite.create!(artwork: artwork35, user: user1)
 
 
 collection_favourite8 = CollectionFavourite.create!(collection: collection3, favourite: favourite8)
